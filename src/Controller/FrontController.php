@@ -11,5 +11,11 @@ public function index(): Response
 {
     return $this->render('./home.html.twig');
 }
-
+/*
+#[Route('/', name: 'login')]
+public function index(): Response
+{
+    return $this->render('./login.html.twig');//il faut faire la page html.twig pour le log in
+}
+*/
 }
