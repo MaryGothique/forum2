@@ -9,10 +9,3 @@ nav{
     margin: 50px;
     background-color: lightblue;
 }
-h1{
-    color:lightblue;
-    position: absolute;
-    top: 40px; left: 40px;
-    padding: 2px;
-    margin: 2px;
-}

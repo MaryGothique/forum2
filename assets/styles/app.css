@@ -2,3 +2,24 @@ body {
     background-color: rgb(5, 5, 5);
     color:grey;
 }
+
+.container{
+    display: grid;
+    grid-template-columns: 2;
+    grid-area: span;
+    min-height: 800px;
+}
+h1{
+    color:lightblue;
+    position: absolute;
+    top: 40px; left: 40px;
+    padding: 2px;
+    margin: 2px;
+}
+footer{
+    position: relative;
+    color: lightblue;
+    
+    justify-content: center;
+    
+  }

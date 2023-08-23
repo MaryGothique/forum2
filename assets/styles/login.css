@@ -1,0 +1,11 @@
+
+form{
+    padding: 20vh;
+    margin: 20vh;
+    border: 2px grey;
+    background-color: lightblue;
+    color:grey;
+    position:relative;
+    justify-content: center;
+}
+
