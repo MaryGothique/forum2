@@ -4,20 +4,32 @@ body {
 }
 .container{
     display: grid;
-    grid-column: 2;
-    grid-template-columns: 15% 40% 15%;
-    grid-template-rows: 5% 40% 5%;
+    justify-content: center;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 30% 70%;
     min-height: 680px;
 }
+
 h1{
-    padding: 10px;
-    margin: 50px;
     display: grid;
-    grid-template-columns: 1% 40% 1%;
-    grid-template-rows: 1% 40% 1%;
+    grid: 2;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 20% 40%;
     color:lightblue;
     position: relative;
     justify-content: center;
+}
+form{
+
+    border: 2px solid grey;
+    width: 160px;
+    height: 260px;
+    grid-column: 2;
+    justify-content: center;
+    display: block;
+    position:relative;
+    background-color: lightblue;
+   
 }
 footer{
     position: relative;
@@ -25,3 +37,4 @@ footer{
     justify-content: center;
     
   }
+

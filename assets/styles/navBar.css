@@ -1,23 +1,21 @@
 nav{
     border: 2px solid grey;
     width: 200px;
-    max-height: 700px;
-    min-height: 680px;
-    padding: 2vh;
-    padding-top: 20px;
+    min-height: 800px;
     display: block;
     position:relative;
-    bottom: -40px; left: -40px;
-    margin-top: 20vh;
-    margin: 50px;
     background-color: lightblue;
-
-    grid-template-columns: 10% 40% 10%;
-    grid-template-rows: 15% 70% 15%;
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+   
 }
+
+
 img{
-    padding: 1px;
-    margin: 1px;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
     height: 50%;
     width: 50%;
 }
