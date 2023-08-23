@@ -1,11 +1,26 @@
 nav{
     border: 2px solid grey;
-    margin: 20px;
     width: 200px;
+    max-height: 700px;
+    min-height: 680px;
     padding: 2vh;
+    padding-top: 20px;
     display: block;
     position:relative;
     bottom: -40px; left: -40px;
+    margin-top: 20vh;
     margin: 50px;
     background-color: lightblue;
+
+    grid-template-columns: 10% 40% 10%;
+    grid-template-rows: 15% 70% 15%;
 }
+img{
+    padding: 1px;
+    margin: 1px;
+    height: 50%;
+    width: 50%;
+}
+
+
+
