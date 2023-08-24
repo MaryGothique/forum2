@@ -12,22 +12,19 @@ body {
 
 h1{
     display: grid;
-    grid: 2;
-    grid-template-columns: 80% 20%;
-    grid-template-rows: 20% 40%;
+    grid-template-columns: 5% 40%;
     color:lightblue;
     position: relative;
     justify-content: center;
 }
 form{
-
     border: 2px solid grey;
     width: 160px;
     height: 260px;
     grid-column: 2;
     justify-content: center;
     display: block;
-    position:relative;
+    position: relative;
     background-color: lightblue;
    
 }
