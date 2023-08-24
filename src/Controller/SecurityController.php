@@ -33,14 +33,9 @@ class SecurityController extends AbstractController
 //si oui alors je verifie s'il est le bon mdp 
 // si tous ça est "oui" je peux rediriger l utilisateur dans la page d' accueil connecté 
 
-/*
-public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
-{
-    $repo = $this->User->findByUser()->getUser($this->userEntity);
 
-    return $repo->loadAll($criteria, $orderBy, $limit, $offset);
-}
-*/
+
+
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername, 
             'error' => $error,
@@ -52,5 +47,12 @@ public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $
     public function logout(): void
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+    }
+
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
+    {
+        $repo = $this->User->findBy($criteria)->getUser($this->userEntity);
+
+        return $repo->loadAll($criteria, $orderBy, $limit, $offset);
     }
 }
