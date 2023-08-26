@@ -28,11 +28,21 @@ class SecurityController extends AbstractController
         $user = new User();
         $form = $this->createForm(LoginType::class, $user);
         $form->handleRequest($request);
+        // verifier si l utilisateur existe dans la base de données 
+        if($form->isSubmitted() && $form->isValid()){
+            //SELECT * FROM user where email = :user_email 
+            $data = $form->getData();
+            dump($data);
+            
+            //$user = $repo->findBy(array());
+            
+                //$user = $this->getDoctrine()->getRepository(User::class)->findBy(['email' => 'email@gmail.com');
 
-// verifier si l utilisateur existe dans la base de donnés 
-//si oui alors je verifie s'il est le bon mdp 
-// si tous ça est "oui" je peux rediriger l utilisateur dans la page d' accueil connecté 
+                
+            //si oui alors je verifie s'il est le bon mdp 
+            // si tous ça est "oui" je peux rediriger l utilisateur dans la page d' accueil connecté 
 
+        }
 
 
 
@@ -49,10 +59,4 @@ class SecurityController extends AbstractController
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 
-    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
-    {
-        $repo = $this->User->findBy($criteria)->getUser($this->userEntity);
-
-        return $repo->loadAll($criteria, $orderBy, $limit, $offset);
-    }
 }

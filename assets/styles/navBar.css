@@ -4,7 +4,7 @@ nav{
     min-height: 800px;
     display: block;
     position:relative;
-    background-color: lightblue;
+    background-color: #74BED9;
     grid-column: 1;
     grid-row-start: 1;
     grid-row-end: 3;

@@ -1,17 +1,15 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Log in!{% endblock %}
 
 {% block specificStylesheets %}{% endblock %}
 
 {% block body %}
-<h1>Login</h1>
-{{ form_errors(login) }}
+    <h1>Login</h1>
+    {{ form_errors(login) }}
 
     {{ form_start(login) }}
         {{ form_row(login) }}
         
-
-        <button type="submit" class="btn">Login</button>
+        <input type="submit" class="btn" value="login">
     {{ form_end(login) }}
 {% endblock %}
