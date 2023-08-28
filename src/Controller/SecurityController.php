@@ -14,7 +14,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
     #[Route('/login', name: 'login')]
-    public function login(Request $request, AuthenticationUtils $authenticationUtils, UserRepository  $repo): Response
+    public function login(AuthenticationUtils $authenticationUtils): Response
     {
         // if ($this->getUser()) {
         //     return $this->redirectToRoute('target_path');
@@ -25,31 +25,9 @@ class SecurityController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        $user = new User();
-        $form = $this->createForm(LoginType::class, $user);
-        $form->handleRequest($request);
-        // verifier si l utilisateur existe dans la base de données 
-        if($form->isSubmitted() && $form->isValid()){
-            //SELECT * FROM user where email = :user_email 
-            $data = $form->getData();
-            dump($data);
-            
-            //$user = $repo->findBy(array());
-            
-                //$user = $this->getDoctrine()->getRepository(User::class)->findBy(['email' => 'email@gmail.com');
-
-                
-            //si oui alors je verifie s'il est le bon mdp 
-            // si tous ça est "oui" je peux rediriger l utilisateur dans la page d' accueil connecté 
-
-        }
-
-
-
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername, 
             'error' => $error,
-            'login' => $form->createView(),
         ]);
     }
        
