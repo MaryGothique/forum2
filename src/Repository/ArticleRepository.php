@@ -19,8 +19,14 @@ class ArticleRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Article::class);
+        $article = new Article();
+            $article->setTitle('Titre')
+                ->setContent('Content')
+                ->setAuthor('Author');            
+                
     }
 
+    
 //    /**
 //     * @return Article[] Returns an array of Article objects
 //     */

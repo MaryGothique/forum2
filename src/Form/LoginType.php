@@ -24,4 +24,5 @@ class LoginType extends AbstractType
             'data_class' => User::class,
         ]);
     }
+    
 }
