@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article
@@ -19,12 +20,16 @@ class Article
     #[ORM\Column(length: 255)]
     private ?string $content = null;
 
-    #[ORM\Column(length:25 )]
-    private ?string $author = null;
-
     #[ORM\Column]
+    #[Gedmo\Timestampable(on: 'create')]
     private ?\DateTimeImmutable $CreateAt = null;
+    
 
+    #[ORM\ManyToOne(inversedBy: 'articles')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
+
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -65,19 +70,19 @@ class Article
 
         return $this;
     }
-    
-    public function getAuthor(): ?string
-    {
-        return $this->author;
 
-    }
-    
-    public function setAuthor(string $author): static
+    public function getUser(): ?User
     {
-        $this->author = $author;
-        
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
+
         return $this;
     }
+    
     
     
 }

@@ -4,41 +4,49 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Form\ArticleType;
-use App\Repository\ArticleRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class ArticleController extends AbstractController
 {
-    #[Route('/article', name: 'admin.article.create')]
-    public function createArticle(Request $request, ArticleRepository $articleRepository) 
+    
+
+    #[Route('/admin/article/create', name: 'admin.article.create')]
+    public function createArticle(EntityManagerInterface $em, Request $request): Response|RedirectResponse
     {
         $article = new Article();
+
         $form = $this->createForm(ArticleType::class, $article);       
-
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
-            // $form->getData() holds the submitted values
+             
+            // Formulaire soumis est valide
+            // $form->getData();  holds the submitted values
             // but, the original `$task` variable has also been updated
-            $article = $form->getData();
+           
+            //ici, aujoute l'auteur à l'article
 
-            // ... perform some action, such as saving the task to the database
-            $article = new Article();
-            $article->setTitle('Titre')
-                ->setContent('Content')
-                ->setAuthor('Author'); 
-            return $this->redirectToRoute('home');
+            
+             $article->setUser($this->getUser());
+
+            $em->persist($article);
+            $em->flush();
+            return $this->redirectToRoute('admin.article.create');
+
         }
-
         return $this->render('article/index.html.twig', [
-            'form' => $form,
-        ]);
+            'form' => $form->createView()
+            ]);
     }
-    public function showArticle(int $id, ArticleRepository $articleRepository)
-{
-    $article = $articleRepository->find($id);
-    // ...
-}
+    #[Route('/admin/article/read', name:'admin.article.read')]
+    public function readArticle():Response
+    {
+        return $this->render('article/create.html.twig');
+    }
+    
 }
