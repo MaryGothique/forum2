@@ -9,3 +9,4 @@
 import './styles/app.css';
 import './styles/navBar.css';
 import './styles/footer.css';
+import './styles/_card.css';

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	Liste des articles |
+	{{ parent() }}
+{% endblock %}
+
+{%  %}
+<h1>voilà votre articles! </h1>
+{% include 'components/main.html.twig' with { form } only %}
+
+{% endblock %}

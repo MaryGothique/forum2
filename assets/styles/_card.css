@@ -1,32 +1,24 @@
-body {
-    background-color: rgb(5, 5, 5);
-    color:grey;
-}
-
 .container{
     display: grid;
     justify-content: center;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 50% 50%;
     grid-template-rows: 30% 70%;
-    min-height: 680px;
+    min-height: 300px;
 }
-
 h1{
     text-shadow: #0000FF 2px 2px 2px ;
     color:#74BED9;
     position: relative;
     margin: 0 35%;
 }
-
-form{
+p{
     border: 2px solid grey;
-    width: 160px;
-    height: 160px;
+    width: 30vh;
+    height: 30vh;
     justify-content: center;
-    display: block;
+    display: flex;
     position:relative;
     background-color: #74BED9;
     margin: 0 33%;
 }
-
 

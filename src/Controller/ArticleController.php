@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Form\ArticleType;
+use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,10 +14,16 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ArticleController extends AbstractController
 {
-    
+    public function __construct(
+        private ArticleRepository $articleRepository
+    )
+    {
+        
+    }
 
     #[Route('/admin/article/create', name: 'admin.article.create')]
     public function createArticle(EntityManagerInterface $em, Request $request): Response|RedirectResponse
+    //Entity manager c'est pour envoyer un object en bdd ou supprimer 
     {
         $article = new Article();
 
@@ -39,14 +46,24 @@ class ArticleController extends AbstractController
             return $this->redirectToRoute('admin.article.create');
 
         }
-        return $this->render('article/index.html.twig', [
+        return $this->render('Backend/article/create.html.twig', [
             'form' => $form->createView()
             ]);
     }
+    
     #[Route('/admin/article/read', name:'admin.article.read')]
     public function readArticle():Response
     {
-        return $this->render('article/create.html.twig');
+        // Récupérer tout les users
+        
+        // Récupérer tout les articles
+        $articles = $this->articleRepository->findAll();
+
+        return $this->render('Backend/article/index.html.twig',[
+            'articles' => $articles,
+           
+        ]);
+    
     }
     
 }

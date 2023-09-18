@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+ 
+ {% block title %}
+    voilà tous les article!
+    {{ parent() }}
+    {% endblock %}
+   {% block body %}
+<a href="{{ path('admin.article.create') }}" class="btn btn-secondary">Créer un article</a>
+{% for article in articles %}
+				{% include 'components/_card.html.twig' %}
+			{% endfor %}
+
+
+   {% endblock body %}
+     

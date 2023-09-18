@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+ {% block body %}
+    <h1>Ecrire un article!</h1>
+
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.title) }}
+    {{ form_row(form.content) }}
+
+    {{ form_row(form.validate, { 'label': 'Submit me' }) }}
+{{ form_end(form) }} {# token error CSRF#}
+   
+{{ form_rest(form) }}
+     {% endblock %}
