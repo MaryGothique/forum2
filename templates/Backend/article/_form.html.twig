@@ -3,4 +3,7 @@
         {{ form_row(form.title) }}
         {{ form_row(form.content) }}
     </div>
+    <h2>
+    {% include 'Backend/article/_form.html.twig' with {button_label: 'Edit'} %}
+    </h2>
 {{form_end}}

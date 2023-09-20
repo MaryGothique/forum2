@@ -1,24 +1,31 @@
-.container{
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 30% 70%;
-    min-height: 300px;
-}
-h1{
-    text-shadow: #0000FF 2px 2px 2px ;
-    color:#74BED9;
-    position: relative;
-    margin: 0 35%;
-}
-p{
-    border: 2px solid grey;
-    width: 30vh;
-    height: 30vh;
-    justify-content: center;
+.card-list {
+    width: 90%;
     display: flex;
-    position:relative;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em 0;
+    margin-left: 1fr;
+}
+
+.card-article{
+    width: 30%;
+    height: 300px;
     background-color: #74BED9;
-    margin: 0 33%;
+    padding: 1em;
+    
+    
+}
+
+.card-title {
+    color:black;
+    text-shadow: #0000FF 2px 2px 2px;
+   
+    position: relative;
+    padding: initial;
+    justify-content: right;
+}
+.card-text {
+   color: grey;
 }
 

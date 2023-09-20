@@ -3,13 +3,14 @@
  {% block title %}
     voilà tous les article!
     {{ parent() }}
-    {% endblock %}
-   {% block body %}
-<a href="{{ path('admin.article.create') }}" class="btn btn-secondary">Créer un article</a>
-{% for article in articles %}
-				{% include 'components/_card.html.twig' %}
-			{% endfor %}
+{% endblock %}
 
-
-   {% endblock body %}
+{% block body %}
+   <a href="{{ path('admin.article.create') }}" class="btn">Créer un article</a>
+   <div class="card-list">
+      {% for article in articles %}
+         {% include 'components/_card.html.twig' %}
+      {% endfor %}
+   </div>
+{% endblock body %}
      

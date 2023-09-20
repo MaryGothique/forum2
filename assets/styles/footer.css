@@ -1,6 +1,7 @@
-.Footer_info{
+footer{
     position: relative;
     color: lightblue;
     text-align: center;
+    grid-area: 5 / 2 / 6 / 6;
   }
 

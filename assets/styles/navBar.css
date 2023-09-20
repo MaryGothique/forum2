@@ -1,17 +1,10 @@
 nav{
     border: 2px solid grey;
-    width: 200px;
-    min-height: 800px;
     display: block;
     position:relative;
     background-color: #74BED9;
-    grid-column: 1;
-    grid-row-start: 1;
-    grid-row-end: 3;
-   
+    grid-area: 1 / 1 / 6 / 2;
 }
-
-
 img{
     justify-content: center;
     padding: 10px;

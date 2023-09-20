@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
  {% block body %}
-    <h1>Ecrire un article!</h1>
+    <h1>Modifier un article!</h1>
 
 {{ form_start(form) }}
     {{ form_errors(form) }}
@@ -8,8 +8,8 @@
     {{ form_row(form.title) }}
     {{ form_row(form.content) }}
 
-    {{ form_row(form.validate, { 'label': 'Create' }) }}
-{{ form_end(form) }} 
+    {{ form_row(form.validate, { 'label': 'Modifier' }) }}
+{{ form_end(form) }} {# token error CSRF#}
    
 {{ form_rest(form) }}
      {% endblock %}

@@ -20,15 +20,15 @@
     </head>
     <body>
         <div class="container">
-        {% include 'components/navBar.html.twig' %}
-        
-        
-        {% block body %}
-            {% include 'components/_card.html.twig' %}
-        {% endblock %}
-
+            {% include 'components/navBar.html.twig' %}
+            
+            <main>
+                {% block body %}
+                {% endblock %}
+            </main>
+            
+            
+            {% include 'components/footer.html.twig' %} 
         </div>
-        
-        {% include 'components/footer.html.twig' %} 
     </body>
 </html>

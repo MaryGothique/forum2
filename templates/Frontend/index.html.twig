@@ -2,10 +2,8 @@
 {% block title %}
 	Liste des articles |
 	{{ parent() }}
-{% endblock %}
 
-{%  %}
 <h1>voilà votre articles! </h1>
-{% include 'components/main.html.twig' with { form } only %}
+{% include 'components/_card.html.twig' with { form } only %}
 
 {% endblock %}
