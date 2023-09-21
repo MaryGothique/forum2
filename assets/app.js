@@ -10,3 +10,5 @@ import './styles/app.css';
 import './styles/navBar.css';
 import './styles/footer.css';
 import './styles/_card.css';
+import './styles/_registration.form.css';
+import './styles/_articleForm.css';

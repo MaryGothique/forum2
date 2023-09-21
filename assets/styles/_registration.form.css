@@ -1,0 +1,9 @@
+.registrationForm{
+    border: 2px solid grey;
+    width: 200px;
+    height: 150px;
+    position: relative;
+    background-color: #74BED9;
+    margin: 30px;
+    padding: 30px; 
+}

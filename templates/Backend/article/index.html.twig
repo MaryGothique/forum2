@@ -6,6 +6,8 @@
 {% endblock %}
 
 {% block body %}
+
+   <h1>voilà tous les article!</h1>
    <a href="{{ path('admin.article.create') }}" class="btn">Créer un article</a>
    <div class="card-list">
       {% for article in articles %}

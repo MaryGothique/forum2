@@ -68,7 +68,7 @@ class ArticleController extends AbstractController
         ]);
     
     }
-    #[Route('/article/edit/{id}', name: 'admin.article.edit', methods: 'GET|POST')]
+    #[Route('/admin/article/edit/{id}', name: 'admin.article.edit', methods: 'GET|POST')]
     public function edit(Article $article, Request $request): Response|RedirectResponse
     {
         $form = $this -> createForm(ArticleType::class, $article);
@@ -88,5 +88,27 @@ class ArticleController extends AbstractController
             'form' => $form->createView()
             ]);
     }
-    
+    #[Route('/admin/article/delete/{id}', name:'admin.article.delete', methods: ['POST', 'DELETE'])]
+    public function deleteArticle(?Article $article, Request $request): RedirectResponse
+    {
+        if (!$article instanceof Article) {
+            $this->addFlash('error',  'Article not found');
+
+            return $this->redirectToRoute('admin.article.read');
+        }
+
+        if ($this->isCsrfTokenValid('delete' . $article->getId(), $request->request->get('token'))) {
+            $this->em->remove($article, true);
+            $this->em->flush();
+
+            $this->addFlash('success', 'Article deleted successfully');
+
+            return $this->redirectToRoute('admin.article.read');
+        }
+
+        $this->addFlash('error', 'Token invalide');
+
+        return $this->redirectToRoute('admin.article.read');
+       
+    }
 }

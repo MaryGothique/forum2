@@ -1,3 +1,4 @@
+/*CSS de l' article*/
 .card-list {
     width: 90%;
     display: flex;
@@ -10,22 +11,77 @@
 
 .card-article{
     width: 30%;
-    height: 300px;
+    height: 500px;
     background-color: #74BED9;
     padding: 1em;
-    
-    
+    margin-left: 50px;
+    margin-top: 150px;
+    color:black;
+    overflow: scroll;
 }
 
 .card-title {
     color:black;
     text-shadow: #0000FF 2px 2px 2px;
-   
     position: relative;
     padding: initial;
     justify-content: right;
+    text-indent: 10px;
 }
 .card-text {
-   color: grey;
+   color: rgb(41, 41, 41);
+   text-indent: 10px;
+   background: white;
+   font-size: 12px;
+   height: 200px;
+   width: 320px;
+}
+.form_delete{
+    height: 2px;
+    width: 5px;
+    border:2px solid red;
+    background-color: white;
+    border-radius: 10%;
+    color: black;
 }
 
+.btn_danger{
+    border:2px solid red;
+    background-color: white;
+    border-radius: 10%;
+    color: black;
+}
+/*CSS du formulaire article
+.form-article{
+    border: 2px solid grey;
+    width: 1500px;
+    height: 800px;
+    position: relative;
+    background-color: #74BED9;
+    margin: 30px;
+    padding: 30px;
+
+}
+
+#article-title{
+    width: 1300px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+#article-content{
+    height: 500px;
+    width: 1300px;
+    border-radius: 20px;
+}
+.required{
+    text-align: center;
+    margin: 10px;
+    padding:10px;
+}
+#article-validate{
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    border-radius: 50%;
+}*/

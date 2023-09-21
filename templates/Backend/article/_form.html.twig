@@ -1,7 +1,8 @@
 {{form_start (form)}}
-    <div> 
+    <div class="form-article"> 
         {{ form_row(form.title) }}
         {{ form_row(form.content) }}
+        {{ form_row(form.author) }}
     </div>
     <h2>
     {% include 'Backend/article/_form.html.twig' with {button_label: 'Edit'} %}
