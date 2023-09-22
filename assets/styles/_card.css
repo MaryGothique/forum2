@@ -37,8 +37,8 @@
    width: 320px;
 }
 .form_delete{
-    height: 2px;
-    width: 5px;
+    height: 20px;
+    width: 65px;
     border:2px solid red;
     background-color: white;
     border-radius: 10%;

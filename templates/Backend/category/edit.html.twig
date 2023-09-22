@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Modifier une catégorie |
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section>
+		<h1>Modifier une catégorie</h1>
+		{% include 'Backend/category/_form.html.twig' with {button_label: "Créer"} %}
+	</section>
+{% endblock %}

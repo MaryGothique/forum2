@@ -42,7 +42,7 @@ class ArticleController extends AbstractController
 
             
              $article->setUser($this->getUser());
-
+            // avec le code suivant nous allons à l' envoyer dans la bdd
             $this->em->persist($article);
             $this->em->flush();
 
@@ -52,8 +52,8 @@ class ArticleController extends AbstractController
         return $this->render('Backend/article/create.html.twig', [
             'form' => $form->createView()
             ]);
-    }
-    
+    } 
+    // crud de la read
     #[Route('/admin/article/read', name:'admin.article.read')]
     public function readArticle():Response
     {
