@@ -1,0 +1,41 @@
+/*CSS de l' article*/
+
+
+.card-title {
+    color:black;
+    text-shadow: #0000FF 2px 2px 2px;
+    position: relative;
+    padding: initial;
+    justify-content: right;
+    text-indent: 10px;
+}
+.card-text {
+   color: rgb(41, 41, 41);
+   text-indent: 10px;
+   background: white;
+   font-size: 12px;
+
+   width: 320px;
+}
+.btn{
+    height: 20px;
+    width: 50px;
+    border:2px solid grey;
+    background-color: white;
+    border-radius: 20px;
+}
+.form_delete{
+    height: 20px;
+    width: 65px;
+    border:2px solid red;
+    background-color: white;
+    border-radius: 10%;
+    color: black;
+}
+
+.btn_danger{
+    border:2px solid red;
+    background-color: white;
+    border-radius: 10%;
+    color: black;
+}

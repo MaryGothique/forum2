@@ -6,7 +6,6 @@ use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Mapping\Entity;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -34,7 +33,7 @@ class ArticleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
              
-            // Formulaire soumis est valide
+            // Formulaire soumis et valide
             // $form->getData();  holds the submitted values
             // but, the original `$task` variable has also been updated
            
@@ -84,7 +83,7 @@ class ArticleController extends AbstractController
             return $this->redirectToRoute('admin.article.read');
         }
 
-        return $this->render('Backend/Article/edit.html.twig', [
+        return $this->render('Backend/article/edit.html.twig', [
             'form' => $form->createView()
             ]);
     }
@@ -92,7 +91,7 @@ class ArticleController extends AbstractController
     public function deleteArticle(?Article $article, Request $request): RedirectResponse
     {
         if (!$article instanceof Article) {
-            $this->addFlash('error',  'Article not found');
+            $this->addFlash('error', 'Article not found');
 
             return $this->redirectToRoute('admin.article.read');
         }
