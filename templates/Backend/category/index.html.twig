@@ -8,6 +8,7 @@
 {% block body %}
 
 <h1>voilà tous les categories!</h1>
+
  <a href="{{ path('admin.category.create') }}" class="btn">Créer une categorie</a>
    <div class="card-list">
       {% for category in categories %}

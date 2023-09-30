@@ -1,22 +1,31 @@
 /*CSS de l' article*/
-
-
+.category-form{
+    border: 2px solid grey;
+    background-color: #74BED9;
+    border-radius: 20px;
+    width: 200px;
+    height: 80px;
+    margin: 100px;
+    padding: 10px;
+    justify-content: baseline;
+    }
 .card-title {
+    border-radius: 20px;
+    border: 2px solid grey;
+    width: 200px;
+    height: 100px;
+   
+    background-color: #74BED9;
+    margin: 30px;
+    padding: 30px; 
     color:black;
     text-shadow: #0000FF 2px 2px 2px;
     position: relative;
     padding: initial;
-    justify-content: right;
+    justify-content: center;
     text-indent: 10px;
 }
-.card-text {
-   color: rgb(41, 41, 41);
-   text-indent: 10px;
-   background: white;
-   font-size: 12px;
 
-   width: 320px;
-}
 .btn{
     height: 20px;
     width: 50px;
@@ -38,4 +47,12 @@
     background-color: white;
     border-radius: 10%;
     color: black;
+}
+.card-text {
+   color: rgb(41, 41, 41);
+   text-indent: 10px;
+   background: white;
+   font-size: 12px;
+
+   width: 320px;
 }

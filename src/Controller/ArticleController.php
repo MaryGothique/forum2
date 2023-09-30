@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class ArticleController extends AbstractController
 {
@@ -23,6 +24,7 @@ class ArticleController extends AbstractController
     }
 
     #[Route('/admin/article/create', name: 'admin.article.create')]
+    #[IsGranted('ROLE_USER')]
     public function createArticle(Request $request): Response|RedirectResponse
     //Entity manager c'est pour envoyer un object en bdd ou supprimer 
     {

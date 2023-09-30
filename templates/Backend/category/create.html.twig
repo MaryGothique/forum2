@@ -6,8 +6,9 @@
 {% endblock %}
 
 {% block body %}
-	<section>
+	
 		<h1>Création d'une catégorie</h1>
+	<section class="category-form">
 		{% include 'Backend/category/_form.html.twig' with {button_label: "Créer"} %}
 	</section>
 {% endblock %}

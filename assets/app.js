@@ -13,3 +13,4 @@ import './styles/_card.css';
 import './styles/_registration.form.css';
 import './styles/_articleForm.css';
 import './styles/_category.css';
+// import './styles/home.css';

@@ -21,6 +21,7 @@ class CategoryController extends AbstractController
     }
 
     #[Route('/admin/category/create', name: 'admin.category.create')]
+    #[IsGranted('ROLE_USER')]
     public function createCategory(Request $request): Response|RedirectResponse
     {
         $category = new Category();
