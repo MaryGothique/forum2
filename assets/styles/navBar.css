@@ -1,17 +1,30 @@
-nav{
-    border: 2px solid grey;
-    display: block;
-    position:relative;
-    background-color: #74BED9;
-    grid-area: 1 / 1 / 6 / 2;
-}
-img{
-    justify-content: center;
-    padding: 10px;
-    margin: 10px;
-    height: 50%;
-    width: 50%;
-}
+    nav{
+        border: 2px solid grey;
+        display: block;
+        position:relative;
+        background-color: #74BED9;
+        height: 100vh;
+    }
+   
+    img{
+        justify-content: center;
+        padding: 10px;
+        margin: 10px;
+        height: 50%;
+        width: 75%;
+    }
+   
+    
+    ul{
+        margin: 10px 0 0 -40px;
+        text-align: center;
+    }
 
-
-
+    .btn{
+        margin: 30px;
+        border:2px solid grey;
+        background-color: white;
+        border-radius: 20px;
+        grid-area: 1/ 2 / 5 / 6; 
+        justify-content: space-between;
+    }

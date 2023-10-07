@@ -1,0 +1,10 @@
+.form-login{
+    border: 2px solid grey;
+    width: 200px;
+    height: 130px;
+    position: relative;
+    background-color: #74BED9;
+    margin: 2vh auto;
+    padding: 10px;
+
+}

@@ -1,7 +1,7 @@
 footer{
-    position: relative;
-    color: lightblue;
+    position:inherit;
+    color: #74BED9;
     text-align: center;
-    grid-area: 5 / 2 / 6 / 6;
-  }
+    margin: -40px;
+   }
 

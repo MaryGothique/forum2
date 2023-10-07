@@ -1,26 +1,28 @@
 /*CSS du formulaire article*/
 .form-article{
     border: 2px solid grey;
-    width: 1500px;
-    height: 800px;
+    width: 1000px;
+    height: 500px;
     position: relative;
     background-color: #74BED9;
-    margin: 30px;
-    padding: 30px;
+    margin: 0 auto 150px auto;
+    padding: 30px 50px;
 
 }
 
 #article_title{
-    width: 1300px;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 20px;
+    width: 100vh;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  height: 5vh;
 }
 #article_content{
-    height: 500px;
-    width: 1300px;
     margin: 20px;
     border-radius: 20px;
+    height: 200px;
+    width: 100vh;
+    padding: 20px;
 }
 
 .required{
