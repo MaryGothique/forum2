@@ -1,10 +1,20 @@
 .form-login{
+  border: 2px solid grey;
+    width: 200px;
+    height: 185px;
+    background-color: #74BED9;
+    padding: 10px;
+    color: gray;
+    margin: auto;
+}
+@media screen and (max-width: 992px){
+  .form-login{
     border: 2px solid grey;
     width: 200px;
-    height: 130px;
-    position: relative;
+    height: 185px;
     background-color: #74BED9;
-    margin: 2vh auto;
     padding: 10px;
-
+    color: gray;
+    margin: auto;
+    }
 }

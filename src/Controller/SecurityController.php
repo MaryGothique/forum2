@@ -30,10 +30,11 @@ class SecurityController extends AbstractController
         ]);
     }
        
-    #[Route(path: '/app_logout', name: 'app_logout')]
-    public function logout(): void
+    #[Route(path: '/logout', name: 'app_logout')]
+    public function logout()
     {
-        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+        //throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+        return $this->render('home.html.twig');
     }
 
        

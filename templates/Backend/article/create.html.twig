@@ -1,15 +1,16 @@
 {% extends 'base.html.twig' %}
  {% block body %}
-    <h1>Ecrire un article!</h1>
-<div class="form-article">
-{{ form_start(form) }}
-    {{ form_errors(form) }}
+   <h1>Ecrire un article!</h1>
+    <div class="form-article">
+        
+            {{ form_start(form) }}
+                {{ form_errors(form) }}
 
-    {{ form_row(form.title) }}
-    {{ form_row(form.content) }}
+                {{ form_row(form.title) }}
+                {{ form_row(form.content) }}
 
-    {{ form_row(form.validate, { 'label': 'Create' }) }}
-{{ form_end(form) }} 
-</div>
-{{ form_rest(form) }}
-     {% endblock %}
+                {{ form_row(form.validate, { 'label': 'Create' }) }}
+            {{ form_end(form) }} 
+    </div>
+            {{ form_rest(form) }}
+  {% endblock %}

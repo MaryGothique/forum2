@@ -70,6 +70,7 @@ class ArticleController extends AbstractController
     
     }
     #[Route('/admin/article/edit/{id}', name: 'admin.article.edit', methods: 'GET|POST')]
+    #[IsGranted('ROLE_USER')]
     public function edit(Article $article, Request $request): Response|RedirectResponse
     {
         $form = $this -> createForm(ArticleType::class, $article);

@@ -1,12 +1,22 @@
     .registrationForm{
         border: 2px solid grey;
-        width: 200px;
-        height: 180px;
-        position: relative;
-        background-color: #74BED9;
-        margin: 2vh auto;
-        padding: 15px; 
+    width: 200px;
+    height: 200px;
+    background-color: #74BED9;
+    padding: 10px;
+    color: gray;
+    margin:auto;
 
     }
    
-    
+    @media screen and (max-width: 992px){
+        .registrationForm{
+          border: 2px solid grey;
+          width: 210px;
+          height: 200px;
+          background-color: #74BED9;
+          padding: 10px;
+          color: gray;
+          margin:auto;
+          }
+      }

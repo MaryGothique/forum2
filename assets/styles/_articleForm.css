@@ -1,41 +1,60 @@
 /*CSS du formulaire article*/
 .form-article{
-    border: 2px solid grey;
-    width: 1000px;
-    height: 500px;
-    position: relative;
-    background-color: #74BED9;
-    margin: 0 auto 150px auto;
-    padding: 30px 50px;
-
-}
-
-#article_title{
-    width: 100vh;
-  margin: 20px;
+    color: gray;
+  border: 2px solid grey;
+  height: 450px;
+  width: 500px;
+  display: flex;
+  margin: auto;
   padding: 20px;
-  border-radius: 20px;
-  height: 5vh;
+  background-color: #74BED9;
+}
+#article_title{
+    width: 450px;
+    height: 50px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 20px;
+    
 }
 #article_content{
-    margin: 20px;
+    margin: 5px;
     border-radius: 20px;
     height: 200px;
-    width: 100vh;
-    padding: 20px;
+    width: 450px;
+    padding: 5px;
 }
-
 .required{
     width: 1300px;
     margin: 20px;
     padding: 20px;
     border-radius: 20px;
     text-align: center;
- 
 }
-#article_validate{
-    justify-content: center;
-    height: 50px;
-    width: 150px;
-    border-radius: 50%;
+@media screen and (max-width: 901px){
+    .form-article{
+        color: gray;
+        border: 2px solid grey;
+        height: 400px;
+        width: 300px;
+        display: flex;
+        padding: 2px;
+        background-color: #74BED9;
+        margin: -20px auto auto 60px;
+    }
+    #article_title{
+        width: 200px;
+        height: 50px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 20px;
+        
+    }
+    #article_content{
+        margin: 5px;
+        border-radius: 20px;
+        height: 200px;
+        width: 200px;
+        padding: 5px;
+    }
 }

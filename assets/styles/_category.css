@@ -1,4 +1,24 @@
-/*CSS de form*/
+/*CSS de category*/
+.card_list{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.category-form{
+        border: 2px solid grey;
+      background-color: #74BED9;
+      border-radius: 20px;
+      width: 200px;
+      height: 130px;
+      margin: auto;
+      padding: 10px;
+      justify-content: baseline;
+      color: gray;
+        }
+
 .card-category-title{
     width: 150px;
     height: 30px;
@@ -12,44 +32,16 @@
     border: 2px gray;
     border-radius: 20px;
 }
-.category-form{
-    border: 2px solid grey;
-    background-color: #74BED9;
-    border-radius: 20px;
-    width: 200px;
-    height: 80px;
-    margin: 100px;
-    padding: 10px;
-    justify-content: baseline;
+@media screen and (max-width: 901px){
+        .category-form{
+            border: 2px solid grey;
+        background-color: #74BED9;
+        border-radius: 20px;
+        width: 200px;
+        height: 130px;
+        margin: auto;
+        padding: 10px;
+        justify-content: baseline;
+        color: gray;
+        }
     }
-
-
-.btn-category{
-    margin: 40px;
-    height: 30px;
-    width: 50px;
-    border:2px solid grey;
-    background-color: white;
-    border-radius: 20px;
-    margin-top: -30px;
-}
-.form_delete{
-    margin: -50px 120px;
-    height: 30px;
-    width: 70px;
-    border:2px solid red;
-    background-color: white;
-    border-radius: 20px;
-    color: black;
-    justify-content: space-around;
-}
-/*
-.card-text {
-   color: rgb(41, 41, 41);
-   text-indent: 10px;
-   background: white;
-   font-size: 12px;
-   width: 320px;
-
-}
-*/

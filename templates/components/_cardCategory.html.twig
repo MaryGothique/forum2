@@ -1,13 +1,12 @@
 <div class="card-category">
     <h1 class="card-category-title">{{category.title}}</h1>
-     
     
-    <a href="{{ path('admin.category.edit', {id: category.id}) }}" class="btn-category">Modifier</a>
+        <a href="{{ path('admin.category.edit', {id: category.id}) }}" class="btn-modifier">Modifier</a>
 
-    <form class="form-delete" method="POST" action="{{ path('admin.category.delete', {'id': category.id}) }}"
-    onsubmit="return confirm('Êtes-vous sùr de vouloir supprimer cet article ?')">
-        <input type="hidden" name="token" value="{{ csrf_token('delete' ~ category.id) }}">
-        <button class="form_delete">Supprimer</button>
-    </form>
+            <form class="" method="POST" action="{{ path('admin.category.delete', {'id': category.id}) }}"
+            onsubmit="return confirm('Êtes-vous sùr de vouloir supprimer cet article ?')">
+                <input type="hidden" name="token" value="{{ csrf_token('delete' ~ category.id) }}">
+                <button class="btn-delete">Supprimer</button>
+            </form>
 
 </div>
