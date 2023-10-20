@@ -9,9 +9,10 @@
 import './styles/app.css';
 import './styles/navBar.css';
 import './styles/footer.css';
-import './styles/_card.css';
-import './styles/_registration.form.css';
+import './styles/_categoryForm.css';
 import './styles/_articleForm.css';
 import './styles/_category.css';
-import './styles/_login.css';
+import './styles/_card.css';
+import './styles/login.css';
+import './styles/register.css';
 // import './styles/home.css';

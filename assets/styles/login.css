@@ -1,0 +1,76 @@
+.form-login{
+  border: 2px solid #727272;
+    width: 200px;
+    height: 185px;
+    background-color: #74BED9;
+    padding: 10px;
+    color: #727272;
+    margin: auto;
+}
+/*les boutons*/
+button{
+  margin: 2vh;
+  height: 50px;
+  width: 60px;
+  border:2px solid #727272;
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  justify-content: center;
+  display: flex;
+  padding:10px;
+}
+
+
+.btn{
+  margin: 2vh;
+  padding:13px;
+  height: 50px;
+  width: 80px;
+  border:2px solid #727272;
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  justify-content: center;
+
+
+}
+ul{
+  margin-left: -20px;
+  display: flex;
+ 
+}
+@media screen and (max-width: 992px){
+  .form-login{
+    border: 2px solid #727272;
+    width: 200px;
+    height: 185px;
+    background-color: #74BED9;
+    padding: 10px;
+    color: #727272;
+    margin: auto;
+    }
+
+          button.btn {
+            margin:15px auto;
+            border:2px solid #727272;
+            background-color: white;
+            border-radius: 20px;
+            color: black;
+            justify-content:center;
+            display: block;
+              }
+        /*navbar button*/
+        a.btn{
+            margin-left:-1vh;
+            
+            height: 50px;
+            width: 70px;
+            border:2px solid #727272;
+            background-color: white;
+            border-radius: 20px;
+            color: black;
+            justify-content: center;
+        
+        }
+}

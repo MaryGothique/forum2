@@ -2,6 +2,10 @@
 
 {% block title %}Register{% endblock %}
 
+{% block specificStylesheets %}
+    {{ encore_entry_link_tags('register') }}
+{% endblock %}
+
 {% block body %}
     <h1>Register</h1>
     <div class="registrationForm">

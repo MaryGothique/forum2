@@ -3,12 +3,13 @@
         <p class="card-text">{{article.content}}</p>
         <p>{{ article.user.email }}</p>
         <p>{{ article.CreateAt|date('Y/m/d') }}</p>
-    <button href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn-modifier">Modifier</button>
+        <div class="card-btn">
+    <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn-modifier">Modifier</a>
 
-    <form class="" method="POST" action="{{ path('admin.article.delete', {'id': article.id}) }}"
+    <form method="POST" action="{{ path('admin.article.delete', {'id': article.id}) }}"
     onsubmit="return confirm('Êtes-vous sùr de vouloir supprimer cet article ?')">
         <input type="hidden" name="token" value="{{ csrf_token('delete' ~ article.id) }}">
         <button class="btn-delete">Supprimer</button>
     </form>
-
+        </div>
 </div>

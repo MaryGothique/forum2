@@ -8,7 +8,7 @@
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <ul><a href="{{ path('app_logout') }}" class="btn">Logout</a></ul>    
             {% else %}
-                <ul><a href= "{{ path('login') }}" class="btn"> login</a></ul>
+                <ul><a href= "{{ path('login') }}" class="btn"> Login</a></ul>
                 <ul><a href="/register" class="btn"> Register</a></ul>
             {% endif %}
             

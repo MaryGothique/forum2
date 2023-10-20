@@ -1,29 +1,27 @@
 /*CSS de l' article*/
 .card-list {
     width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    
 }
 .tous-article{
     display: flex;
 }
 .card-article{
-    width: 22%;
-    height: 20%;
-    border: 2px solid grey;
+    border: 2px solid #727272;
     background-color: #74BED9;
     margin: 20px;
     color: black;
-    padding: 10px;
+    height: auto;
+    
 }
 main{
     height: 100%;
+  grid-column: 2;
+  grid-row: 1;
+
 }
 .card-title {
-
-    height: 15px;
+    height: auto;
     padding: 15px;
     color: black;
     text-shadow: #0000FF 2px 2px 2px;
@@ -33,14 +31,82 @@ main{
     text-align: center;
     background: white;
     font-size: 12px;
+    height: auto;
+}
+.card-btn{
+    display: inline-flex;
+}
+    .card-article .btn-modifier{
+        padding: 5px;
+        
+        border: 2px solid #727272;
+        background-color: white;
+        border-radius: 20px;
+        color: black;
+        margin: 15px 20px;
+    
+    }
+    
+    .card-article .btn-delete{
+        padding: 2px;
+        height: 30px;
+        width: 80px;
+        border: 2px solid #ff0101;
+        background-color:#f80707;
+        border-radius: 20px;
+        color: black;
+        margin: 15px 20px;
     }
 /*mediaquery*/
 @media screen and (max-width: 901px){
-.card-list {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    display: inline-block;
+    .card-list {
+        display: flex;
+        flex-direction: column; /* Imposta l'orientamento come colonna */
+        align-items: center; /* Allinea gli elementi lungo l'asse trasversale (verticale) */
+        margin: -10px 20 ;
+        overflow: scroll;
+    }
+
+    .tous-article{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: -10px 20px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+    .card-title {
+
+        height: auto;
+    
+        color: black;
+        text-shadow: #0000FF 2px 2px 2px;
+        
+    }
+    main{
+        height: 100%;
+        margin-left: 60px;
+        overflow: scroll;
+    }
+    .card-article{
+        width: 80%;
+
+        border: 2px solid #727272;
+        background-color: #74BED9;
+        margin: 20px;
+        color: black;
+        padding: 10px;
+        overflow-x: hidden;
+    }
+    .card-article .btn-delete{
+        padding: 2px;
+        height: 30px;
+        width: 80px;
+        border: 2px solid #ff0101;
+        background-color:#f80707;
+        border-radius: 20px;
+        color: black;
+        margin: 15px -20px;
+    }
 }
-}
+

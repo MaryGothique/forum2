@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
+use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,10 +26,12 @@ class ArticleController extends AbstractController
 
     #[Route('/admin/article/create', name: 'admin.article.create')]
     #[IsGranted('ROLE_USER')]
-    public function createArticle(Request $request): Response|RedirectResponse
+    public function createArticle(Request $request, CategoryRepository $categoryRepo): Response|RedirectResponse
     //Entity manager c'est pour envoyer un object en bdd ou supprimer 
     {
         $article = new Article();
+
+        $categories = $categoryRepo->findAll();
 
         $form = $this->createForm(ArticleType::class, $article);       
         $form->handleRequest($request);
@@ -51,7 +54,8 @@ class ArticleController extends AbstractController
         }
         
         return $this->render('Backend/article/create.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'categories' => $categories
             ]);
     } 
     // crud de la read

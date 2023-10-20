@@ -27,6 +27,8 @@ class CategoryController extends AbstractController
     {
         $category = new Category();
 
+        
+
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
 
@@ -90,4 +92,5 @@ public function deleteCategory(?Category $category, Request $request): RedirectR
         return $this->redirectToRoute('admin.category.read');
     }
 }
+
 }

@@ -1,14 +1,17 @@
     nav{
-        border: 2px solid grey;
+        border: 2px solid #727272;
         display:flex;
         position: relative;
         background-color: #74BED9;
         height: 100vh;
-        width: 100%;
+        
+        grid-column:1;
+        grid-row-start: 1;
+        grid-row-end: 3;
 }
     img{
-        width: 130px;
-        height: 120px;
+       width:80%;
+      
         margin-left: 2px;
         padding: 10px;
     }
@@ -21,7 +24,7 @@
 @media screen and (max-width: 901px){
     
     nav{
-        border: 2px solid grey;
+        border: 2px solid #727272;
         display:flex;
         position: relative;
         background-color: #74BED9;
@@ -30,17 +33,18 @@
         
     }
     img{
-        width: 80px;
-        height: 60px;
-        
-        margin-left: -15px;
+        width: 100%;
+        margin-left:-1px;
     }
     ul{
         margin-left: -20px;
         display: flex;
        
     }        
-   
+   .home .btn{
+    height: 50px;
+    width: 150px;
+   }
 
 }
 
