@@ -23,7 +23,7 @@ class ArticleController extends AbstractController
     {
         
     }
-
+        //Le Create 
     #[Route('/admin/article/create', name: 'admin.article.create')]
     #[IsGranted('ROLE_USER')]
     public function createArticle(Request $request, CategoryRepository $categoryRepo): Response|RedirectResponse
@@ -73,6 +73,7 @@ class ArticleController extends AbstractController
         ]);
     
     }
+    // Le Update
     #[Route('/admin/article/edit/{id}', name: 'admin.article.edit', methods: 'GET|POST')]
     #[IsGranted('ROLE_USER')]
     public function edit(Article $article, Request $request): Response|RedirectResponse
@@ -94,6 +95,7 @@ class ArticleController extends AbstractController
             'form' => $form->createView()
             ]);
     }
+    // Le Delete
     #[Route('/admin/article/delete/{id}', name:'admin.article.delete', methods: ['POST', 'DELETE'])]
     public function deleteArticle(?Article $article, Request $request): RedirectResponse
     {

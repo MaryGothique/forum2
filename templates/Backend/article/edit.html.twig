@@ -3,17 +3,27 @@
  
  <h1>Modifier un article!</h1>
  <div class="form-article">
-    
 
 {{ form_start(form) }}
     {{ form_errors(form) }}
-
+    
     {{ form_row(form.title) }}
+    {{ form_row(form.category) }}
+    <!--
+     <select class="form-control" id="category">
+                {# for category in categories %}
+                    {% set selected = '' %}
+                    {% if (category.title ~ ' ' ~ category.title) == categories %}
+                    {% set selected = 'selected' %}
+                    {% endif %}
+                    <option value="{{category.title}} " {{ selected }}>{{category.title}}</option>
+                {% endfor #}
+            </select> -->
     {{ form_row(form.content) }}
 
     {{ form_row(form.validate, {'label': 'Modifier' }) }}
 {{ form_end(form) }} 
-   
+ </div>  
 {{ form_rest(form) }}
-</div>
+
  {% endblock %}

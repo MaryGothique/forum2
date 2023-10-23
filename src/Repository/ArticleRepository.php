@@ -3,8 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Article;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Entity\Category;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @extends ServiceEntityRepository<Article>
@@ -22,7 +24,12 @@ class ArticleRepository extends ServiceEntityRepository
               
                 
     }
-
+    public function Category(EntityManagerInterface $entityManager)
+    {
+        $repository = $entityManager->getRepository(Category::class);
+        $category = $repository->findAll();
+        dd($category);
+    }
     
 //    /**
 //     * @return Article[] Returns an array of Article objects

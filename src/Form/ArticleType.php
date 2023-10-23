@@ -3,13 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Article;
-
 use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\ChoiceList\ChoiceList;
-use Symfony\Component\Form\ChoiceList\Factory\Cache\ChoiceAttr;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -22,11 +19,17 @@ class ArticleType extends AbstractType
  
         $builder
             ->add('title', TextType::class)
-            /*
-            ->add('categories', ChoiceList::class, [
+           
+            ->add('category', EntityType::class, [
                 'class' => Category::class,
+                'label' => 'Categories:',
+                'multiple' => true,
+                'expanded' => false,
                 'choice_label' => 'title',
-            ])*/
+                'by_reference' => true,
+               
+               
+            ])
             ->add('content', TextareaType::class)        
             ->add('validate', SubmitType::class);
         
@@ -36,6 +39,7 @@ class ArticleType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Article::class,
+            'category' => Category::class,
         ]);
     }
 }

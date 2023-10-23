@@ -1,6 +1,8 @@
 /*CSS de category*/
+
 .card-category{
-    display: grid;
+  display: grid;
+  width: 20px;
   }
 
 .card-category-title{

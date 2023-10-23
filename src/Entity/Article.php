@@ -104,6 +104,14 @@ class Article
         return $this->category;
     }
 
+    /**
+     * @return Collection<int, Category>
+     */
+    public function getCategories(): Collection
+    {
+        return $this->category;
+    }
+
     public function addCategory(Category $category): static
     {
         if (!$this->category->contains($category)) {

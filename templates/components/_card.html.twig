@@ -1,8 +1,18 @@
 <div class="card-article">
     <h1 class="card-title">{{article.title}}</h1>
+   
         <p class="card-text">{{article.content}}</p>
+    
         <p>{{ article.user.email }}</p>
         <p>{{ article.CreateAt|date('Y/m/d') }}</p>
+        <p>
+            <ul>
+            {% for category in article.categories %}
+                <li>{{ category.title }}</li>
+            {% endfor %}
+            </ul>
+        </p>
+
         <div class="card-btn">
     <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn-modifier">Modifier</a>
 
