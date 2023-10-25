@@ -6,13 +6,13 @@
     <div class="home">
         <h1>IcedTears</h1> 
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                 <a href="{{ path('admin.article.create') }}" class="btn">Créer un article!</a> 
-                 <a href="{{ path('admin.category.create') }}" class="btn">Créer une categorie</a> 
-                 <a href="{{ path('admin.article.read')}}" class="btn"> Tous les articles</a>
-                 <a href="{{ path('admin.category.read')}}" class="btn"> Tous les categories</a>
+                 <a href="{{ path('admin.article.create') }}" class="btn">Create an article!</a> 
+                 <a href="{{ path('admin.category.create') }}" class="btn">Create a category</a> 
+                 <a href="{{ path('admin.article.read')}}" class="btn"> All articles</a>
+                 <a href="{{ path('admin.category.read')}}" class="btn"> All categories</a>
             {% else %}
-                <a href="{{ path('admin.article.read')}}" class="btn"> Tous les articles</a>
-                <a href="{{ path('admin.category.read')}}" class="btn"> Tous les categories</a>
+                <a href="{{ path('admin.article.read')}}" class="btn"> All articles</a>
+                <a href="{{ path('admin.category.read')}}" class="btn"> All categories</a>
             {% endif %}
     </div>
 {% endblock %}

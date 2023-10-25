@@ -19,6 +19,7 @@
             label: 'Password'
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
+         <a href="{{ path('rgpd') }}">Condition d' utilisation</a>
 
         <button class="btn" type="submit">Register</button>
         {{ form_end(registrationForm) }}

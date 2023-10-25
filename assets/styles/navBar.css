@@ -15,11 +15,11 @@
         margin-left: 2px;
         padding: 10px;
     }
- ul{
-        margin-left: -20px;
-        display: flex;
-       
-    }
+    ul{
+            margin-left: -20px;
+            display: flex;
+        
+        }
 /*CSS pour écran >= 601px*/
 @media screen and (max-width: 901px){
     

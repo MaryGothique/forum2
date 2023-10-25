@@ -23,7 +23,7 @@ class ArticleType extends AbstractType
             ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'label' => 'Categories:',
-                'multiple' => true,
+                'multiple' =>true ,
                 'expanded' => false,
                 'choice_label' => 'title',
                 'by_reference' => true,

@@ -6,8 +6,17 @@ footer{
     width: 100%;
     grid-column: 2;
     grid-row: 2;
-    
+    a:link, a:visited {
+        text-decoration: underline;
+        color: #74BED9;
+        background-color: transparent;
+    }
+    a:hover, a:active {
+        text-decoration: underline overline;
+        color: #ffffff;
+    }
    }
+  
    @media screen and (max-width: 901px){
     footer{
         margin-left:20px;

@@ -1,30 +1,17 @@
 .registrationForm{
     border: 2px solid grey;
-width: 200px;
-height: 200px;
-background-color: #74BED9;
-padding: 10px;
-color: gray;
-margin:auto;
+    width: 200px;
+    height: 250px;
+    background-color: #74BED9;
+    padding: 10px;
+    color: gray;
+    margin:auto;
 
 }
 
 /*les boutons*/
-button{
-    margin: 2vh;
-    height: 50px;
-    width: 60px;
-    border:2px solid #727272;
-    background-color: white;
-    border-radius: 20px;
-    color: black;
-    justify-content: center;
-    display: flex;
-    padding:13px;
-}
 
-
-.btn{
+.registrationForm .btn{
     margin: 2vh;
     padding:13px;
     height: 50px;
@@ -34,8 +21,9 @@ button{
     border-radius: 20px;
     color: black;
     justify-content: center;
-
 }
+
+
 ul{
     margin-left: -20px;
     display: flex;
@@ -53,12 +41,12 @@ ul{
         }
     a.btn{
         margin-left: -1vh;
-    height: 50px;
-    width: 70px;
-    border: 2px solid #727272;
-    background-color: white;
-    border-radius: 20px;
-    color: black;
+        height: 50px;
+        width: 70px;
+        border: 2px solid #727272;
+        background-color: white;
+        border-radius: 20px;
+        color: black;
     }
     button {
         border:2px solid #727272;
