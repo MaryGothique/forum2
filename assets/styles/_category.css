@@ -37,7 +37,7 @@ border-radius: 20px;
 color: black;
 margin: -30px 10px 10px 130px;
 }
-@media screen and (max-width: 901px){
+@media screen and (max-width: 500px){
   /*
         .category-form{
             border: 2px solid #727272;

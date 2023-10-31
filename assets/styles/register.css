@@ -14,8 +14,8 @@
 .registrationForm .btn{
     margin: 2vh;
     padding:13px;
-    height: 50px;
-    width: 80px;
+    height: 40px;
+    width: 70px;
     border:2px solid #727272;
     background-color: white;
     border-radius: 20px;
@@ -24,12 +24,8 @@
 }
 
 
-ul{
-    margin-left: -20px;
-    display: flex;
-   
-}
-@media screen and (max-width: 992px){
+
+@media screen and (max-width: 500px){
     .registrationForm{
         border: 2px solid grey;
         width: 210px;
@@ -39,10 +35,11 @@ ul{
         color: gray;
         margin:auto;
         }
+
     a.btn{
-        margin-left: -1vh;
-        height: 50px;
-        width: 70px;
+        margin-left: 150px;
+        height: 40px;
+        width: 60px;
         border: 2px solid #727272;
         background-color: white;
         border-radius: 20px;
@@ -55,6 +52,7 @@ ul{
         color: black;
         justify-content:center;
         display: block;
+        margin: 10px;
           }
- 
+    
 }

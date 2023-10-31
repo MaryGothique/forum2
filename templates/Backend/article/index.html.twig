@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
  
  {% block title %}
-    voilà tous les articles!
+    All Articles!
     {{ parent() }}
 {% endblock %}
 
 {% block body %}
 
-   <h1>voilà tous les articles!</h1>
-      <a href="{{ path('admin.article.create') }}" class="btn">Créer un article</a>
+   <h1>All articles!</h1>
+      <a href="{{ path('admin.article.create') }}" class="btn">Write an article</a>
          <div class="tous-article">
             {% for article in articles %}
                {% include 'components/_card.html.twig' %}

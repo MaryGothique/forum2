@@ -14,12 +14,7 @@
     height: auto;
     
 }
-main{
-    height: 100%;
-  grid-column: 2;
-  grid-row: 1;
 
-}
 .card-title {
     height: auto;
     padding: 15px;
@@ -58,7 +53,7 @@ main{
         margin: 15px 20px;
     }
 /*mediaquery*/
-@media screen and (max-width: 901px){
+@media screen and (max-width: 500px){
     .card-list {
         display: flex;
         flex-direction: column; /* Imposta l'orientamento come colonna */
@@ -76,20 +71,13 @@ main{
         overflow-x: hidden;
     }
     .card-title {
-
-        height: auto;
-    
-        color: black;
+        height: 75px;
+              color: black;
         text-shadow: #0000FF 2px 2px 2px;
-        
     }
-    main{
-        height: 100%;
-        margin-left: 60px;
-        overflow: scroll;
-    }
+
     .card-article{
-        width: 80%;
+        width: 100%;
 
         border: 2px solid #727272;
         background-color: #74BED9;
