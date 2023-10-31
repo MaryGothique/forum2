@@ -14,7 +14,7 @@
         </p>
 
         <div class="card-btn">
-    <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn-modifier">Modifier</a>
+    <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn-modifier">Edit</a>
 
     <form method="POST" action="{{ path('admin.article.delete', {'id': article.id}) }}"
     onsubmit="return confirm('Êtes-vous sùr de vouloir supprimer cet article ?')">

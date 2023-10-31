@@ -1,18 +1,24 @@
-<nav>
-    <div>
-        <a class="logo" href="{{ path('home') }}">
-            <img src="{{ asset('img/logo.png') }}" alt="C'est un fichier">
-        </a>
-        <li>
-                
+<nav role="navigation"> 
+<a href="{{ path('home') }}"><img src="{{ asset('img/logo.png') }}" alt="C'est un fichier"></a>
+ 
+
+    
+           <div id="menuToggle">
+ <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+        
+            
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <ul><a href="{{ path('app_logout') }}" class="btn">Logout</a></ul>    
+                <li><a href="{{ path('app_logout') }}" class="btn">Logout</a>    </li>
             {% else %}
-                <ul><a href= "{{ path('login') }}" class="btn"> Login</a></ul>
-                <ul><a href="/register" class="btn"> Register</a></ul>
+               <li> <a href= "{{ path('login') }}" class="btn">Login</a></li>
+               <li> <a href="/register" class="btn">Register</a> </li>
             {% endif %}
             
-        </li>
+        </ul>
     </div> 
   
    

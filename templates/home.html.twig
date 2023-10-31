@@ -8,12 +8,9 @@
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                  <a href="{{ path('admin.article.create') }}" class="btn">Create an article!</a> 
                  <a href="{{ path('admin.category.create') }}" class="btn">Create a category</a> 
-                 <a href="{{ path('admin.article.read')}}" class="btn"> All articles</a>
-                 <a href="{{ path('admin.category.read')}}" class="btn"> All categories</a>
-            {% else %}
+            {% endif %}
                 <a href="{{ path('admin.article.read')}}" class="btn"> All articles</a>
                 <a href="{{ path('admin.category.read')}}" class="btn"> All categories</a>
-            {% endif %}
     </div>
 {% endblock %}
 
