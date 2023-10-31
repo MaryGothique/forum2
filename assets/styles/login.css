@@ -1,17 +1,17 @@
 .form-login{
   border: 2px solid #727272;
-    width: 200px;
-    height: 185px;
-    background-color: #74BED9;
-    padding: 10px;
-    color: #727272;
-    margin: auto;
+  width: 200px;
+  height: 185px;
+  background-color: #74BED9;
+  padding: 10px;
+  color: #727272;
+  margin: auto;
 }
 /*les boutons*/
 button{
   margin: 2vh;
-  height: 50px;
-  width: 60px;
+  height: auto;
+  width: auto;
   border:2px solid #727272;
   background-color: white;
   border-radius: 20px;
@@ -25,16 +25,13 @@ button{
 .btn{
   margin: 10px;
   padding: 5px;
-  height: 50px;
-  width: 80px;
+  height: auto;
+  width: auto;
   border: 2px solid #727272;
   background-color: white;
   border-radius: 20px;
   color: black;
-  
   display: inline-block;
-
-
 }
 
 @media screen and (max-width: 500px){
@@ -48,24 +45,24 @@ button{
     margin: auto;
     }
 
-          button.btn {
-            margin:15px auto;
-            border:2px solid #727272;
-            background-color: white;
-            border-radius: 20px;
-            color: black;
-            justify-content:center;
-            display: block;
-              }
+  button.btn {
+    margin:15px auto;
+    border:2px solid #727272;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    justify-content:center;
+    display: block;
+    }
         /*navbar button*/
-        a.btn{
-          height: 40px;
-          width: 60px;
-          border: 2px solid #727272;
-          background-color: white;
-          border-radius: 20px;
-          color: black;
-          display: table;
+  a.btn{
+    height: auto;
+    width: auto;
+    border: 2px solid #727272;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    display: table;
         
-        }
+    }
 }

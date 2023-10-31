@@ -1,51 +1,53 @@
-    nav{
-        border: 2px solid #727272;
-        position: relative;
-        background-color: #74BED9;
-        height: 100vh;
-        grid-column:1;
-        grid-row-start: 1;
-        grid-row-end: 3;
+nav{
+  border: 2px solid #727272;
+  position: relative;
+  background-color: #74BED9;
+  height: 100vh;
+  grid-column:1;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
-    img{
-       width:100%;
-       margin-left: -10px;
-      padding: 10px;
-    }
-    #menu ul{
-            display:block;
-            margin: 100px;
-            padding:160px;
-        }
 
+img{
+  width:100%;
+  margin-left: -10px;
+  padding: 10px;
+  }
+#menu ul{
+  display:block;
+  margin: 100px;
+  padding:160px;
+  }
+div .check{
+  visibility: hidden;
+  }
 
 /*CSS pour écran <= 900px*/
 @media screen and (max-width: 500px){
-    
-    nav{
-      border: 2px solid #72727200;
-      display: flex;
-      position: relative;
-      background-color: #74bed900;
-      height: 50px;
-      width: 50px;
-        
-    }
-    
-    img{
-        width: 500%;
-        margin-left:-1px;
+  nav{
+  border: 2px solid #72727200;
+  display: flex;
+  position: relative;
+  background-color: #74bed900;
+  height: 50px;
+  width: 50px;   
+  }
+  img{
+    width: 500%;
+    margin-left:-1px;
     }
       
-   .home .btn{
-    height: 70px;
-    width: 80px;
+  .home .btn{
+    height: auto;
+    width: auto;
     margin-bottom: -7px;
     margin-left: 150px;
   }
   
-
-    
+  div .check{
+    visibility:visible;
+  
+  }
  #menuToggle
  {
    display: block;
@@ -100,7 +102,7 @@
    margin-bottom: 5px;
    position: relative;
    
-   background: #cdcdcd;
+   background: #727272;
    border-radius: 3px;
    
    z-index: 1;

@@ -31,26 +31,25 @@
 .card-btn{
     display: inline-flex;
 }
-    .card-article .btn-modifier{
-        padding: 5px;
-        
-        border: 2px solid #727272;
-        background-color: white;
-        border-radius: 20px;
-        color: black;
-        margin: 15px 20px;
+.card-article .btn-modifier{
+    padding: auto;
+    border: 2px solid #727272;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    margin: 15px 20px;
     
     }
     
-    .card-article .btn-delete{
-        padding: 2px;
-        height: 30px;
-        width: 80px;
-        border: 2px solid #ff0101;
-        background-color:#f80707;
-        border-radius: 20px;
-        color: black;
-        margin: 15px 20px;
+.card-article .btn-delete{
+    padding: auto;
+    height: 30px;
+    width: 80px;
+    border: 2px solid #ff0101;
+    background-color:#f80707;
+    border-radius: 20px;
+    color: black;
+    margin: 15px 20px;
     }
 /*mediaquery*/
 @media screen and (max-width: 500px){
@@ -87,7 +86,7 @@
         overflow-x: hidden;
     }
     .card-article .btn-delete{
-        padding: 2px;
+        padding: auto;
         height: 30px;
         width: 80px;
         border: 2px solid #ff0101;

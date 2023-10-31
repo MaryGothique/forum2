@@ -2,13 +2,13 @@ footer{
  
     color: #74BED9;
     text-align: center;
-  
     width: 100%;
     grid-column: 2;
     grid-row: 2;
+    
     a:link, a:visited {
         text-decoration: underline;
-        color: #74BED9;
+        color: #d97474;
         background-color: transparent;
     }
     a:hover, a:active {
@@ -16,25 +16,4 @@ footer{
         color: #ffffff;
     }
 
-    }
-    @media screen and (max-width: 500px){
-        footer{
- 
-            color: #74BED9;
-            text-align: center;
-          
-            width: 100%;
-            grid-column: 2;
-            grid-row: 2;
-            a:link, a:visited {
-                text-decoration: underline;
-                color: #74BED9;
-                background-color: transparent;
-            }
-            a:hover, a:active {
-                text-decoration: underline overline;
-                color: #ffffff;
-            }
-        
-            }
     }
