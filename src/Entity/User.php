@@ -40,7 +40,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         'minScore' => PasswordStrength::STRENGTH_VERY_STRONG, 
         // Very strong password required
     ])]
-
     private ?string $password = null;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Article::class)] 

@@ -55,6 +55,7 @@ class CategoryController extends AbstractController
     }
 //CRUD pour le EDIT
 #[Route('/admin/category/edit/{id}', name: 'admin.category.edit', methods: ['GET', 'POST'])]
+#[IsGranted('ROLE_USER')]
 public function edit(Category $category, Request $request): Response|RedirectResponse
 
 {

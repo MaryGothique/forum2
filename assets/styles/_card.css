@@ -69,11 +69,6 @@
         overflow: scroll;
         overflow-x: hidden;
     }
-    .card-title {
-        height: 75px;
-              color: black;
-        text-shadow: #0000FF 2px 2px 2px;
-    }
 
     .card-article{
         width: 100%;

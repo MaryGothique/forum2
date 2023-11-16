@@ -63,7 +63,6 @@ class ArticleController extends AbstractController
     public function readArticle():Response
     {
         // Récupérer tout les users
-        
         // Récupérer tout les articles
         $articles = $this->articleRepository->findAll();
 

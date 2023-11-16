@@ -13,9 +13,7 @@ class LoginType extends AbstractType
     {
         $builder
             ->add('email')
-            ->add('password')
-        
-        ;
+            ->add('password');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

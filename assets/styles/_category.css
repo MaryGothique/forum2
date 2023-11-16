@@ -6,16 +6,6 @@
   border: 2px #727272;
   }
 
-.card-category-title{
-    
-    background-color: #74BED9;
-    
-    color: black;
-    text-shadow: #0000FF 2px 2px 2px;
-    margin: 20px 10px 30px 10px;
-    border: 2px #727272;
-    border-radius: 20px;
-}
 .btn-modifier{
   padding: 2px;
   height: 30px;

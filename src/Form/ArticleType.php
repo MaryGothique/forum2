@@ -4,11 +4,13 @@ namespace App\Form;
 
 use App\Entity\Article;
 use App\Entity\Category;
+use Doctrine\ORM\Mapping\Entity;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
@@ -19,20 +21,16 @@ class ArticleType extends AbstractType
  
         $builder
             ->add('title', TextType::class)
-           
             ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'label' => 'Categories:',
-                'multiple' =>true ,
-                'expanded' => true,
+                'multiple' => true ,
+                'expanded' => false,
                 'choice_label' => 'title',
-                'by_reference' => true,
-               
-               
+                'by_reference' => true,   
             ])
             ->add('content', TextareaType::class)        
             ->add('validate', SubmitType::class);
-        
     }
 
     public function configureOptions(OptionsResolver $resolver): void
