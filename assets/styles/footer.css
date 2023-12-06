@@ -1,5 +1,4 @@
 footer{
- 
     color: #74BED9;
     text-align: center;
     width: 100%;
@@ -8,7 +7,7 @@ footer{
     
     a:link, a:visited {
         text-decoration: underline;
-        color: #d97474;
+        color: #ffffff;
         background-color: transparent;
     }
     a:hover, a:active {

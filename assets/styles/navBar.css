@@ -8,9 +8,7 @@ nav{
   grid-row-end: 3;
 
 }
- .checkbox{
-  visibility: hidden;
-}
+
 img{
  width:100%;
  margin-left: -10px;
@@ -23,10 +21,15 @@ padding: 10px;
       padding:160px;
   }
 
-
+.checkbox{
+  visibility: hidden;
+}
 /*CSS pour écran <= 500px*/
 @media screen and (max-width: 500px){
-
+.checkbox{
+    visibility: visible;
+  }
+ 
 nav{
 border: 2px solid #72727200;
 display: flex;
@@ -48,8 +51,6 @@ width: 80px;
 margin-bottom: -7px;
 margin-left: 150px;
 }
-
-
 
 #menuToggle
 {
@@ -73,7 +74,7 @@ transition: color 0.3s ease;
 
 #menuToggle a:hover
 {
-color: rgb(71, 74, 255);
+color: #727272;
 }
 
 
@@ -104,8 +105,7 @@ width: 33px;
 height: 4px;
 margin-bottom: 5px;
 position: relative;
-
-background: #cdcdcd;
+background: #727272;
 border-radius: 3px;
 
 z-index: 1;
@@ -164,7 +164,8 @@ transform: rotate(-45deg) translate(0, -1px);
 margin-left: -115px;
 margin-top: 20px;
 margin-bottom: 20px;
-background-color: #727272;
+background-color: #74BED9;
+border: 2px solid #727272;
 display: block;
 list-style-type: none;
 -webkit-font-smoothing: antialiased;

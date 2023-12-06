@@ -24,7 +24,7 @@ class Article
         min: 2,
         max: 50,
         minMessage: 'Your title must be at least {{limit}} character long',
-        maxMessage: 'Your title cannote be longer than {{ limit }}characters',
+        maxMessage: 'Your title cannot be longer than {{ limit }}characters',
     )]
     private ?string $title = null;
 

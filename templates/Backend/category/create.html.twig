@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	Création d'une catégorie |
+	Create the category |
 	{{ parent() }}
 {% endblock %}
 
@@ -9,6 +9,6 @@
 	
 		<h1>Create a Category</h1>
 	<section class="category-form">
-		{% include 'Backend/category/_form.html.twig' with {button_label: "Créer"} %}
+		{% include 'Backend/category/_form.html.twig' with {button_label: "Create"} %}
 	</section>
 {% endblock %}

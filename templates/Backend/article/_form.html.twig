@@ -1,9 +1,8 @@
 {{form_start (form)}}
     <div class="form-article"> 
         {{ form_row(form.title) }}
-        {{ form_label(form.category) }} {# Questo renderizzerà l'etichetta del campo #}
-        {{ form_widget(form.category) }} {# Questo renderizzerà il widget del campo (il menu a tendina) #}
-   
+        {{ form_label(form.category) }} {# this is the label #}
+        {{ form_widget(form.category) }} {# this is the widget of the menu #}
         {{ form_row(form.content) }}
         {{ form_row(form.author) }}
     </div>

@@ -8,7 +8,7 @@
         <p>
             <ul>
             {% for category in article.categories %}
-                <li>{{ category.title }}</li>
+                <li class="category_title">{{ category.title }}</li>
             {% endfor %}
             </ul>
         </p>
@@ -17,7 +17,7 @@
     <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn-modifier">Edit</a>
 
     <form method="POST" action="{{ path('admin.article.delete', {'id': article.id}) }}"
-    onsubmit="return confirm('Êtes-vous sùr de vouloir supprimer cet article ?')">
+    onsubmit="return confirm('Are you sure?')">
         <input type="hidden" name="token" value="{{ csrf_token('delete' ~ article.id) }}">
         <button class="btn-delete">Delete</button>
     </form>

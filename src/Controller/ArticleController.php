@@ -30,29 +30,20 @@ class ArticleController extends AbstractController
     //Entity manager c'est pour envoyer un object en bdd ou supprimer 
     {
         $article = new Article();
-
         $categories = $categoryRepo->findAll();
-
         $form = $this->createForm(ArticleType::class, $article);       
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-             
             // Formulaire soumis et valide
             // $form->getData();  holds the submitted values
             // but, the original `$task` variable has also been updated
-           
             //ici, aujoute l'auteur à l'article
-
-            
              $article->setUser($this->getUser());
             // avec le code suivant nous allons à l' envoyer dans la bdd
             $this->em->persist($article);
             $this->em->flush();
-
             return $this->redirectToRoute('admin.article.read');
         }
-        
         return $this->render('Backend/article/create.html.twig', [
             'form' => $form->createView(),
             'categories' => $categories
@@ -85,7 +76,7 @@ class ArticleController extends AbstractController
             $this->em->persist($article);
             $this->em->flush();
 
-            $this->addFlash('success', 'Article modifié avec succès');
+            $this->addFlash('success', 'Article modified with succes!');
 
             return $this->redirectToRoute('admin.article.read');
         }
@@ -96,6 +87,7 @@ class ArticleController extends AbstractController
     }
     // Le Delete
     #[Route('/admin/article/delete/{id}', name:'admin.article.delete', methods: ['POST', 'DELETE'])]
+    #[IsGranted('ROLE_USER')]
     public function deleteArticle(?Article $article, Request $request): RedirectResponse
     {
         if (!$article instanceof Article) {
@@ -113,7 +105,7 @@ class ArticleController extends AbstractController
             return $this->redirectToRoute('admin.article.read');
         }
 
-        $this->addFlash('error', 'Token invalide');
+        $this->addFlash('error', 'Invalid token');
 
         return $this->redirectToRoute('admin.article.read');
        

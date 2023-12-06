@@ -4,7 +4,7 @@
         <a href="{{ path('admin.category.edit', {id: category.id}) }}" class="btn-modifier">Edit</a>
 
             <form class="" method="POST" action="{{ path('admin.category.delete', {'id': category.id}) }}"
-            onsubmit="return confirm('Êtes-vous sùr de vouloir supprimer cet article ?')">
+            onsubmit="return confirm('Are you sure?')">
                 <input type="hidden" name="token" value="{{ csrf_token('delete' ~ category.id) }}">
                 <button class="btn-delete">Delete</button>
             </form>

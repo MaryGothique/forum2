@@ -9,7 +9,7 @@
 
    <h1>All articles!</h1>
       <a href="{{ path('admin.article.create') }}" class="btn">Write an article</a>
-         <div class="tous-article">
+         <div class="ALL-article">
             {% for article in articles %}
                {% include 'components/_card.html.twig' %}
             {% endfor %}

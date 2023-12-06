@@ -14,7 +14,14 @@
     height: auto;
     
 }
-
+.category_title{
+    border:solid 2px #0000FF;
+    border-radius: 20px;
+    width: fit-content;
+    color:white;
+    background-color: black;
+    list-style-type:none;
+}
 .card-title {
     height: auto;
     padding: 15px;
