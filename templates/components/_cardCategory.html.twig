@@ -1,6 +1,6 @@
 <div class="card-category">
     <h2>{{category.title}}</h2>
-    
+     {% if is_granted ('IS_AUTHENTICATED_FULLY') %}
         <a href="{{ path('admin.category.edit', {id: category.id}) }}" class="btn-modifier">Edit</a>
 
             <form class="" method="POST" action="{{ path('admin.category.delete', {'id': category.id}) }}"
@@ -8,5 +8,5 @@
                 <input type="hidden" name="token" value="{{ csrf_token('delete' ~ category.id) }}">
                 <button class="btn-delete">Delete</button>
             </form>
-
+     {% endif %}
 </div>

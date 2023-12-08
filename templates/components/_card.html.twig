@@ -12,7 +12,7 @@
             {% endfor %}
             </ul>
         </p>
-
+        {% if is_granted ('IS_AUTHENTICATED_FULLY') %}
         <div class="card-btn">
     <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn-modifier">Edit</a>
 
@@ -22,4 +22,5 @@
         <button class="btn-delete">Delete</button>
     </form>
         </div>
+        {% endif %}
 </div>

@@ -2,8 +2,7 @@
 
 .card-category{
   display: grid;
-  width: 20px;
-  
+  width: 25px;
   }
 
 .btn-modifier{
@@ -16,7 +15,6 @@
   color: black;
   margin: -25px 12px auto;
 }
-
 
 .btn-delete{
   padding: 4px;
@@ -41,7 +39,7 @@ margin: -30px 10px 10px 130px;
       text-shadow: #0000FF 2px 2px 2px;
       height: 50px;
       border-radius: 20px;
-      width: 200px;
+      width: 250px;
       text-align: center;
       padding: inherit;
         }
