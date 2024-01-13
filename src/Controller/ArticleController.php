@@ -25,7 +25,7 @@ class ArticleController extends AbstractController
     }
         //Le Create 
     #[Route('/admin/article/create', name: 'admin.article.create')]
-    #[IsGranted('ROLE_USER')]
+  
     public function createArticle(Request $request, CategoryRepository $categoryRepo): Response|RedirectResponse
     //Entity manager c'est pour envoyer un object en bdd ou supprimer 
     {
@@ -65,7 +65,7 @@ class ArticleController extends AbstractController
     }
     // Le Update
     #[Route('/admin/article/edit/{id}', name: 'admin.article.edit', methods: 'GET|POST')]
-    #[IsGranted('ROLE_USER')]
+
     public function edit(Article $article, Request $request): Response|RedirectResponse
     {
         $form = $this -> createForm(ArticleType::class, $article);
@@ -87,7 +87,7 @@ class ArticleController extends AbstractController
     }
     // Le Delete
     #[Route('/admin/article/delete/{id}', name:'admin.article.delete', methods: ['POST', 'DELETE'])]
-    #[IsGranted('ROLE_USER')]
+   
     public function deleteArticle(?Article $article, Request $request): RedirectResponse
     {
         if (!$article instanceof Article) {

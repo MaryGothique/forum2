@@ -26,11 +26,11 @@ class Article
         minMessage: 'Your title must be at least {{limit}} character long',
         maxMessage: 'Your title cannot be longer than {{ limit }}characters',
     )]
+   
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
-
     #[ORM\Column]
     #[Gedmo\Timestampable(on: 'create')]
     private ?\DateTimeImmutable $CreateAt = null;
