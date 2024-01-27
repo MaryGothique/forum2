@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <!-- This is the view twig base: the common structure for all webpages of my forum-->
-<html lang="en_EN">
+
+<html lang="en">
+
     <head>    
         <title>{% block title %}IcedTears{% endblock %}</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content=" Homepage of my Metal forum, You will be wellcome if you are a metalhead and not accepted posers!" />
-        <link rel="icon"
-            href="{{ '/img/' ~ 'fav.png' }}"
-            type="image/x-icon"
-            href="" />
-        
-        
+    
+        <meta name="description" content="Welcome to IcedTears, the ultimate Metal forum. Join us if you're a true metalhead, posers not welcome!">
+        <link rel="icon" href="{{ asset('/img/fav.png') }}" type="image/x-icon" />
+
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
                 {% block specificStylesheets %}{% endblock %}
@@ -23,6 +22,7 @@
         {% endblock %}
     </head>
     <body>
+    
         <div class="container">
             {% include 'components/_navBar.html.twig' %}      
                 <main>

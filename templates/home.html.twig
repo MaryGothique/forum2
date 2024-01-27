@@ -1,22 +1,22 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
-    
     <div class="home">
         <h1>IcedTears</h1> 
-            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                 <a href="{{ path('admin.article.create') }}" class="btn">Create an article!</a> 
-                 <a href="{{ path('admin.category.create') }}" class="btn">Create a category</a> 
-                
-                 {% else %}
-            {% endif %}
-                <a href="{{ path('admin.article.read')}}" class="btn"> All articles</a>
-                <a href="{{ path('admin.category.read')}}" class="btn"> All categories</a>
-                 
+
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <a href="{{ path('admin.article.create') }}" class="btn">Create an article!</a> 
+            <a href="{{ path('admin.category.create') }}" class="btn">Create a category</a> 
+            <!-- Aggiungi altre istruzioni o messaggi di benvenuto per utenti autenticati se necessario -->
+        {% else %}
+            <!-- Se non è necessario alcun contenuto specifico per utenti non autenticati, puoi anche rimuovere completamente il blocco else -->
+        {% endif %}
+
+        <a href="{{ path('admin.article.read') }}" class="btn"> All articles</a>
+        <a href="{{ path('admin.category.read') }}" class="btn"> All categories</a>
     </div>
-  
 {% endblock %}
+
 
 
 

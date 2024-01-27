@@ -25,7 +25,7 @@ class ArticleController extends AbstractController
     }
         //Le Create 
     #[Route('/admin/article/create', name: 'admin.article.create')]
-  
+    #[IsGranted('ROLE_USER')]
     public function createArticle(Request $request, CategoryRepository $categoryRepo): Response|RedirectResponse
     //Entity manager c'est pour envoyer un object en bdd ou supprimer 
     {

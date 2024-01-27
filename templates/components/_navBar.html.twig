@@ -1,20 +1,22 @@
-<nav role="navigation"> 
-<a href="{{ path('home') }}"><img src="{{ asset('img/LOGO.svg') }}" alt="It's an image!"></a>
-    <!-- Burger menu css -->
-        <div id="menuToggle">
- <input type="checkbox" class="checkbox" />
+<nav role="navigation">
+    <a href="{{ path('home') }}">
+        <img src="{{ asset('img/LOGO.svg') }}" alt="It's an image!">
+    </a>
+
+    <div id="menuToggle">
+        <input type="checkbox" class="checkbox" />
         <span></span>
         <span></span>
         <span></span>
-        <ul id="menu">          
+
+        <ul id="menu">
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <li><a href="{{ path('app_logout') }}" class="btn">Logout</a>    </li>
+                <li><a href="{{ path('app_logout') }}" class="btn">Logout</a></li>
             {% else %}
-               <li> <a href= "{{ path('login') }}" class="btn">Login</a></li>
-               <li> <a href="/register" class="btn">Register</a> </li>
+                <li><a href="{{ path('login') }}" class="btn">Login</a></li>
+                <li><a href="{{ path('register') }}" class="btn">Register</a></li>
             {% endif %}
-     
         </ul>
-    </div>   
-</nav> 
+    </div>
+</nav>
 
