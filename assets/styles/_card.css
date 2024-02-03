@@ -12,7 +12,11 @@
     margin: 20px;
     color: black;
     height: auto;
-    
+    border-radius: 20px;
+}
+#cat{
+    background-color: #ff0101;
+    color:burlywood;
 }
 .category_title{
     border:solid 2px #0000FF;
@@ -23,17 +27,25 @@
     list-style-type:none;
 }
 .card-title {
+    justify-content: center;
+    text-align: center;
+    font-display: flex;
     height: auto;
+    width: 1100px;
     padding: 15px;
     color: black;
     text-shadow: #0000FF 2px 2px 2px;
+
 }
 .card-text {
+    border-radius: 20px;
     color: rgb(41, 41, 41);
     text-align: center;
     background: white;
     font-size: 12px;
     height: auto;
+    border: 2px solid #727272;
+    margin: -15px 20px 20px 20px;
 }
 .card-btn{
     display: inline-flex;

@@ -1,4 +1,4 @@
-/*CSS du formulaire article*/
+/*CSS article form*/
 .form-article{
     color: #727272;
   border: 2px solid #727272;
@@ -15,7 +15,6 @@
     margin: 5px;
     padding: 5px;
     border-radius: 20px;
-    
 }
 #article_content{
     margin: 5px;

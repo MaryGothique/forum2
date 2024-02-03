@@ -1,5 +1,5 @@
 footer{
-    color: #74BED9;
+    color: #000000;
     text-align: center;
     width: 100%;
     grid-column: 2;
@@ -7,12 +7,17 @@ footer{
     
     a:link, a:visited {
         text-decoration: underline;
-        color: #ffffff;
+        color: #000000;
         background-color: transparent;
     }
     a:hover, a:active {
         text-decoration: underline overline;
-        color: #ffffff;
+        color: #0000FF;
     }
 
     }
+    ul.social li{
+        height: 100px;
+        width: 100px;
+        display:inline-block;
+      }

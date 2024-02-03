@@ -3,7 +3,11 @@
     <p class="card-text">{{ article.content }}</p>
     <p>{{ article.user.email }}</p>
     <p>{{ article.CreateAt|date('F j, Y') }}</p>
-    <p>Categories: {% for category in article.categories %}{{ category.title }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
+   <div>
+    <span class="cat">Category</span>
+    <p class="category_title">{% for category in article.categories %}{{ category.title }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
+   </div> 
+   
     
     {% if is_granted ('IS_AUTHENTICATED_FULLY') %}
         <div class="card-btn">

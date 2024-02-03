@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- This is the view twig base: the common structure for all webpages of my forum-->
 
-<html lang="en">
+<html lang="en" data-theme="dark">
 
     <head>    
         <title>{% block title %}IcedTears{% endblock %}</title>
@@ -27,7 +27,7 @@
             {% include 'components/_navBar.html.twig' %}      
                 <main>
                     {% block body %}
-                    
+                    <botton>Night mode<botton>
                     {% endblock %}
                 </main>
             {% include 'components/_footer.html.twig' %} 

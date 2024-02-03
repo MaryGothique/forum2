@@ -12,9 +12,17 @@
         <ul id="menu">
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <li><a href="{{ path('app_logout') }}" class="btn">Logout</a></li>
+                <li><a href="{{ path('admin.article.create') }}" class="btn">Create Article</a></li>
+                <li><a href="{{ path('admin.category.create') }}" class="btn">Create Category</a></li>
+                                <li><a href="{{ path('admin.article.read') }}" class="btn"> All articles</a></li>
+                <li><a href="{{ path('admin.category.read') }}" class="btn"> All categories</a></li>
             {% else %}
                 <li><a href="{{ path('login') }}" class="btn">Login</a></li>
                 <li><a href="{{ path('register') }}" class="btn">Register</a></li>
+                <li><a href="{{ path('admin.article.read') }}" class="btn"> All articles</a></li>
+                <li><a href="{{ path('admin.category.read') }}" class="btn"> All categories</a></li>
+        
+        
             {% endif %}
         </ul>
     </div>

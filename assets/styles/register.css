@@ -6,7 +6,7 @@
     padding: 10px;
     color: gray;
     margin:auto;
-
+    border-radius: 20px;
 }
 
 /*les boutons*/
@@ -21,6 +21,7 @@
     border-radius: 20px;
     color: black;
     justify-content: center;
+    
 }
 
 
@@ -34,6 +35,7 @@
         padding: 10px;
         color: gray;
         margin:auto;
+        border-radius: 20px;
         }
 
     a.btn{

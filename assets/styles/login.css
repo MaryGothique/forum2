@@ -6,6 +6,7 @@
   padding: 10px;
   color: #727272;
   margin: auto;
+  border-radius: 20px;
 }
 /*les boutons*/
 button{
@@ -43,6 +44,7 @@ button{
     padding: 10px;
     color: #727272;
     margin: auto;
+    border-radius: 20px
     }
 
   button.btn {
