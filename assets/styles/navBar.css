@@ -2,13 +2,21 @@ nav{
   border: 2px solid #727272;
   position: relative;
   background-color: #74BED9;
-  height: 100vh;
+  height: 105vh;
   grid-column:1;
   grid-row-start: 1;
   grid-row-end: 3;
 
 }
-
+a.btn{
+  margin-left: -9px;
+  height: auto;
+  width: 10vh;
+  border: 2px solid #727272;
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+}
 img{
  width:100%;
  margin-left: -10px;
@@ -25,7 +33,7 @@ padding: 10px;
   visibility: hidden;
 }
 /*CSS pour écran <= 500px*/
-@media screen and (max-width: 500px){
+@media screen and ( max-width: 500px){
 .checkbox{
     visibility: visible;
   }
@@ -173,7 +181,7 @@ transform-origin: 0% 0%;
 transform: translate(-100%, 0);
 transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 width: 200px;
-height: 300px;
+height: 700px;
 position: absolute;
 /* to stop flickering of text in safari */
 
@@ -187,7 +195,6 @@ transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 {
 display: grid;
 margin: 50px;
-
 }
 
 

@@ -8,7 +8,7 @@ footer{
     a:link, a:visited {
         text-decoration: underline;
         color: #000000;
-        background-color: transparent;
+        background-color: white;
     }
     a:hover, a:active {
         text-decoration: underline overline;
@@ -20,4 +20,12 @@ footer{
         height: 100px;
         width: 100px;
         display:inline-block;
+      }
+      @media screen and (max-width: 500px){
+        ul.social li{
+            height: 10px;
+            width: 10px;
+            display:inline-block;
+            margin: 10px;
+          }
       }

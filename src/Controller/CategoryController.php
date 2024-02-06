@@ -22,7 +22,7 @@ class CategoryController extends AbstractController
     }
 
     #[Route('/admin/category/create', name: 'admin.category.create')]
-    #[IsGranted('ROLE_USER')]
+    #[IsGranted('ROLE_ADMIN')]
     public function createCategory(Request $request): Response|RedirectResponse
     {
         $category = new Category();
@@ -55,7 +55,7 @@ class CategoryController extends AbstractController
     }
 //CRUD pour le EDIT
 #[Route('/admin/category/edit/{id}', name: 'admin.category.edit', methods: ['GET', 'POST'])]
-#[IsGranted('ROLE_USER')]
+#[IsGranted('ROLE_ADMIN')]
 public function edit(Category $category, Request $request): Response|RedirectResponse
 
 {
@@ -66,7 +66,7 @@ public function edit(Category $category, Request $request): Response|RedirectRes
         $this->em->persist($category);
         $this->em->flush();
 
-        $this->addFlash('success', 'category modifié avec succès');
+        $this->addFlash('success', 'category modified successifully');
 
         return $this->redirectToRoute('admin.category.read');
     }
@@ -77,6 +77,7 @@ public function edit(Category $category, Request $request): Response|RedirectRes
 
 //crud du delete
 #[Route('/admin/category/delete/{id}', name: 'admin.category.delete', methods:['POST', 'DELETE'])]
+#[IsGranted('ROLE_ADMIN')]
 public function deleteCategory(?Category $category, Request $request): RedirectResponse
 {
     if (!$category instanceof Category) {
