@@ -4,18 +4,17 @@
     <p>{{ article.user.email }}</p>
     <p>{{ article.CreateAt|date('F j, Y') }}</p>
    <div>
-    <span class="cat">Category</span>
     <p class="category_title">{% for category in article.categories %}{{ category.title }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
    </div> 
    
     
     {% if is_granted ('IS_AUTHENTICATED_FULLY') %}
         <div class="card-btn">
-            <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn-modify">Edit</a>
-    
             <form method="POST" action="{{ path('admin.article.delete', {'id': article.id}) }}"
                   onsubmit="return confirm('Are you sure you want to delete this article? This action cannot be undone.')">
                 <input type="hidden" name="token" value="{{ csrf_token('delete' ~ article.id) }}">
+                
+                <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn-modify">Edit</a>
                 <button class="btn-delete">Delete</button>
             </form>
         </div>

@@ -1,6 +1,6 @@
 /*CSS article form*/
 .form-article{
-    color: #727272;
+    color: #000000;
   border: 2px solid #727272;
   height: 500px;
   width: 500px;
@@ -29,6 +29,18 @@
     padding: 20px;
     border-radius: 20px;
     text-align: center;
+}
+
+button #article_validate {
+    margin: 10px auto;
+    padding: 5px;
+    height: auto;
+    width: 20vh;
+    border: 2px solid #727272;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    display: inline-block;
 }
 
 @media screen and (max-width: 500px){

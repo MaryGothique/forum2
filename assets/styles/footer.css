@@ -20,7 +20,38 @@ footer{
         height: 100px;
         width: 100px;
         display:inline-block;
+        margin: 5px;
+
       }
+      li.deezer {
+        padding: 5px;
+      }
+      li.deezer img {
+        height: 140px;
+        width: 140px;
+      }
+      li.facebook {
+        padding: 5px;
+      }
+      li.facebook img {
+        height: 140px;
+        width: 140px;
+      }
+      li.instagram {
+        padding: 5px;
+      }
+      li.instagram img {
+        height: 130px;
+        width: 100px;
+      }
+      li.tiktok {
+        padding: 5px;
+      }
+      li.tiktok img {
+        height: 140px;
+        width: 110px;
+      }
+
       @media screen and (max-width: 500px){
         ul.social li{
             height: 10px;
