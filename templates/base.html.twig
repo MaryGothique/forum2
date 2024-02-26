@@ -28,22 +28,33 @@
                 <main>
                 
                     {% block body %}
-                        {% for flash in app.flashes('error') %}
-                            <div class="danger" role="alert">
-                                {{ flash }}
-                            </div>
-                        {% endfor %}
-                        {% for flash in app.flashes('success') %}
-                            <div class="success" role="alert">
-                                {{ flash }}
-                            </div>
-                        {% endfor %}
-                        {% for flash in app.flashes('info') %}
-                            <div class="info" role="alert">
-                                {{ flash }}
-                            </div>
-                        {% endfor %}
+                    {% block content %}
+                {% for flash in app.flashes('flash-message-error') %}
+                    <div class="flash-message flash-message-error" role="alert">
+                        {{ flash }}
+                    </div>
+                {% endfor %}
+
+                {% for flash in app.flashes('flash-message-success') %}
+                    <div class="flash-message flash-message-success" role="alert">
+                        {{ flash }}
+                    </div>
+                {% endfor %}
+
+                {% for flash in app.flashes('flash-message') %}
+                    <div class="flash-message" role="alert">
+                        {{ flash }}
+                    </div>
+                {% endfor %}
+
+                {% for flash in app.flashes('flash-message-warning') %}
+                    <div class="flash-message flash-message-warning" role="alert">
+                        {{ flash }}
+                    </div>
+                {% endfor %}
+
                     {% endblock %}
+                     {% endblock %}
                 </main>
             {% include 'components/_footer.html.twig' %} 
         </div>

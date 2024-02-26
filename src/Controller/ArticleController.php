@@ -23,33 +23,37 @@ class ArticleController extends AbstractController
     {
         
     }
-        //Le Create 
+        // Create 
     #[Route('/admin/article/create', name: 'admin.article.create')]
     #[IsGranted('ROLE_USER')]
     public function createArticle(Request $request, CategoryRepository $categoryRepo): Response|RedirectResponse
-    //Entity manager c'est pour envoyer un object en bdd ou supprimer 
+    
     {
         $article = new Article();
         $categories = $categoryRepo->findAll();
         $form = $this->createForm(ArticleType::class, $article);       
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            // Formulaire soumis et valide
+            //
             // $form->getData();  holds the submitted values
             // but, the original `$task` variable has also been updated
-            //ici, aujoute l'auteur à l'article
+     
              $article->setUser($this->getUser());
             // avec le code suivant nous allons à l' envoyer dans la bdd
             $this->em->persist($article);
             $this->em->flush();
-            return $this->redirectToRoute('admin.article.read');
+
+            $this->addFlash('success', 'Article created');
+$this->em->flush();
+return $this->redirectToRoute('admin.article.read');
+
         }
         return $this->render('Backend/article/create.html.twig', [
             'form' => $form->createView(),
             'categories' => $categories
             ]);
     } 
-    // crud de la read
+    // crud 
     #[Route('/admin/article/read', name:'admin.article.read')]
     public function readArticle():Response
     {
@@ -63,7 +67,7 @@ class ArticleController extends AbstractController
         ]);
     
     }
-    // Le Update
+    //  Update
     #[Route('/admin/article/edit/{id}', name: 'admin.article.edit', methods: 'GET|POST')]
 
     public function edit(Article $article, Request $request): Response|RedirectResponse
@@ -77,7 +81,7 @@ class ArticleController extends AbstractController
             $this->em->flush();
 
             $this->addFlash('success', 'Article modified with succes!');
-
+            var_dump($this->addFlash('success', 'Article modified with succes!'));
             return $this->redirectToRoute('admin.article.read');
         }
 
@@ -85,14 +89,14 @@ class ArticleController extends AbstractController
             'form' => $form->createView()
             ]);
     }
-    // Le Delete
+    // Delete
     #[Route('/admin/article/delete/{id}', name:'admin.article.delete', methods: ['POST', 'DELETE'])]
    
     public function deleteArticle(?Article $article, Request $request): RedirectResponse
     {
         if (!$article instanceof Article) {
             $this->addFlash('error', 'Article not found');
-
+            var_dump($this->addFlash('error', 'Article not found'));
             return $this->redirectToRoute('admin.article.read');
         }
 
@@ -101,7 +105,7 @@ class ArticleController extends AbstractController
             $this->em->flush();
 
             $this->addFlash('success', 'Article deleted successfully');
-
+                var_dump($this->addFlash('success', 'Article deleted successfully'));
             return $this->redirectToRoute('admin.article.read');
         }
 

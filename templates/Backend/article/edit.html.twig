@@ -1,6 +1,23 @@
 {% extends 'base.html.twig' %}
+
+{% block title %}Edit Article{% endblock %}
+
  {% block body %}
  
+
+    {% for flashMessage in app.flashes('success') %}
+        <div class="flash-message flash-message-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% for flashMessage in app.flashes('error') %}
+        <div class="flash-message flash-message-error">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+ {% block content %}
  <h1>Edit an article!</h1>
  <div class="form-article">
 
@@ -18,3 +35,8 @@
 {{ form_rest(form) }}
 
  {% endblock %}
+
+
+
+    {# Il tuo codice HTML per il form di modifica dell'articolo qui #}
+{% endblock %}

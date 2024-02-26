@@ -20,32 +20,7 @@ button{
   color: black;
   display: inline-block;
 }
-/*flash messages*/ 
-.flash-message {
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
 
-.flash-message-success {
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-  color: #3c763d;
-}
-
-.flash-message-error {
-  background-color: #f2dede;
-  border-color: #ebccd1;
-  color: #a94442;
-}
-
-.flash-message-warning {
-  background-color: #fcf8e3;
-  border-color: #faebcc;
-  color: #8a6d3b;
-}
-/* end flash messages*/
 .btn{
   margin: 10px auto;
   padding: 5px;
