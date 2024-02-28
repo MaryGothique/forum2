@@ -5,26 +5,27 @@
   width: 25px;
   }
 
-.btn-modify{
-  padding: 2px;
-  height: 30px;
+form .btn-modify{
+  height: auto;
   width: 80px;
   border: 2px solid #727272;
   background-color: white;
   border-radius: 20px;
   color: black;
-  margin: -25px 12px auto;
+  margin: -20px 5px 5px 20px;
+  display: inline-block;
+  padding: 4px;
 }
 
 .btn-delete{
-  padding: 4px;
-height: 30px;
+
+height: auto;
 width: 80px;
 border: 2px solid #6a0303;
 background-color: #f80707;
 border-radius: 20px;
 color: black;
-margin: -30px 10px 10px 130px;
+margin: -20px 5px 5px 20px;
 }
   @media screen and (max-width: 500px){
 

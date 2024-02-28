@@ -4,30 +4,28 @@
   height: 185px;
   background-color: #74BED9;
   padding: 10px;
-  color: #727272;
+  color: #000000;
   margin: auto;
   border-radius: 20px;
 }
 /*les boutons*/
 button{
-  margin: 2vh;
+  margin: 10px auto;
+  padding: 5px;
   height: auto;
-  width: auto;
-  border:2px solid #727272;
+  width: 20vh;
+  border: 2px solid #727272;
   background-color: white;
   border-radius: 20px;
   color: black;
-  justify-content: center;
-
-  padding:20px;
+  display: inline-block;
 }
 
-
 .btn{
-  margin: 10px;
+  margin: 10px auto;
   padding: 5px;
   height: auto;
-  width: auto;
+  width: 20vh;
   border: 2px solid #727272;
   background-color: white;
   border-radius: 20px;

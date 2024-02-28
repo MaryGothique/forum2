@@ -17,6 +17,7 @@
 #cat{
     background-color: #ff0101;
     color:burlywood;
+    overflow: visible;
 }
 .category_title{
     border:solid 2px #0000FF;
@@ -39,28 +40,31 @@
 
 }
 .card-text {
-    border-radius: 20px;
-    color: rgb(41, 41, 41);
-    text-align: center;
-    background: white;
-    font-size: 12px;
-    height: auto;
-    border: 2px solid #727272;
-    margin: -15px 20px 20px 20px;
-    padding: 10px;
-    overflow: scroll;
+  border-radius: 20px;
+  color: rgb(41, 41, 41);
+  text-align: center;
+  background: white;
+  height: 200px;
+  border: 2px solid #727272;
+  margin: -15px 20px 20px 20px;
+  padding: 10px;
+  overflow: scroll;
+  font-size: 20px;
 }
+
 .card-btn{
     display: inline-flex;
 }
 .card-article .btn-modify{
-    padding: auto;
+    height: auto;
+    width: 80px;
     border: 2px solid #727272;
     background-color: white;
     border-radius: 20px;
     color: black;
-    margin: 15px 20px;
-    
+    margin: -20px 5px 5px 20px;
+    display: inline-block;
+    padding: 4px;
     }
     
 .card-article .btn-delete{
@@ -73,6 +77,32 @@
     color: black;
     margin: 15px 20px;
     }
+    /*flash messages*/ 
+.flash-message{
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .flash-message-success{
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+  }
+  
+  .flash-message-error{
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+  }
+  
+  .flash-message-warning{
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    color: #8a6d3b;
+  }
+  /* end flash messages*/
 /*mediaquery*/
 @media screen and (max-width: 500px){
     .card-list {
@@ -89,7 +119,6 @@
         align-items: center;
         margin: -10px 20px;
         overflow: scroll;
-        overflow-x: hidden;
     }
 
     .card-article{
@@ -100,7 +129,7 @@
         margin: 20px;
         color: black;
         padding: 10px;
-        overflow-x: hidden;
+      
     }
     .card-article .btn-delete{
         padding: auto;

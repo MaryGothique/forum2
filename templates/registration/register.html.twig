@@ -4,13 +4,14 @@
 
 {% block specificStylesheets %}
     {{ encore_entry_link_tags('register') }}
+
 {% endblock %}
 
 {% block body %}
     <h1>Register</h1>
     <div class="registrationForm">
-
         
+
         {{ form_errors(registrationForm) }}
 
         {{ form_start(registrationForm) }}
@@ -19,14 +20,9 @@
             label: 'Password'
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
-         <a href="{{ path('rgpd') }}">User Conditions</a>
+        <a href="{{ path('rgpd') }}">User Conditions</a>
 
         <button class="btn" type="submit">Register</button>
         {{ form_end(registrationForm) }}
     </div>
-            {% for message in app.flashes('success') %}
-            <div class="alert alert-success">
-                {{ message }}
-            </div>
-        {% endfor %}
 {% endblock %}

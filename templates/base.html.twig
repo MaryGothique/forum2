@@ -26,34 +26,35 @@
         <div class="container">
             {% include 'components/_navBar.html.twig' %}      
                 <main>
+                
                     {% block body %}
-                    {# templates/base.html.twig #}
+                    {% block content %}
+                {% for flash in app.flashes('flash-message-error') %}
+                    <div class="flash-message flash-message-error" role="alert">
+                        {{ flash }}
+                    </div>
+                {% endfor %}
 
-                                    {# read and display just one flash message type #}
-                                    {% for message in app.flashes('notice') %}
-                                        <div class="flash-notice">
-                                            {{ message }}
-                                        </div>
-                                    {% endfor %}
+                {% for flash in app.flashes('flash-message-success') %}
+                    <div class="flash-message flash-message-success" role="alert">
+                        {{ flash }}
+                    </div>
+                {% endfor %}
 
-                                    {# read and display several types of flash messages #}
-                                    {% for label, messages in app.flashes(['success', 'warning']) %}
-                                        {% for message in messages %}
-                                            <div class="flash-{{ label }}">
-                                                {{ message }}
-                                            </div>
-                                        {% endfor %}
-                                    {% endfor %}
+                {% for flash in app.flashes('flash-message') %}
+                    <div class="flash-message" role="alert">
+                        {{ flash }}
+                    </div>
+                {% endfor %}
 
-                                    {# read and display all flash messages #}
-                                    {% for label, messages in app.flashes %}
-                                        {% for message in messages %}
-                                            <div class="flash-{{ label }}">
-                                                {{ message }}
-                                            </div>
-                                        {% endfor %}
-                                    {% endfor %}
+                {% for flash in app.flashes('flash-message-warning') %}
+                    <div class="flash-message flash-message-warning" role="alert">
+                        {{ flash }}
+                    </div>
+                {% endfor %}
+
                     {% endblock %}
+                     {% endblock %}
                 </main>
             {% include 'components/_footer.html.twig' %} 
         </div>
