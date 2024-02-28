@@ -36,11 +36,23 @@ button.btn{
     border-color: #d6e9c6;
     color: #3c763d;
   }
-  
+  /* style bootstrap*/
+  /*
   .flash-message-error {
     background-color: rgba(255, 0, 0, 0.24);
     border-color: #8e0505;
     color: rgb(122, 3, 3);
+  }
+  */
+  /* rouge plus fort*/
+  .flash-message-error{
+    background-color: #ff0000; /* Rosso intenso */
+    color: #ffffff; /* Testo bianco */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    /* Aggiungi effetto di ombra */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
   
   .flash-message-warning {
