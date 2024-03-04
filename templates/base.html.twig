@@ -7,7 +7,6 @@
         <title>{% block title %}IcedTears{% endblock %}</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
         <meta name="description" content="Welcome to IcedTears, the ultimate Metal forum. Join us if you're a true metalhead, posers not welcome!">
         <link rel="icon" href="{{ asset('/img/fav.png') }}" type="image/x-icon" />
 
@@ -22,11 +21,9 @@
         {% endblock %}
     </head>
     <body>
-    
         <div class="container">
             {% include 'components/_navBar.html.twig' %}      
                 <main>
-                
                     {% block body %}
                     {% block content %}
                 {% for flash in app.flashes('flash-message-error') %}
@@ -34,25 +31,21 @@
                         {{ flash }}
                     </div>
                 {% endfor %}
-
                 {% for flash in app.flashes('flash-message-success') %}
                     <div class="flash-message flash-message-success" role="alert">
                         {{ flash }}
                     </div>
                 {% endfor %}
-
                 {% for flash in app.flashes('flash-message') %}
                     <div class="flash-message" role="alert">
                         {{ flash }}
                     </div>
                 {% endfor %}
-
                 {% for flash in app.flashes('flash-message-warning') %}
                     <div class="flash-message flash-message-warning" role="alert">
                         {{ flash }}
                     </div>
                 {% endfor %}
-
                     {% endblock %}
                      {% endblock %}
                 </main>

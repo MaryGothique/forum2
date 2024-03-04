@@ -12,6 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class CategoryController extends AbstractController
 {
@@ -20,7 +21,7 @@ class CategoryController extends AbstractController
         private EntityManagerInterface $em
     ) {    
     }
-
+        // create
     #[Route('/admin/category/create', name: 'admin.category.create')]
     #[IsGranted('ROLE_USER')]
     public function createCategory(Request $request): Response|RedirectResponse
@@ -35,15 +36,16 @@ class CategoryController extends AbstractController
         if($form->isSubmitted()&& $form->isValid()){
             $this->em->persist($category);
             $this->em->flush();
-
+            $this->addFlash('success', 'Category created');
             return $this->redirectToRoute('admin.category.read');
         }
+       
         return $this->render('Backend/category/create.html.twig',[
             'form' => $form->createView()
         ]);
 
     }
-    // CRUD
+    // CRUD ->read 
     #[Route('/admin/category/read', name:'admin.category.read')]
     public function readCategory():Response
     {
@@ -53,12 +55,22 @@ class CategoryController extends AbstractController
             'categories' => $categories,
         ]);
     }
-
+// edit update
 #[Route('/admin/category/edit/{id}', name: 'admin.category.edit', methods: ['GET', 'POST'])]
-
+#[IsGranted('ROLE_USER')]
 public function edit(Category $category, Request $request): Response|RedirectResponse
 
 {
+            //if user are logged, if he's not logged  the message with 'accessDeniedException'
+            if (!$this->getUser()) {
+                throw new AccessDeniedException('You must be logged in to edit category.');
+            }
+                   // if the user is not the author, addFlash message
+        if ($category->getUser() !== $this->getUser()) {
+            $this->addFlash('error', 'You are not allowed to edit this category.');
+            return $this->redirectToRoute('admin.category.read');
+        }
+    
     $form = $this -> createForm(CategoryType::class, $category);
     $form->handleRequest($request);
     if ($form->isSubmitted() && $form->isValid())
@@ -74,16 +86,25 @@ public function edit(Category $category, Request $request): Response|RedirectRes
         'form' => $form->createView()
         ]);
 }
-
+// Delete 
 #[Route('/admin/category/delete/{id}', name: 'admin.category.delete', methods:['POST', 'DELETE'])]
 #[IsGranted('ROLE_USER')]
 public function deleteCategory(?Category $category, Request $request): RedirectResponse
 {
+    // Controllo se l'utente è autenticato
+    if (!$this->getUser()) {
+        throw new AccessDeniedException('You must be logged in to delete category.');
+    }
     if (!$category instanceof Category) {
         $this->addFlash('error',  'category not found');
 
         return $this->redirectToRoute('admin.category.read');
     }
+    if ($category->getUser() !== $this->getUser()) {
+        $this->addFlash('error', 'You are not allowed to delete this category.');
+        return $this->redirectToRoute('admin.category.read');
+    }
+
     if ($this->isCsrfTokenValid('delete' . $category->getId(), $request->request->get('token'))) {
         $this->em->remove($category, true);
         $this->em->flush();

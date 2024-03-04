@@ -25,7 +25,9 @@ class ArticleController extends AbstractController
     {
         
     }
-        // Create 
+   /**
+    * Create continuer à documentare 
+    */
     #[Route('/admin/article/create', name: 'admin.article.create')]
     #[IsGranted('ROLE_USER')]
     public function createArticle(Request $request, CategoryRepository $categoryRepo): Response|RedirectResponse
@@ -55,11 +57,10 @@ return $this->redirectToRoute('admin.article.read');
             'categories' => $categories
             ]);
     } 
-    // crud 
+    // read
     #[Route('/admin/article/read', name:'admin.article.read')]
     public function readArticle():Response
     {
-        // Récupérer tout les users
         // Récupérer tout les articles
         $articles = $this->articleRepository->findAll();
 
@@ -74,15 +75,24 @@ return $this->redirectToRoute('admin.article.read');
 
     public function edit(Article $article, Request $request): Response|RedirectResponse
     {
-        // Controllo se l'utente è autenticato
+
+        //faire des vardump pour verifier des valeurs des variables sur le navigateur
+
+        // trouver l id de l utilisateur 
+
+        //trouve l id de l article sur laquelle l user a cliqué 
+
+
+        //if user are logged, if he's not logged  the message with 'accessDeniedException'
         if (!$this->getUser()) {
             throw new AccessDeniedException('You must be logged in to edit articles.');
         }
     
-        // Controllo se l'utente attuale è l'autore dell'articolo
+        // if the user is not the author, addFlash message
         if ($article->getUser() !== $this->getUser()) {
             $this->addFlash('error', 'You are not allowed to edit this article.');
             return $this->redirectToRoute('admin.article.read');
+
         }
     
         $form = $this->createForm(ArticleType::class, $article);
@@ -117,7 +127,6 @@ public function deleteArticle(?Article $article, Request $request): RedirectResp
         return $this->redirectToRoute('admin.article.read');
     }
 
-    // Controllo se l'utente attuale è l'autore dell'articolo
     if ($article->getUser() !== $this->getUser()) {
         $this->addFlash('error', 'You are not allowed to delete this article.');
         return $this->redirectToRoute('admin.article.read');

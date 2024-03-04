@@ -1,3 +1,6 @@
+/**
+ * Ma doc 
+ */
 function showResponsiveMenu() {
     var menu = document.getElementById("topnav_responsive_menu");
     var icon = document.getElementById("topnav_hamburger_icon");
