@@ -24,7 +24,7 @@ class ArticleType extends AbstractType
                 'class' => Category::class,
                 'label' => 'Categories:',
                 'multiple' => true ,
-                'expanded' => true,
+                'expanded' => false,
                 'choice_label' => 'title',
                 'by_reference' => true,   
             ])

@@ -6,19 +6,7 @@
 {% endblock %}
 
 {% block body %}
-    {% for flashMessage in app.flashes('success') %}
-        <div class="flash-message flash-message-success">
-            {{ flashMessage }}
-        </div>
-    {% endfor %}
 
-    {% for flashMessage in app.flashes('error') %}
-        <div class="flash-message flash-message-error">
-            {{ flashMessage }}
-        </div>
-    {% endfor %}
-
-    {% block content %}
         <h1>All the categories!</h1>
 
         <div>
@@ -26,5 +14,5 @@
                 {% include 'components/_cardCategory.html.twig' %}
             {% endfor %}
         </div>
-    {% endblock %}
+    
 {% endblock %}

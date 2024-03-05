@@ -20,12 +20,14 @@
     overflow: visible;
 }
 .category_title{
-    border:solid 2px #0000FF;
+    border: solid 2px #0000FF;
     border-radius: 20px;
     width: fit-content;
-    color:white;
-    background-color: black;
-    list-style-type:none;
+    color: black;
+    background-color: white;
+    list-style-type: none;
+    padding: inherit;
+    margin: auto;
 }
 .card-title {
     justify-content: center;
