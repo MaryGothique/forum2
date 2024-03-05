@@ -1,8 +1,14 @@
 /*CSS de category*/
 
 .card-category{
-  display: grid;
-  width: 25px;
+    display: grid;
+    width: 25px;
+    border: 2px #2398ff solid;
+
+    margin: auto;
+    padding: 15px;
+    height: 150px;
+    width: fit-content;
   }
 
 form .btn-modify{

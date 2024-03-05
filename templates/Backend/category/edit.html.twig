@@ -7,20 +7,6 @@
 
 {% block body %}
  
-
-    {% for flashMessage in app.flashes('success') %}
-        <div class="flash-message flash-message-success">
-            {{ flashMessage }}
-        </div>
-    {% endfor %}
-
-    {% for flashMessage in app.flashes('error') %}
-        <div class="flash-message flash-message-error">
-            {{ flashMessage }}
-        </div>
-    {% endfor %}
-
- {% block content %}
 <h1>Edit a category</h1>
 	<section class="card-list">
 		
@@ -28,4 +14,4 @@
 		
 	</section>
 {% endblock %}
-{% endblock %}
+

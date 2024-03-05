@@ -61,16 +61,26 @@ class CategoryController extends AbstractController
 public function edit(Category $category, Request $request): Response|RedirectResponse
 
 {
-            //if user are logged, if he's not logged  the message with 'accessDeniedException'
-            if (!$this->getUser()) {
-                throw new AccessDeniedException('You must be logged in to edit category.');
-            }
-                   // if the user is not the author, addFlash message
-        if ($category->getUser() !== $this->getUser()) {
-            $this->addFlash('error', 'You are not allowed to edit this category.');
-            return $this->redirectToRoute('admin.category.read');
-        }
-    
+
+    // Check if the user is logged in
+    if (!$this->getUser()) {
+        throw new AccessDeniedException('You must be logged in to edit category.');
+    }
+
+    $form = $this->createForm(CategoryType::class, $category);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+        $this->em->persist($category);
+        $this->em->flush();
+
+        $this->addFlash('success', 'Category modified successfully');
+        return $this->redirectToRoute('admin.category.read');
+    }
+
+    return $this->render('Backend/category/edit.html.twig', [
+        'form' => $form->createView()
+    ]);
     $form = $this -> createForm(CategoryType::class, $category);
     $form->handleRequest($request);
     if ($form->isSubmitted() && $form->isValid())
@@ -79,7 +89,7 @@ public function edit(Category $category, Request $request): Response|RedirectRes
         $this->em->flush();
 
         $this->addFlash('success', 'category modified successifully');
-        var_dump($this->addFlash('success', 'category modified successifully'));
+       
         return $this->redirectToRoute('admin.category.read');
     }
     return $this->render('Backend/category/edit.html.twig', [
@@ -90,20 +100,16 @@ public function edit(Category $category, Request $request): Response|RedirectRes
 #[Route('/admin/category/delete/{id}', name: 'admin.category.delete', methods:['POST', 'DELETE'])]
 #[IsGranted('ROLE_USER')]
 public function deleteCategory(?Category $category, Request $request): RedirectResponse
-{
+{ 
+    
     // Controllo se l'utente è autenticato
-    if (!$this->getUser()) {
-        throw new AccessDeniedException('You must be logged in to delete category.');
-    }
+   
     if (!$category instanceof Category) {
         $this->addFlash('error',  'category not found');
 
         return $this->redirectToRoute('admin.category.read');
     }
-    if ($category->getUser() !== $this->getUser()) {
-        $this->addFlash('error', 'You are not allowed to delete this category.');
-        return $this->redirectToRoute('admin.category.read');
-    }
+   
 
     if ($this->isCsrfTokenValid('delete' . $category->getId(), $request->request->get('token'))) {
         $this->em->remove($category, true);
