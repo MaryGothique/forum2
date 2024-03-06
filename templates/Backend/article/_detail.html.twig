@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block body %}
+
+    <article class="card-article">
+        <h1 class="card-title">{{ article.title }}</h1>
+        <p class="author">Author: {{ article.user.email }}</p>
+        <p class="date">Published on: {{ article.createAt|date('F j, Y') }}</p>
+        
+        <div class="categories">
+            <h3>Categories:</h3>
+            <div>
+                {% for category in article.categories %}
+                    <p class="category_title">{{ category.title }}</p>
+                {% endfor %}   
+                     <div class="content card-text">
+            {{ article.content|raw }}
+        </div>
+            </div>
+        </div>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <div class="card-btn">
+            <form method="POST" action="{{ path('admin.article.delete', {'id': article.id}) }}"
+                  onsubmit="return confirm('Are you sure you want to delete this article? This action cannot be undone.')">
+                <input type="hidden" name="token" value="{{ csrf_token('delete' ~ article.id) }}">
+                
+                <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn-modify">Edit</a>
+                <button class="btn-delete">Delete</button>
+            </form>
+        </div>
+    {% endif %}
+        </div>
+
+    </article> 
+  
+{% endblock %}
+
+ 

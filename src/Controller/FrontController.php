@@ -8,6 +8,7 @@ class FrontController extends AbstractController
 #[Route('/', name: 'home')]
 public function index(): Response
 {
+    // Récupérer tout les articles
     return $this->render('./home.html.twig');
 }
 

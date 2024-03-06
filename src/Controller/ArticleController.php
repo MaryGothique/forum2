@@ -15,7 +15,6 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-
 class ArticleController extends AbstractController
 {
     public function __construct(
@@ -48,8 +47,8 @@ class ArticleController extends AbstractController
             $this->em->flush();
 
             $this->addFlash('success', 'Article created');
-$this->em->flush();
-return $this->redirectToRoute('admin.article.read');
+                $this->em->flush();
+                return $this->redirectToRoute('admin.article.read');
 
         }
         return $this->render('Backend/article/create.html.twig', [
@@ -75,14 +74,16 @@ return $this->redirectToRoute('admin.article.read');
 
     public function edit(Article $article, Request $request): Response|RedirectResponse
     {
-
+/*
         //faire des vardump pour verifier des valeurs des variables sur le navigateur
-
+            var_dump($article);
         // trouver l id de l utilisateur 
-
+        var_dump($this->getUser());
+        var_dump($this->getUser()->getId());
+       
         //trouve l id de l article sur laquelle l user a cliqué 
-
-
+            var_dump($article->getId());
+*/
         //if user are logged, if he's not logged  the message with 'accessDeniedException'
         if (!$this->getUser()) {
             throw new AccessDeniedException('You must be logged in to edit articles.');
@@ -143,5 +144,12 @@ public function deleteArticle(?Article $article, Request $request): RedirectResp
     $this->addFlash('error', 'Invalid token');
 
     return $this->redirectToRoute('admin.article.read');
+}
+#[Route('/article/{id}', name: 'article_detail')]
+public function articleDetail(Article $article): Response
+{
+    return $this->render('Backend/article/_detail.html.twig', [
+        'article' => $article
+    ]);
 }
 }

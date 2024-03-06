@@ -1,11 +1,5 @@
-/*CSS de l' article*/
-.card-list {
-    width: 90%;
-    list-style: none;
-}
-.tous-article{
-    display: flex;
-}
+/*CSS de _details.html.twig*/
+
 .card-article{
     border: 2px solid #727272;
     background-color: #74BED9;
@@ -17,7 +11,7 @@
 #cat{
     background-color: #ff0101;
     color:burlywood;
-    overflow: auto;
+    overflow: visible;
 }
 .category_title{
     border: solid 2px #0000FF;
@@ -29,10 +23,6 @@
     padding: inherit;
     margin: auto;
     display: ruby-text;
-}
-a{
-    color:black;
-    
 }
 .card-title {
     justify-content: center;
@@ -51,12 +41,12 @@ a{
   color: rgb(41, 41, 41);
   text-align: center;
   background: white;
-  height: 200px;
+  height: auto;
   border: 2px solid #727272;
   margin: -15px 20px 20px 20px;
   padding: 10px;
-  overflow: clip;
   font-size: 20px;
+  overflow: clip;
 }
 
 .card-btn{
@@ -72,7 +62,6 @@ a{
     margin: -20px 5px 5px 20px;
     display: inline-block;
     padding: 4px;
-    list-style: none;
     }
     
 .card-article .btn-delete{
@@ -110,44 +99,3 @@ a{
     border-color: #faebcc;
     color: #8a6d3b;
   }
-  /* end flash messages*/
-/*mediaquery*/
-@media screen and (max-width: 500px){
-    .card-list {
-        display: flex;
-        flex-direction: column; /* Imposta l'orientamento come colonna */
-        align-items: center; /* Allinea gli elementi lungo l'asse trasversale (verticale) */
-        margin: -10px 20 ;
-        overflow: scroll;
-    }
-
-    .tous-article{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: -10px 20px;
-        overflow: scroll;
-    }
-
-    .card-article{
-        width: 100%;
-
-        border: 2px solid #727272;
-        background-color: #74BED9;
-        margin: 20px;
-        color: black;
-        padding: 10px;
-      
-    }
-    .card-article .btn-delete{
-        padding: auto;
-        height: 30px;
-        width: 80px;
-        border: 2px solid #ff0101;
-        background-color:#f80707;
-        border-radius: 20px;
-        color: black;
-        margin: 15px -20px;
-    }
-}
-

@@ -19,7 +19,6 @@ label.required {
 /*les boutons*/
 
 button.btn{
-  margin: 10px auto;
   padding: 5px;
   height: auto;
   width: 20vh;
@@ -28,7 +27,7 @@ button.btn{
   border-radius: 20px;
   color: black;
   display: inline-block;
-    
+  margin-top: 35px;
 }
 /*flash messages*/ 
 .flash-message {

@@ -3,8 +3,8 @@
 .card-category{
     display: grid;
     width: 25px;
-    border: 2px #2398ff solid;
-
+    border: 2px #7b7b7b solid;
+    display: inline-block;
     margin: auto;
     padding: 15px;
     height: 150px;

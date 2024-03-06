@@ -5,7 +5,17 @@
 {% block specificStylesheets %}{% endblock %}
 
 {% block body %}
-  
+      {% for flashMessage in app.flashes('success') %}
+        <div class="flash-message flash-message-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% for flashMessage in app.flashes('error') %}
+        <div class="flash-message flash-message-error">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
     {% if error %}
         <div class="flash-message flash-message-error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
