@@ -4,7 +4,6 @@ namespace App\Form;
 
 use App\Entity\Article;
 use App\Entity\Category;
-use App\Form\ArticleImageType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -24,7 +23,7 @@ class ArticleType extends AbstractType
                 'class' => Category::class,
                 'label' => 'Categories:',
                 'multiple' => true ,
-                'expanded' => false,
+                'expanded' => true,
                 'choice_label' => 'title',
                 'by_reference' => true,   
             ])

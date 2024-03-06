@@ -8,6 +8,17 @@
 {% endblock %}
 
 {% block body %}
+    {% for flashMessage in app.flashes('success') %}
+        <div class="flash-message flash-message-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% for flashMessage in app.flashes('error') %}
+        <div class="flash-message flash-message-error">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
     <h1>Register</h1>
     <div class="registrationForm">
         

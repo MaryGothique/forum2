@@ -1,10 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% for flashMessage in app.flashes('success') %}
+        <div class="flash-message flash-message-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% for flashMessage in app.flashes('error') %}
+        <div class="flash-message flash-message-error">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
     <div class="home">
         <h1>IcedTears</h1> 
-
-        
 
     </div>
 {% endblock %}

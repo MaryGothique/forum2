@@ -6,13 +6,25 @@
 {% endblock %}
 
 {% block body %}
+{# I don't know why without the flash messages here, the messages flash doesn' t work #}
+{% for flashMessage in app.flashes('success') %}
+        <div class="flash-message flash-message-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
 
-        <h1>All the categories!</h1>
+    {% for flashMessage in app.flashes('error') %}
+        <div class="flash-message flash-message-error">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    <h1>All the categories!</h1>
 
+    {% block content %}
         <div>
             {% for category in categories %}
                 {% include 'components/_cardCategory.html.twig' %}
             {% endfor %}
         </div>
-    
+    {% endblock %}
 {% endblock %}

@@ -15,5 +15,6 @@ import './styles/_category.css';
 import './styles/_card.css';
 import './styles/login.css';
 import './styles/register.css';
+import './styles/detail.css';
 
 //import './js/menu_burger.js';
