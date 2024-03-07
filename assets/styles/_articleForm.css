@@ -8,6 +8,7 @@
   margin: auto;
   padding: 20px;
   background-color: #74BED9;
+  border-radius: 20px;
 }
 #article_title{
     width: 450px;
@@ -70,9 +71,9 @@ button #article_validate {
   /* end flash messages*/
 @media screen and (max-width: 500px){
     .form-article{
-        color: #727272;
+        color: black;
         border: 2px solid #727272;
-        height: 500px;
+        height: 525px;
         width: 300px;
         display: flex;
        

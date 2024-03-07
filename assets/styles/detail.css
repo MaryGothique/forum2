@@ -94,3 +94,103 @@
     border-color: #faebcc;
     color: #8a6d3b;
   }
+  @media screen and (max-width: 500px){
+    
+.detail{
+  border: 2px solid #727272;
+  background-color: #74BED9;
+  margin: 20px;
+  color: black;
+  height: auto;
+  border-radius: 20px;
+}
+.author{
+  
+}
+.category_title{
+  border: solid 2px #0000FF;
+  border-radius: 20px;
+  width: fit-content;
+  color: black;
+  background-color: white;
+  list-style-type: none;
+  padding: inherit;
+  margin: auto;
+  display: ruby-text;
+}
+.title {
+  display: flex;
+  justify-content: start;
+  text-align: center;
+  font-display: flex;
+  height: auto;
+  width: 1100px;
+  padding: 15px;
+  color: black;
+  text-shadow: #0000FF 2px 2px 2px;
+  padding: 25px;
+}
+.card-text {
+border-radius: 20px;
+color: rgb(41, 41, 41);
+text-align: center;
+background: white;
+height: auto;
+border: 2px solid #727272;
+margin: -15px 20px 20px 20px;
+padding: 10px;
+font-size: 20px;
+overflow: clip;
+}
+
+.card-btn{
+  display: inline-flex;
+}
+.card-article .btn-modify{
+  height: auto;
+  width: 80px;
+  border: 2px solid #727272;
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  margin: -20px 5px 5px 20px;
+  display: inline-block;
+  padding: 4px;
+  }
+  
+.card-article .btn-delete{
+  padding: auto;
+  height: 30px;
+  width: 80px;
+  border: 2px solid #ff0101;
+  background-color:#f80707;
+  border-radius: 20px;
+  color: black;
+  margin: 15px 20px;
+  }
+  /*flash messages*/ 
+.flash-message{
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.flash-message-success{
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+
+.flash-message-error{
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+
+.flash-message-warning{
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
+  }

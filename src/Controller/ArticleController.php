@@ -25,15 +25,17 @@ class ArticleController extends AbstractController
         
     }
    /**
-    * Create continuer à documentare 
+    * This is the crud: CRUD is for Create, Read, Update and Delete. Here starts the Create
     */
     #[Route('/admin/article/create', name: 'admin.article.create')]
     #[IsGranted('ROLE_USER')]
     public function createArticle(Request $request, CategoryRepository $categoryRepo): Response|RedirectResponse
     
     {
+        //Here is meaning that every new article created search every article and every category
         $article = new Article();
         $categories = $categoryRepo->findAll();
+        //ArticleType is the form 
         $form = $this->createForm(ArticleType::class, $article);       
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -42,10 +44,12 @@ class ArticleController extends AbstractController
             // but, the original `$task` variable has also been updated
      
              $article->setUser($this->getUser());
-            // avec le code suivant nous allons à l' envoyer dans la bdd
+           
+            //With this code we will send it in the database
             $this->em->persist($article);
             $this->em->flush();
-
+            //the flash messages are the messages that appears when you do an action
+            //there are: successful flash message, danger flash message, info... 
             $this->addFlash('success', 'Article created');
                 $this->em->flush();
                 return $this->redirectToRoute('admin.article.read');
@@ -56,11 +60,13 @@ class ArticleController extends AbstractController
             'categories' => $categories
             ]);
     } 
-    // read
+    /**
+     * Here starts the Read of the CRUD
+     */
     #[Route('/admin/article/read', name:'admin.article.read')]
     public function readArticle():Response
     {
-        // Récupérer tout les articles
+        // Here is take every article for see it 
         $articles = $this->articleRepository->findAll();
 
         return $this->render('Backend/article/index.html.twig',[
@@ -69,7 +75,9 @@ class ArticleController extends AbstractController
         ]);
     
     }
-    //  Update
+    /**
+     * Here we can find the Edit.
+     */
     #[Route('/admin/article/edit/{id}', name: 'admin.article.edit', methods: 'GET|POST')]
 
     public function edit(Article $article, Request $request): Response|RedirectResponse
@@ -112,44 +120,49 @@ class ArticleController extends AbstractController
             'form' => $form->createView()
         ]);
     }
-    // Delete
+    /**
+     * Here there are the Delete
+     */
     #[Route('/admin/article/delete/{id}', name:'admin.article.delete', methods: ['POST', 'DELETE'])]
    
-public function deleteArticle(?Article $article, Request $request): RedirectResponse
-{
-    // Controllo se l'utente è autenticato
-    if (!$this->getUser()) {
-        throw new AccessDeniedException('You must be logged in to delete articles.');
-    }
+        public function deleteArticle(?Article $article, Request $request): RedirectResponse
+        {
+            // Controllo se l'utente è autenticato
+            if (!$this->getUser()) {
+                throw new AccessDeniedException('You must be logged in to delete articles.');
+            }
 
-    if (!$article instanceof Article) {
-        $this->addFlash('error', 'Article not found');
-        
-        return $this->redirectToRoute('admin.article.read');
-    }
-
-    if ($article->getUser() !== $this->getUser()) {
-        $this->addFlash('error', 'You are not allowed to delete this article.');
-        return $this->redirectToRoute('admin.article.read');
-    }
-
-    if ($this->isCsrfTokenValid('delete' . $article->getId(), $request->request->get('token'))) {
-        $this->em->remove($article, true);
-        $this->em->flush();
+            if (!$article instanceof Article) {
+                $this->addFlash('error', 'Article not found');
                 
-        $this->addFlash('success', 'Article deleted successfully');
-        return $this->redirectToRoute('admin.article.read');
-    }
+                return $this->redirectToRoute('admin.article.read');
+            }
 
-    $this->addFlash('error', 'Invalid token');
+            if ($article->getUser() !== $this->getUser()) {
+                $this->addFlash('error', 'You are not allowed to delete this article.');
+                return $this->redirectToRoute('admin.article.read');
+            }
 
-    return $this->redirectToRoute('admin.article.read');
-}
-#[Route('/article/{id}', name: 'article_detail')]
-public function articleDetail(Article $article): Response
-{
-    return $this->render('Backend/article/_detail.html.twig', [
-        'article' => $article
-    ]);
+            if ($this->isCsrfTokenValid('delete' . $article->getId(), $request->request->get('token'))) {
+                $this->em->remove($article, true);
+                $this->em->flush();
+                        
+                $this->addFlash('success', 'Article deleted successfully');
+                return $this->redirectToRoute('admin.article.read');
+            }
+
+            $this->addFlash('error', 'Invalid token');
+
+            return $this->redirectToRoute('admin.article.read');
+        }
+        /**
+         * this is the page of the single article
+         */
+        #[Route('/article/{id}', name: 'article_detail')]
+        public function articleDetail(Article $article): Response
+        {
+            return $this->render('Backend/article/_detail.html.twig', [
+                'article' => $article
+            ]);
 }
 }

@@ -37,9 +37,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     #[Assert\PasswordStrength([ //constraint 
-        // this is not good for the jury
-        'minScore' => PasswordStrength::STRENGTH_VERY_STRONG, 
-        // Very strong password required
+        'minScore' => PasswordStrength::STRENGTH_MEDIUM, 
     ])]
     private ?string $password = null;
 

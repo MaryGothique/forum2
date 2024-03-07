@@ -49,8 +49,8 @@ width: 50px;
 }
 
 img{
-  width: 500%;
-  margin-left:-1px;
+  width: 600%;
+  margin-left: 10px;
 }
 
 .home .btn{
@@ -64,8 +64,7 @@ margin-left: 150px;
 {
 display: block;
 position: relative;
-top: 60px;
-
+top: 100px;
 z-index: 1;
 
 -webkit-user-select: none;
@@ -143,7 +142,7 @@ transform-origin: 0% 100%;
 {
 opacity: 1;
 transform: rotate(45deg) translate(-2px, -1px);
-background: #74BED9;
+background: black;
 }
 
 /*
@@ -180,8 +179,8 @@ list-style-type: none;
 transform-origin: 0% 0%;
 transform: translate(-100%, 0);
 transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-width: 200px;
-height: 700px;
+width: 265px;
+height: 600px;
 position: absolute;
 /* to stop flickering of text in safari */
 
