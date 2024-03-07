@@ -10,7 +10,7 @@
         <span></span>
 
          <ul id="menu">
-            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}{# just who is autenticated can see and use the create article and create category bottom #}
                 <li><a href="{{ path('app_logout') }}" class="btn">Logout</a></li>
                 <li><a href="{{ path('admin.article.create') }}" class="btn">Create Article</a></li>
                 <li><a href="{{ path('admin.category.create') }}" class="btn">Create Category</a></li>

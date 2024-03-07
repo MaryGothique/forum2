@@ -37,15 +37,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     #[Assert\PasswordStrength([ //constraint 
-        // this is not good for the jury
-        'minScore' => PasswordStrength::STRENGTH_VERY_STRONG, 
-        // Very strong password required
+        'minScore' => PasswordStrength::STRENGTH_MEDIUM, 
     ])]
     private ?string $password = null;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Article::class)] 
 
     private Collection $articles;
+
+    #[ORM\Column(length: 30)]
+    private ?string $nickname = null;
 
     public function __construct()
     {
@@ -151,4 +152,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    public function getNickname(): ?string
+    {
+        return $this->nickname;
+    }
+
+    public function setNickname(string $nickname): static
+    {
+        $this->nickname = $nickname;
+
+        return $this;
+    }
+
 }

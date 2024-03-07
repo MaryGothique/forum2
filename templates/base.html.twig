@@ -26,6 +26,7 @@
                 <main>
                     {% block body %}
                     {% block content %}
+                    {# this is the flash messages, you can see the message on src->controller-> article or category controller #}
                 {% for flash in app.flashes('flash-message-error') %}
                     <div class="flash-message flash-message-error" role="alert">
                         {{ flash }}

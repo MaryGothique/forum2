@@ -8,7 +8,7 @@ security:
         app_user_provider:
             entity:
                 class: App\Entity\User
-                property: email
+                property: nickname
         # used to reload user from session & other features (e.g. switch_user)
     firewalls:
         dev:
@@ -25,6 +25,8 @@ security:
                 # "app_login" is the name of the route created previously
                 login_path: login
                 check_path: login
+                username_parameter: _nickname # Usa _nickname come parametro di login
+                password_parameter: _password
 
             remember_me:
                 secret: '%kernel.secret%'

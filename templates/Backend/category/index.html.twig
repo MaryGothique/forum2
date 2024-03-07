@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block body %}
-{# I don't know why without the flash messages here, the messages flash doesn' t work #}
+
 {% for flashMessage in app.flashes('success') %}
         <div class="flash-message flash-message-success">
             {{ flashMessage }}

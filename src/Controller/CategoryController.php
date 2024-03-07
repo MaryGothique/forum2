@@ -49,10 +49,11 @@ class CategoryController extends AbstractController
     #[Route('/admin/category/read', name:'admin.category.read')]
     public function readCategory():Response
     {
-        $categories = $this ->categoryRepository->findAll();
+        $categories = $this->categoryRepository->findAll();
 
-        return $this->render('Backend/category/index.html.twig',[
+        return $this->render('Backend/category/index.html.twig', [
             'categories' => $categories,
+            'current_user' => $this->getUser() // Passa l'utente corrente al template Twig
         ]);
     }
 // edit update
