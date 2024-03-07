@@ -1,7 +1,7 @@
 <div class="card-article">
     <h2><a href="{{ path('article_detail', {id: article.id}) }}">{{ article.title }}</a></h2>
     <p class="card-text">{{ article.content }}</p>
-    <p>{{ article.user.email }}</p>
+    <p>{{ article.user.nickname }}</p>
     <p>{{ article.createAt|date('F j, Y') }}</p>
     
     {% if article.categories is not empty %}

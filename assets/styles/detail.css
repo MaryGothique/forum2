@@ -1,17 +1,12 @@
 /*CSS de _details.html.twig*/
 
-.card-article{
+.detail{
     border: 2px solid #727272;
     background-color: #74BED9;
     margin: 20px;
     color: black;
     height: auto;
     border-radius: 20px;
-}
-#cat{
-    background-color: #ff0101;
-    color:burlywood;
-    overflow: visible;
 }
 .category_title{
     border: solid 2px #0000FF;
@@ -24,7 +19,7 @@
     margin: auto;
     display: ruby-text;
 }
-.card-title {
+.title {
     justify-content: center;
     text-align: center;
     font-display: flex;

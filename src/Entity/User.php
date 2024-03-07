@@ -47,6 +47,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     private Collection $articles;
 
+    #[ORM\Column(length: 30)]
+    private ?string $nickname = null;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -151,4 +154,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    public function getNickname(): ?string
+    {
+        return $this->nickname;
+    }
+
+    public function setNickname(string $nickname): static
+    {
+        $this->nickname = $nickname;
+
+        return $this;
+    }
+
 }

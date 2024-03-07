@@ -21,8 +21,8 @@
     {% endif %}
     <h1>Login</h1>
     <form class="form-login" action="{{ path('login') }}" method="post">
-        <label for="username">Email:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}">
+    <label for="_nickname">Nickname:</label>
+    <input type="text" id="_nickname" name="_nickname" value="{{ last_username }}">
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="_password">
