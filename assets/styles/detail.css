@@ -1,5 +1,5 @@
 /*CSS de _details.html.twig*/
-
+/*css of the single article page*/
 .detail{
     border: 2px solid #727272;
     background-color: #74BED9;
@@ -36,12 +36,11 @@
   color: rgb(41, 41, 41);
   text-align: center;
   background: white;
-  height: auto;
+  height: max-content;
   border: 2px solid #727272;
   margin: -15px 20px 20px 20px;
   padding: 10px;
   font-size: 20px;
-  overflow: clip;
 }
 
 .card-btn{
