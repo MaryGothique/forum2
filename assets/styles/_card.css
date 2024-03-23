@@ -1,4 +1,6 @@
-/*CSS de l' article*/
+/*
+*All article page
+*/
 .card-list {
     width: 90%;
     list-style: none;
@@ -14,11 +16,7 @@
     height: auto;
     border-radius: 20px;
 }
-#cat{
-    background-color: #ff0101;
-    color:burlywood;
-    overflow: auto;
-}
+
 .category_title{
     border: solid 2px #0000FF;
     border-radius: 20px;
@@ -47,16 +45,12 @@ a{
 
 }
 .card-text {
-  border-radius: 20px;
-  color: rgb(41, 41, 41);
-  text-align: center;
-  background: white;
-  height: 200px;
-  border: 2px solid #727272;
-  margin: -15px 20px 20px 20px;
-  padding: 10px;
-  overflow: clip;
-  font-size: 20px;
+    height: 150px;
+    overflow: hidden;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px; 
 }
 
 .card-btn{
@@ -111,6 +105,16 @@ a{
     color: #8a6d3b;
   }
   /* end flash messages*/
+  @media screen and (min-width:700px){
+    .card-article{
+        border: 2px solid #727272;
+        background-color: #74BED9;
+        margin-left: 90px;
+        color: black;
+        height: auto;
+        border-radius: 20px;
+    }
+  }
 /*mediaquery*/
 @media screen and (max-width: 500px){
     .card-list {
@@ -131,7 +135,7 @@ a{
 
     .card-article{
         width: 100%;
-
+        margin-left: 90px;
         border: 2px solid #727272;
         background-color: #74BED9;
         margin: 20px;

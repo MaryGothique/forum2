@@ -1,3 +1,7 @@
+/*
+*css category form
+*/
+
 .edit-category{
   border: 2px solid #727272;
   background-color: #74BED9;
@@ -6,16 +10,39 @@
   height: 130px;
   margin: auto;
   padding: 10px;
-  color:#000000;
+  color: #000000;
 }
 .btn-category{
   margin: 20px auto;
   padding: 5px;
   height: auto;
-  width: 20vh;
+  width: 10vh;
   border: 2px solid #727272;
   background-color: white;
   border-radius: 20px;
   color: black;
   display: inline-block;
+}
+@media screen and (min-width:700px) {
+  .edit-category{
+    border: 2px solid #727272;
+    background-color: #74BED9;
+    border-radius: 20px;
+    width: 200px;
+    height: 130px;
+    margin: auto;
+    padding: 10px;
+    color: #000000;
+  }
+  .btn-category{
+    margin: 20px auto;
+    padding: 5px;
+    height: auto;
+    width: 10vh;
+    border: 2px solid #727272;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    display: inline-block;
+  }
 }

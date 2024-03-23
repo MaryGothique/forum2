@@ -19,7 +19,7 @@ a.btn{
 }
 img{
  width:100%;
- margin-left: -10px;
+
 padding: 10px;
 }
 
@@ -32,7 +32,44 @@ padding: 10px;
 .checkbox{
   visibility: hidden;
 }
-/*CSS pour écran <= 500px*/
+@media screen and (min-width:700px) {
+  nav{
+    border: 2px solid #727272;
+    position: relative;
+    background-color: #74BED9;
+    height: 1000px;
+    grid-column:1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: fit-content;
+  }
+  a.btn{
+    margin-left: -35px;
+    height: auto;
+    width: 15vh;
+    border: 2px solid #727272;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+  }
+  img{
+   width:100%;
+  
+  padding: 10px;
+  }
+  
+  #menu ul{
+        display:block;
+        margin: 90px;
+        padding:160px;
+    }
+  
+  .checkbox{
+    visibility: hidden;
+  }
+  /*CSS pour écran >= 500px*/
+}
+/*CSS pour écran >= 500px*/
 @media screen and ( max-width: 500px){
 .checkbox{
     visibility: visible;
@@ -45,12 +82,13 @@ position: relative;
 background-color: #74bed900;
 height: 50px;
 width: 50px;
+
   
 }
 
-img{
-  width: 600%;
-  margin-left: 10px;
+.logo{
+  width: 1000%;
+padding: 10px;
 }
 
 .home .btn{
@@ -59,7 +97,7 @@ width: 80px;
 margin-bottom: -7px;
 margin-left: 150px;
 }
-
+/*I added a css burger menu for the mobile version*/
 #menuToggle
 {
 display: block;

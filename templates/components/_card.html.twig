@@ -3,6 +3,7 @@
     <p class="card-text">{{ article.content }}</p>
     <p>{{ article.user.nickname }}</p>
     <p>{{ article.createAt|date('F j, Y') }}</p>
+    {# F=name of the month, j= day without 0, Y=Year #}
     
     {% if article.categories is not empty %}
         {% for category in article.categories %}

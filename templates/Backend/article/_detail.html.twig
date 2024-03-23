@@ -1,12 +1,21 @@
 {% extends 'base.html.twig' %}
+{#
+ {% block stylesheets %}
+     {{ parent() }}
+   {{ encore_entry_link_tags('detail') }}
+ {% endblock %}
 
+ {% block javascripts %}
+     {{ parent() }}
+     {{ encore_entry_script_tags('detail') }}
+ {% endblock %}
 {% block title %}{{ article.title }}{% endblock %}
-
+#}
 {% block body %}
 
     <article class="detail">
         <h1 class="title">{{ article.title }}</h1>
-        <p class="author">Author: {{ article.user.email }}</p>
+        <p class="author">Author: {{ article.user.nickname }}</p>
         <p class="date">Published on: {{ article.createAt|date('j/m/Y') }}</p>
         
         <div class="categories">
@@ -21,7 +30,7 @@
             </div>
         </div>
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <div class="card-btn">
+        <div class="detail">
             <form method="POST" action="{{ path('admin.article.delete', {'id': article.id}) }}"
                   onsubmit="return confirm('Are you sure you want to delete this article? This action cannot be undone.')">
                 <input type="hidden" name="token" value="{{ csrf_token('delete' ~ article.id) }}">

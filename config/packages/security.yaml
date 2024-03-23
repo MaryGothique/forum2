@@ -8,7 +8,7 @@ security:
         app_user_provider:
             entity:
                 class: App\Entity\User
-                property: nickname
+                property: nickname #I changed email for nickname for security reason
         # used to reload user from session & other features (e.g. switch_user)
     firewalls:
         dev:
@@ -25,7 +25,7 @@ security:
                 # "app_login" is the name of the route created previously
                 login_path: login
                 check_path: login
-                username_parameter: _nickname # Usa _nickname come parametro di login
+                username_parameter: _nickname # it use _nickname like login parameter
                 password_parameter: _password
 
             remember_me:
