@@ -45,8 +45,12 @@ a{
 
 }
 .card-text {
-  height: 200px;
-
+    height: 150px;
+    overflow: hidden;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px; 
 }
 
 .card-btn{
@@ -101,6 +105,16 @@ a{
     color: #8a6d3b;
   }
   /* end flash messages*/
+  @media screen and (min-width:700px){
+    .card-article{
+        border: 2px solid #727272;
+        background-color: #74BED9;
+        margin-left: 90px;
+        color: black;
+        height: auto;
+        border-radius: 20px;
+    }
+  }
 /*mediaquery*/
 @media screen and (max-width: 500px){
     .card-list {
@@ -121,7 +135,7 @@ a{
 
     .card-article{
         width: 100%;
-
+        margin-left: 90px;
         border: 2px solid #727272;
         background-color: #74BED9;
         margin: 20px;

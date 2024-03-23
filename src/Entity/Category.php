@@ -24,6 +24,9 @@ class Category
 
     private $user;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $author = null;
+
     public function getUser(): ?UserInterface
     {
         return $this->user;
@@ -80,6 +83,18 @@ class Category
         if ($this->articles->removeElement($article)) {
             $article->removeCategory($this);
         }
+
+        return $this;
+    }
+
+    public function getAuthor(): ?string
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?string $author): static
+    {
+        $this->author = $author;
 
         return $this;
     }
