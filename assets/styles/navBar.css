@@ -2,7 +2,7 @@ nav{
   border: 2px solid #727272;
   position: relative;
   background-color: #74BED9;
-  height: 1000px;
+  height: 800px;
   grid-column:1;
   grid-row-start: 1;
   grid-row-end: 3;
@@ -32,7 +32,7 @@ padding: 10px;
 .checkbox{
   visibility: hidden;
 }
-@media screen and (min-width:700px) {
+@media screen and (min-width: 810px) and (max-width: 1080px){
   nav{
     border: 2px solid #727272;
     position: relative;
@@ -233,7 +233,15 @@ transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 display: grid;
 margin: 50px;
 }
-
+a.btn{
+  margin-left: -35px;
+    height: auto;
+    width: 15vh;
+    border: 2px solid #727272;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+}
 
 /*
 * And let's slide it in from the left

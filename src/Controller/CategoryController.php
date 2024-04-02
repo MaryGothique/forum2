@@ -67,7 +67,6 @@ public function edit(Category $category, Request $request): Response|RedirectRes
     if (!$this->getUser()) {
         throw new AccessDeniedException('You must be logged in to edit category.');
     }
- 
     $form = $this->createForm(CategoryType::class, $category);
     $form->handleRequest($request);
 

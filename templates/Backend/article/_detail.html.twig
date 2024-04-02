@@ -1,20 +1,15 @@
 {% extends 'base.html.twig' %}
-{#
- {% block stylesheets %}
-     {{ parent() }}
-   {{ encore_entry_link_tags('detail') }}
- {% endblock %}
 
- {% block javascripts %}
-     {{ parent() }}
-     {{ encore_entry_script_tags('detail') }}
- {% endblock %}
-{% block title %}{{ article.title }}{% endblock %}
-#}
+                {% block specificStylesheets %} {{ encore_entry_link_tags('detail') }}{% endblock %}
+     
 {% block body %}
-
+<h1>Iced Tears</h2>
     <article class="detail">
-        <h1 class="title">{{ article.title }}</h1>
+        <div class="detail">
+     
+            <h1 class="title">{{ article.title }}</h1>
+            
+        </div>
         <p class="author">Author: {{ article.user.nickname }}</p>
         <p class="date">Published on: {{ article.createAt|date('j/m/Y') }}</p>
         
@@ -30,15 +25,16 @@
             </div>
         </div>
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <div class="detail">
+        
+           <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn-modify">Edit</a>
             <form method="POST" action="{{ path('admin.article.delete', {'id': article.id}) }}"
                   onsubmit="return confirm('Are you sure you want to delete this article? This action cannot be undone.')">
                 <input type="hidden" name="token" value="{{ csrf_token('delete' ~ article.id) }}">
                 
-                <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn-modify">Edit</a>
+             
                 <button class="btn-delete">Delete</button>
             </form>
-        </div>
+        
     {% endif %}
         </div>
 
