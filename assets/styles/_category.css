@@ -7,33 +7,31 @@
     display: inline-block;
     margin: auto;
     padding: 15px;
-    height: 150px;
+    height: 180px;
     width: fit-content;
   }
-
-form .btn-modify{
+div .btn-modify{
   height: auto;
   width: 80px;
   border: 2px solid #727272;
   background-color: white;
   border-radius: 20px;
   color: black;
-  margin: -20px 5px 5px 20px;
+  margin: -100px;
   display: inline-block;
   padding: 4px;
 }
 
 .btn-delete{
-
-height: auto;
-width: 80px;
-border: 2px solid #6a0303;
-background-color: #f80707;
-border-radius: 20px;
-color: black;
-margin: -20px 5px 5px 20px;
+    height: auto;
+    width: 80px;
+    border: 2px solid #6a0303;
+    background-color: #f80707;
+    border-radius: 20px;
+    color: black;
+    margin: 20px;
 }
-  @media screen and (max-width: 500px){
+@media screen and (min-width: 412px) and (max-width: 500px){
 
     .card-category{
       color: black;
