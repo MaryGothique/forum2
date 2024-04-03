@@ -8,9 +8,7 @@
     height: auto;
     border-radius: 20px;
 }
-h2 .detail{
-  height: 10px;
-}
+
 .category_title{
     border: solid 2px #0000FF;
     border-radius: 20px;
@@ -95,36 +93,26 @@ h2 .detail{
   }
 
   /*tablet version iPad OS14.7.1*/
-  @media screen and (min-width: 800px) and (max-width: 1200px){
-    .card-article{
-        border: 2px solid #727272;
-        background-color: #74BED9;
-        margin-left: 100px;
-        margin-right: 20px;
-        color: black;
-        height: auto;
-        border-radius: 20px;
-    }
+  @media screen and (min-width: 800px) and (max-width: 1000px){
+    .detail{
+      border: 2px solid #727272;
+      background-color: #74BED9;
+      margin-left: 100px;
+      color: black;
+      height: auto;
+      border-radius: 20px;
+  }
 
-  .category_title {
-    border: solid 2px #0000FF;
-    border-radius: 20px;
-    width: fit-content;
-    color: black;
-    background-color: white;
-    list-style-type: none;
-    padding: inherit;
-    margin: auto;
-    display: ruby-text;
-}
-  
-  .title {
-        
-    height: auto;
-    width: auto;
-    padding: 1px;
-    color: black;
-    text-shadow: #0000FF 2px 2px 2px;
+  .category_title{
+      border: solid 2px #0000FF;
+      border-radius: 20px;
+      width: fit-content;
+      color: black;
+      background-color: white;
+      list-style-type: none;
+      padding: inherit;
+      margin: auto;
+      display: ruby-text;
   }
 
   .card-text {
@@ -139,6 +127,32 @@ h2 .detail{
     font-size: 20px;
     overflow: hidden;
   }
+  
+  .card-btn{
+      display: inline-flex;
+  }
+  .card-article .btn-modify{
+      height: auto;
+      width: 80px;
+      border: 2px solid #727272;
+      background-color: white;
+      border-radius: 20px;
+      color: black;
+      margin: -20px 5px 5px 20px;
+      display: inline-block;
+      padding: 4px;
+      }
+      
+  .card-article .btn-delete{
+      padding: auto;
+      height: 30px;
+      width: 80px;
+      border: 2px solid #ff0101;
+      background-color:#f80707;
+      border-radius: 20px;
+      color: black;
+      margin: 15px 20px;
+      }
   }
 
   @media screen and (max-width: 500px){

@@ -5,11 +5,10 @@
 {% block body %}
 <h1>Iced Tears</h2>
     <article class="detail">
-        <div class="detail">
+        
      
-            <h1 class="title">{{ article.title }}</h1>
-            
-        </div>
+            <h2 class="title">{{ article.title }}</h2>
+  
         <p class="author">Author: {{ article.user.nickname }}</p>
         <p class="date">Published on: {{ article.createAt|date('j/m/Y') }}</p>
         
