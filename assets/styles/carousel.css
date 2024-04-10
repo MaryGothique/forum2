@@ -1,0 +1,20 @@
+#container {
+    display: flex;
+}
+button{
+    height: 40px;
+    width: auto;
+}
+
+figure {
+    padding:10px;
+}
+
+img{
+    width: 50%;
+   
+}
+
+h2{
+    justify-items: center;
+}

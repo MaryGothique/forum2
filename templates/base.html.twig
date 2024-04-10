@@ -9,6 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Welcome to IcedTears, the ultimate Pop Music forum. Join us you are welcome!">
         <link rel="icon" href="{{ asset('/img/fav.png') }}" type="image/x-icon" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -19,12 +21,15 @@
             {{ encore_entry_script_tags('app') }}
            
         {% endblock %}
+        
     </head>
     <body>
         <div class="container">
             {% include 'components/_navBar.html.twig' %}      
                 <main>
                     {% block body %}
+                       <section id="container">
+
                     {% block content %}
                     {# this is the flash messages, you can see the message on src->controller-> article or category controller #}
                 {% for flash in app.flashes('flash-message-error') %}
