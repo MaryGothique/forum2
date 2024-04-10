@@ -1,5 +1,11 @@
 {% extends 'base.html.twig' %}
 {# this is my home page  #}
+ {% block specificStylesheets %}
+  {{ encore_entry_link_tags('carousel-style') }}
+  {% endblock %}
+   {% block javascripts %}
+  {{ encore_entry_script_tags('carousel') }}
+  {% endblock %}
 {% block body %}
     {% for flashMessage in app.flashes('success') %}
         <div class="flash-message flash-message-success">
@@ -12,10 +18,31 @@
             {{ flashMessage }}
         </div>
     {% endfor %}
-    <div class="home">
-        <h1>IcedTears</h1> 
-
-    </div>
+        <div class="home">
+            <h1>IcedTears</h1>
+                <h2>the latest released albums</h2>
+            <div id="container">
+                
+                <button class="previous">Previous</button>
+                <figure>
+                    <img src="{{ asset('img/30.adele.jpg') }}" alt=""class="adele">
+                    <figcaption>30-Adele</figcaption>
+                </figure>
+                <figure>
+                    <img src="{{ asset('img/donda.kanyewest.png') }}" alt="">
+                    <figcaption>Donda-Kanye West</figcaption>
+                </figure>
+                <figure>
+                    <img src="{{ asset('img/justinbieber.justice.png') }}" alt="">
+                    <figcaption>Justice Justin Bieber</figcaption>
+                </figure>
+                <figure>
+                    <img src="{{ asset('img/lanadelrey.jpg') }}" alt="">
+                    <figcaption>Chemtrails over the country club-Lana del Rey</figcaption>
+                </figure>
+                <button class="next">Next</button>
+            </div>
+        </div>
 {% endblock %}
 
 
