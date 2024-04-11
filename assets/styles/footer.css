@@ -42,16 +42,10 @@ footer{
         padding: 5px;
       }
       li.instagram img {
-        height: 130px;
-        width: 100px;
+        height: 90px;
+        width: 90px;
       }
-      li.tiktok {
-        padding: 5px;
-      }
-      li.tiktok img {
-        height: 140px;
-        width: 110px;
-      }
+
 
       @media screen and (max-width: 500px){
 

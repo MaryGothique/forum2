@@ -24,6 +24,7 @@ Encore
     .addEntry('carousel', "./assets/js/script.js")
     .addStyleEntry('carousel-style','./assets/styles/carousel.css')
     .addStyleEntry('detail', './assets/styles/detail.css')
+    .addStyleEntry('register', './assets/styles/register.css')
    
 
     

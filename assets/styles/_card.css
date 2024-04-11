@@ -58,6 +58,9 @@ a{
 .card-btn{
     display: inline;
 }
+.card-btn:hover{
+    box-shadow: -1px 13px 142px 0px rgba(0,0,255,0.75);
+}
 .card-article .btn-modify{
     height: 30px;
     width: 80px;

@@ -1,20 +1,30 @@
+h2{
+    margin: auto;
+}
+figcaption {
+    color: black;
+    font-size: 15px;
+}
 #container {
     display: flex;
+    border: 2px solid #727272;
+    border-radius: 20px;
+    padding:2px;
+    margin: 20px;
+    -webkit-box-shadow: 0px 5px 50px 25px #74BED9; 
+box-shadow: 0px 5px 50px 25px #74BED9;
 }
-button{
+button {
     height: 40px;
-    width: auto;
+    margin: auto;
 }
-
+button:hover{
+    box-shadow: -1px 13px 142px 0px rgba(0,0,255,0.75);
+}
 figure {
     padding:10px;
+    max-width: 25%;
 }
 
-img{
-    width: 50%;
-   
-}
 
-h2{
-    justify-items: center;
-}
+

@@ -1,21 +1,26 @@
 <footer>
-           
-            <ul class="social">
-                <li class="spotify"><img src="{{ asset('img/spotify.svg') }}" class="spotify"  alt="spotify"><a href="https://open.spotify.com/user/31wvfuofvbw3245pmbmdakt7uo4u"><a/></li>
-                <li class="deezer"><img src="{{ asset('img/deezer.svg') }}"  alt="deezer"><a href="https://www.deezer.com/fr/profile/5915894923"><a/></li>
-                <li class="facebook"><img src="{{ asset('img/Facebook.svg') }}" alt="facebook"><a href="https://www.facebook.com/profile.php?id=61557115244373"><a/></li>
-                <li class="instagram"><img src="{{ asset('img/Instagram.svg') }}" alt="instagram"><a href="https://www.instagram.com/icedtears6/"><a/></li>
-                <li class="tiktok"><img src="{{ asset('img/tiktok.svg') }}" alt="tiktok"><a href=""><a/></li>
-            </ul>
+        <ul class="social">
+            <li class="spotify"><a href="https://open.spotify.com/user/31wvfuofvbw3245pmbmdakt7uo4u" target="_blank"><img src="{{ asset('img/spotify.svg') }}" alt="spotify img"></a></li>
+            <li class="deezer"><a href="https://www.deezer.com/fr/profile/5915894923" target="_blank"><img src="{{ asset('img/deezer.svg') }}" alt="deezer img"></a></li>
+            <li class="facebook"><a href="https://www.facebook.com/profile.php?id=61557115244373" target="_blank"><img src="{{ asset('img/Facebook.svg') }}" alt="facebook img"></a></li>
+            <li class="facebook"><a href="https://www.instagram.com/icedtears6/" target="_blank"><img src="{{ asset('img/instagram.svg') }}" alt="instagram img"></a></li>
+        </ul>
 
-          
+
     <address>
         <p>Maria Paola Mingrino</p>
         <p>Tel: <a href="tel:0752029237">0752029237</a></p>
-        <p>Email: <a href="potofih846@hdrlog.com">potofih846@hdrlog.com</a></p>
+        <p>Email: <a href="mailto:potofih846@hdrlog.com">potofih846@hdrlog.com</a></p>
     </address>
     <p>
+   <!--"noopener noreferrer" is an attribute often added to HTML anchor tags (<a>) used to create hyperlinks.
+    "noopener" is a security measure that prevents the new page from being able to access the window.opener property and ensures that the new page does not have access to the window object of the originating page.
+    This helps to mitigate certain security risks, such as cross-site scripting attacks.
+    "noreferrer" instructs the browser not to send the HTTP referer header if the user navigates to the linked page.
+     This helps to maintain the user's privacy by not disclosing the URL of the originating page to the linked page.
+Together, "noopener noreferrer" is often used when creating links that open in a new tab or window to enhance security and privacy. --> 
         <a href="{{ path('cookies') }}" rel="noopener noreferrer">Cookies Policy</a>
         <a href="{{ path('rgpd') }}" rel="noopener noreferrer">User Condition</a>
     </p>
 </footer>
+
