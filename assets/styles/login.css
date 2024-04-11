@@ -1,6 +1,6 @@
 /*css login form*/
 .form-login{
-  border: 2px solid grey;
+  border: 2px solid #727272;
   width: 300px;
   height: 300px;
   background-color: #74BED9;
@@ -21,7 +21,9 @@ button{
   color: black;
   display: inline-block;
 }
-
+button:hover {
+  box-shadow: -1px 13px 142px 0px rgba(0,0,255,0.75);
+}
 .btn{
   margin: 10px auto;
   padding: 5px;
@@ -33,7 +35,9 @@ button{
   color: black;
   display: inline-block;
 }
-
+.btn:hover{
+  box-shadow: -1px 13px 142px 0px rgba(0,0,255,0.75);
+}
 @media screen and (max-width: 500px){
   .form-login{
     border: 2px solid #727272;
