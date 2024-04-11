@@ -2,7 +2,10 @@
 
 {% block title %}Log in!{% endblock %}
 
-{% block specificStylesheets %}{% endblock %}
+{% block specificStylesheets %}
+    {{ encore_entry_link_tags('login') }}
+
+{% endblock %}
 
 {% block body %}
       {% for flashMessage in app.flashes('success') %}
