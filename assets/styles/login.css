@@ -38,6 +38,12 @@ button:hover {
 .btn:hover{
   box-shadow: -1px 13px 142px 0px rgba(0,0,255,0.75);
 }
+<<<<<<< HEAD
+=======
+  
+
+
+>>>>>>> b91dd52c055b629cea813138ea3de7c96b398675
 @media screen and (max-width: 500px){
   .form-login{
     border: 2px solid #727272;

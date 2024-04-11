@@ -32,6 +32,7 @@ border-radius: 20px;
   text-align: center;
 }
 
+<<<<<<< HEAD
 button #article_validate {
   margin: 10px auto;
   padding: 5px;
@@ -43,6 +44,8 @@ button #article_validate {
   color: black;
   display: inline-block;
 }
+=======
+>>>>>>> b91dd52c055b629cea813138ea3de7c96b398675
 /*
 *Flash messages
 */

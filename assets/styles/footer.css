@@ -29,6 +29,7 @@ footer{
       height: 140px;
       width: 140px;
     }
+<<<<<<< HEAD
     li.facebook {
       padding: 5px;
     }
@@ -44,6 +45,39 @@ footer{
       width: 90px;
     }
     @media screen and (max-width: 500px){
+=======
+    ul.social li{
+        height: 100px;
+        width: 100px;
+        display:inline-block;
+        margin: 5px;
+
+      }
+      li.deezer {
+        padding: 5px;
+      }
+      li.deezer img {
+        height: 140px;
+        width: 140px;
+      }
+      li.facebook {
+        padding: 5px;
+      }
+      li.facebook img {
+        height: 140px;
+        width: 140px;
+      }
+      li.instagram {
+        padding: 5px;
+      }
+      li.instagram img {
+        height: 90px;
+        width: 90px;
+      }
+
+
+      @media screen and (max-width: 500px){
+>>>>>>> b91dd52c055b629cea813138ea3de7c96b398675
 
       ul.social li{
           height: 10px;
