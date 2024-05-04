@@ -5,22 +5,22 @@ class Diaporama {
         this.btnNext = this.container.querySelector(".next");
         this.images = Array.from(this.container.querySelectorAll("figure"));
         this.index = 0;
-        this.affichage();
+        this.show(); 
         this.btnNext.addEventListener("click", () => { this.next() });
         this.btnPrevious.addEventListener("click", () => { this.previous() });
     }
 
     next() {
         this.index = (this.index + 1) % this.images.length;
-        this.affichage();
+        this.show(); 
     }
 
     previous() {
         this.index = (this.index - 1 + this.images.length) % this.images.length;
-        this.affichage();
+        this.show(); 
     }
 
-    affichage() {
+    show() { 
         this.images.forEach(image => image.style.display = 'none');
         this.images[this.index].style.display = 'block';
     }
@@ -28,4 +28,6 @@ class Diaporama {
 
 document.addEventListener("DOMContentLoaded", function() {
     const diaporama = new Diaporama("container");
+  
+
 });

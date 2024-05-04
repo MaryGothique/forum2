@@ -9,31 +9,60 @@ figcaption {
     display: flex;
     border: 2px solid #727272;
     border-radius: 20px;
-    padding:2px;
-    margin: 20px;
-    -webkit-box-shadow: 0px 5px 50px 25px #74BED9; 
-box-shadow: 0px 5px 50px 25px #74BED9;
+    padding: 2px;
+    margin: 50px 150px;
+    -webkit-box-shadow: 0px 5px 50px 25px #74BED9;
+    box-shadow: 0px 5px 50px 25px #74BED9;
 }
 button {
-<<<<<<< HEAD
-    height: auto;
-    width: 100px;
-=======
     height: 40px;
->>>>>>> b91dd52c055b629cea813138ea3de7c96b398675
     margin: auto;
 }
 button:hover{
-    box-shadow: -1px 13px 142px 0px rgba(0,0,255,0.75);
+    box-shadow: -1px 13px 142px 0px #0000FF;
+ 
 }
 figure {
     padding:10px;
     max-width: 25%;
-<<<<<<< HEAD
 }
-=======
+@media screen and (min-width: 800px) and (max-width: 1000px){
+    #container {
+        display: flex;
+        border: 2px solid #727272;
+        border-radius: 20px;
+        padding: 2px;
+        margin: 20px auto;
+        -webkit-box-shadow: 0px 5px 50px 25px #74BED9;
+        box-shadow: 0px 5px 50px 25px #74BED9;
+        width: 500px;
+    }
+    button {
+        height: 40px;
+        width: 100px;
+        margin: auto;
+    }
 }
-
-
-
->>>>>>> b91dd52c055b629cea813138ea3de7c96b398675
+@media screen and (max-width: 500px){
+    figcaption {
+        color: black;
+        font-size: 15px;
+    }
+    #container {
+        display: flex;
+        border: 2px solid #727272;
+        border-radius: 20px;
+        padding: 2px;
+        margin: 20px;
+        box-shadow: 0px 5px 50px 25px #74BED9;
+    }
+    button {
+        height: 40px;
+        width: 80px;
+        margin: auto;
+    }
+    figure {
+        padding:10px;
+        max-width: 30%;
+    }
+}
