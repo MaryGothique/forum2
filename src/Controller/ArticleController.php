@@ -21,8 +21,7 @@ class ArticleController extends AbstractController
         private ArticleRepository $articleRepository,
         private EntityManagerInterface $em
     )
-    {
-        
+    {   
     }
    /**
     * This is the crud: CRUD is for Create, Read, Update and Delete. Here starts the Create
@@ -76,46 +75,30 @@ class ArticleController extends AbstractController
     
     }
     /**
-     * Here we can find the Edit.
+     * Here we can find the Edit.(Update)
      */
     #[Route('/admin/article/edit/{id}', name: 'admin.article.edit', methods: 'GET|POST')]
 
     public function edit(Article $article, Request $request): Response|RedirectResponse
     {
-/*
-        //faire des vardump pour verifier des valeurs des variables sur le navigateur
-            var_dump($article);
-        // trouver l id de l utilisateur 
-        var_dump($this->getUser());
-        var_dump($this->getUser()->getId());
-       
-        //trouve l id de l article sur laquelle l user a cliqué 
-            var_dump($article->getId());
-*/
         //if user are logged, if he's not logged  the message with 'accessDeniedException'
         if (!$this->getUser()) {
             throw new AccessDeniedException('You must be logged in to edit articles.');
         }
-    
         // if the user is not the author, addFlash message
         if ($article->getUser() !== $this->getUser()) {
             $this->addFlash('error', 'You are not allowed to edit this article.');
             return $this->redirectToRoute('admin.article.read');
-
         }
-    
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
     
         if ($form->isSubmitted() && $form->isValid()) {
             $this->em->persist($article);
             $this->em->flush();
-    
-            $this->addFlash('success', 'Article modified with success!');
-            
+            $this->addFlash('success', 'Article modified with success!');     
             return $this->redirectToRoute('admin.article.read');
         }
-    
         return $this->render('Backend/article/edit.html.twig', [
             'form' => $form->createView()
         ]);
@@ -124,20 +107,16 @@ class ArticleController extends AbstractController
      * Here there are the Delete
      */
     #[Route('/admin/article/delete/{id}', name:'admin.article.delete', methods: ['POST', 'DELETE'])]
-   
         public function deleteArticle(?Article $article, Request $request): RedirectResponse
         {
             // Controllo se l'utente è autenticato
             if (!$this->getUser()) {
                 throw new AccessDeniedException('You must be logged in to delete articles.');
             }
-
             if (!$article instanceof Article) {
                 $this->addFlash('error', 'Article not found');
-                
                 return $this->redirectToRoute('admin.article.read');
             }
-
             if ($article->getUser() !== $this->getUser()) {
                 $this->addFlash('error', 'You are not allowed to delete this article.');
                 return $this->redirectToRoute('admin.article.read');

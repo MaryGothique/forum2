@@ -1,10 +1,10 @@
 /*css login form*/
 .form-login{
   border: 2px solid #727272;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   background-color: #74BED9;
-  padding: 50px;
+  padding: 42px;
   color: black;
   margin: auto;
   border-radius: 20px;
@@ -22,7 +22,7 @@ button{
   display: inline-block;
 }
 button:hover {
-  box-shadow: -1px 13px 142px 0px rgba(0,0,255,0.75);
+  box-shadow: -1px 13px 142px 0px #0000FF;
 }
 .btn{
   margin: 10px auto;
@@ -36,10 +36,21 @@ button:hover {
   display: inline-block;
 }
 .btn:hover{
-  box-shadow: -1px 13px 142px 0px rgba(0,0,255,0.75);
+  box-shadow: -1px 13px 142px 0px #0000FF;
 }
-  
-
+@media screen and (min-width: 800px) and (max-width: 1000px){
+  .btn{
+    margin: 10px auto;
+    padding: 5px;
+    height: auto;
+    width: 150px;
+    border: 2px solid #727272;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    display: inline-block;
+  }
+}
 
 @media screen and (max-width: 500px){
   .form-login{

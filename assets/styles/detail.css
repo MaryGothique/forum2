@@ -7,6 +7,7 @@
     color: black;
     height: auto;
     border-radius: 20px;
+    box-shadow: 0px 5px 50px 25px #74BED9;
 }
 
 .category_title{
@@ -43,29 +44,44 @@
 
 .card-btn{
     display: inline-flex;
-}
-.card-article .btn-modify{
-    height: auto;
-    width: 80px;
-    border: 2px solid #727272;
-    background-color: white;
-    border-radius: 20px;
-    color: black;
-    margin: -20px 5px 5px 20px;
-    display: inline-block;
-    padding: 4px;
-    }
     
-.card-article .btn-delete{
-    padding: auto;
-    height: 30px;
-    width: 80px;
-    border: 2px solid #ff0101;
-    background-color:#f80707;
-    border-radius: 20px;
-    color: black;
-    margin: 15px 20px;
-    }
+}
+.card-buttons {
+  display: flex;
+  justify-content: space-between; 
+  margin-top: 10px; 
+}
+div .btn-modify{
+  height: 30px;
+  width: 80px;
+  border: 2px solid #727272;
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  margin: 1px auto 20px 350px;
+  display: inline-block;
+  padding: 4px;
+ 
+}
+div .btn-modify:hover{
+  box-shadow: -1px 13px 142px 0px #0000FF;
+}
+
+
+.btn-delete{
+  height: auto;
+  width: 80px;
+  border: 2px solid #6a0303;
+  background-color: #f80707;
+  border-radius: 20px;
+  color: black;
+  margin: auto 30px 20px -800px;
+
+}
+
+.btn-delete:hover{
+  box-shadow: -1px 13px 142px 0px #0000FF;
+}
     /*flash messages*/ 
 .flash-message{
     margin-bottom: 10px;
@@ -127,32 +143,33 @@
     font-size: 20px;
     overflow: hidden;
   }
-  
-  .card-btn{
-      display: inline-flex;
+  .card-buttons {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 10px; 
   }
-  .card-article .btn-modify{
-      height: auto;
-      width: 80px;
-      border: 2px solid #727272;
-      background-color: white;
-      border-radius: 20px;
-      color: black;
-      margin: -20px 5px 5px 20px;
-      display: inline-block;
-      padding: 4px;
-      }
-      
-  .card-article .btn-delete{
-      padding: auto;
-      height: 30px;
-      width: 80px;
-      border: 2px solid #ff0101;
-      background-color:#f80707;
-      border-radius: 20px;
-      color: black;
-      margin: 15px 20px;
-      }
+  div .btn-modify{
+    height: 30px;
+    width: 80px;
+    border: 2px solid #727272;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    margin: auto 35px;
+    display: inline-block;
+    padding: 4px;
+   
+  }
+  .btn-delete{
+    height: auto;
+    width: 80px;
+    border: 2px solid #6a0303;
+    background-color: #f80707;
+    border-radius: 20px;
+    color: black;
+    margin: auto 35px;
+  
+  }
   }
 
   @media screen and (max-width: 500px){
@@ -178,12 +195,8 @@
   display: ruby-text;
 }
 .title {
-  
-  width: 50px;
-  padding-left: 45px;
   color: black;
   text-shadow: #0000FF 2px 2px 2px;
-  margin-left: 80px;
 }
 .card-text {
 border-radius: 20px;
@@ -192,37 +205,22 @@ text-align: center;
 background: white;
 height: auto;
 border: 2px solid #727272;
-margin: -15px 20px 20px 20px;
+margin:30px;
 padding: 10px;
 font-size: 20px;
 overflow: clip;
 }
-
-.card-btn{
-  display: inline-flex;
+.card-buttons {
+  display: flex;
+  justify-content: space-between; 
+  margin-top: 10px; 
 }
-.card-article .btn-modify{
-  height: auto;
-  width: 80px;
-  border: 2px solid #727272;
-  background-color: white;
-  border-radius: 20px;
-  color: black;
-  margin: -20px 5px 5px 20px;
-  display: inline-block;
-  padding: 4px;
-  }
-  
-.card-article .btn-delete{
-  padding: auto;
-  height: 30px;
-  width: 80px;
-  border: 2px solid #ff0101;
-  background-color:#f80707;
-  border-radius: 20px;
-  color: black;
-  margin: 15px 20px;
-  }
+div .btn-modify{
+margin: auto 25px;
+}
+.btn-delete{
+  margin: auto 30px;
+}
   /*flash messages*/ 
 .flash-message{
   margin-bottom: 10px;

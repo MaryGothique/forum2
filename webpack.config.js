@@ -25,6 +25,8 @@ Encore
     .addStyleEntry('carousel-style','./assets/styles/carousel.css')
     .addStyleEntry('detail', './assets/styles/detail.css')
     .addStyleEntry('register', './assets/styles/register.css')
+    .addStyleEntry('login', './assets/styles/login.css')
+    .addStyleEntry('rgpd','./assets/styles/rgpd.css')
    
 
     

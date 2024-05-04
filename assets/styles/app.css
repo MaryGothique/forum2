@@ -1,7 +1,6 @@
 * {
     margin: 0px;
     box-sizing: border-box;
-    
     }
 p {
   color: rgb(0, 0, 0);
@@ -15,7 +14,6 @@ body {
 .container{
    text-align: center;
 }
-
 main{
     min-height: 600px;
     grid-column: 2;
@@ -27,15 +25,14 @@ main{
     grid-template-columns: 10% 90%;
     grid-template-rows: 90% 10%;
     color:#74BED9;
-    
 }
+
 h1{
     text-align: center;
     text-shadow: -1px 0 #0000FF, 0 1px #0000FF, 1px 0 #0000FF, 0 -1px #0000FF;
     color: #74BED9;
     margin: 22px;
     padding: 20px;
-   
   }
   h2{
     background-color: #74BED9;
@@ -53,19 +50,16 @@ h1{
     border: 1px solid #ccc;
     border-radius: 5px;
   }
-  
   .flash-message-success{
     background-color: #dff0d8;
     border-color: #d6e9c6;
     color: #3c763d;
   }
-  
   .flash-message-error{
     background-color: #f2dede;
     border-color: #ebccd1;
     color: #a94442;
   }
-  
   .flash-message-warning{
     background-color: #fcf8e3;
     border-color: #faebcc;
@@ -73,7 +67,7 @@ h1{
   }
   /* end flash messages*/
 
-/*Css mediaquery bouttons*/
+/*Css mediaquery*/
 @media screen and (max-width: 500px){
 
     .container{
@@ -94,7 +88,6 @@ h1{
     main{
         height: 100%;
         width: 100%;
-        justify-content: center;
     }
 
 }

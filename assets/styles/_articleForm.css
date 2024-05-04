@@ -1,94 +1,107 @@
 /*CSS article form*/
 .form-article{
-    color: #000000;
-  border: 2px solid #727272;
-  height: 500px;
-  width: 500px;
-  display: flex;
-  margin: auto;
-  padding: 20px;
-  background-color: #74BED9;
-  border-radius: 20px;
+  color: #000000;
+border: 2px solid #727272;
+height: 500px;
+width: 500px;
+display: flex;
+margin: auto;
+background-color: #74BED9;
+border-radius: 20px;
+box-shadow: 0px 5px 50px 25px #74BED9;
+
 }
 #article_title{
-    width: 450px;
-    height: 50px;
-    margin: 5px;
-    padding: 5px;
-    border-radius: 20px;
+  width: 450px;
+  height: 50px;
+  margin: 25px;
+  padding: 5px;
+  border-radius: 20px;
 }
 #article_content{
-    margin: 5px;
-    border-radius: 20px;
-    height: 200px;
-    width: 450px;
-    padding: 5px;
+  margin: 5px;
+  border-radius: 20px;
+  height: 200px;
+  width: 450px;
+  padding: 25px;
 }
 .required{
-    width: 1300px;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    text-align: center;
+ 
+  margin: 10px;
+  display: block;
+  border-radius: 20px;
+  text-align: center;
+}
+
+button #article_validate {
+  margin: 10px auto;
+  padding: 5px;
+  height: auto;
+  width: 20vh;
+  border: 2px solid #727272;
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  display: inline-block;
+  box-shadow: -1px 13px 142px 0px #0000FF;
 }
 
 /*
 *Flash messages
 */
 .flash-message{
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  /*success message flash*/
-  .flash-message-success{
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #3c763d;
-  }
-  /*error message flash*/
-  .flash-message-error{
-    background-color: #f2dede;
-    border-color: #ebccd1;
-    color: #a94442;
-  }
-  /*warning message flash*/
-  .flash-message-warning{
-    background-color: #fcf8e3;
-    border-color: #faebcc;
-    color: #8a6d3b;
-  }
-  /* end flash messages*/
-  /*
-  *This is version mobile :
-  version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
-  in this case for a creen max of the 500px
-  */
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/*success message flash*/
+.flash-message-success{
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+/*error message flash*/
+.flash-message-error{
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+/*warning message flash*/
+.flash-message-warning{
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
+/* end flash messages*/
+
+/*This is version mobile :
+version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
+in this case for a creen max of the 500px
+*/
 @media screen and (max-width: 500px){
-    .form-article{
-        color: black;
-        border: 2px solid #727272;
-        height: 525px;
-        width: 300px;
-        display: flex;
-       
-        background-color: #74BED9;
-        margin: -20px auto auto 38px;
-    }
-    #article_title{
-        width: 200px;
-        height: 50px;
-        margin: 5px;
-        padding: 5px;
-        border-radius: 20px;
-        
-    }
-    #article_content{
-        margin: 5px;
-        border-radius: 20px;
-        height: 200px;
-        width: 200px;
-        padding: 5px;
-    }
+  .form-article{
+      color: black;
+      border: 2px solid #727272;
+      height: 525px;
+      width: 300px;
+      display: flex;
+     
+      background-color: #74BED9;
+      
+  }
+  #article_title{
+    width: 200px;
+    height: 50px;
+    margin: auto 47px;
+    padding: 5px;
+    border-radius: 20px;    
+  }
+  #article_content{
+      margin: 5px;
+      border-radius: 20px;
+      height: 300px;
+      width: 200px;
+      padding: 15px;
+  }
 }

@@ -7,6 +7,7 @@
         <div class="card-container">
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
             {# if the user or admin is connected #}
+            <div class="card-buttons">
            <a href="{{ path('admin.category.edit', {id: category.id}) }}" class="btn-modify">Edit</a>
                 
                 {# if the author that has created the category is the same of the user, twig shows me the buttons #}
@@ -17,7 +18,7 @@
                         
                         <button class="btn-delete">Delete</button>
                     </form>
-                   
+            </div>   
 
             {% endif %}
         </div>

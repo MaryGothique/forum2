@@ -10,12 +10,13 @@
   margin: auto;
   padding: 10px;
   color: #000000;
+  box-shadow: 0px 5px 50px 25px #74BED9;
 }
 .btn-category{
   margin: 20px auto;
   padding: 5px;
   height: auto;
-  width: 10vh;
+  width: auto;
   border: 2px solid #727272;
   background-color: white;
   border-radius: 20px;

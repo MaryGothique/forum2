@@ -6,6 +6,7 @@ nav{
   grid-column:1;
   grid-row-start: 1;
   grid-row-end: 3;
+  box-shadow: -1px 13px 142px 0px #0000FF;
 
 }
 a.btn{
@@ -206,9 +207,8 @@ transform: rotate(-45deg) translate(0, -1px);
 */
 #menu
 {
-margin-left: -115px;
-margin-top: 20px;
-margin-bottom: 20px;
+margin: 10px -115px 20px;
+
 background-color: #74BED9;
 border: 2px solid #727272;
 display: block;
@@ -218,7 +218,7 @@ transform-origin: 0% 0%;
 transform: translate(-100%, 0);
 transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 width: 265px;
-height: 600px;
+height: 700px;
 position: absolute;
 /* to stop flickering of text in safari */
 
@@ -227,11 +227,13 @@ transform: translate(-100%, 0);
 
 transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
-
+li{
+  margin-bottom: -50px;
+}
 .btn li
 {
 display: grid;
-margin: 50px;
+margin: 10px;
 }
 a.btn{
   margin-left: -35px;

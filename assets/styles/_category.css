@@ -9,7 +9,15 @@
     padding: 15px;
     height: 180px;
     width: fit-content;
+    box-shadow: 0px 5px 50px 25px #74BED9;
   }
+  .card-buttons {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 10px; 
+}
+
+
 div .btn-modify{
   height: auto;
   width: 80px;
@@ -17,9 +25,13 @@ div .btn-modify{
   background-color: white;
   border-radius: 20px;
   color: black;
-  margin: -100px;
+  margin: auto 20px;
   display: inline-block;
   padding: 4px;
+ 
+}
+div .btn-modify :hover{
+  box-shadow: -1px 13px 142px 0px #0000FF;
 }
 
 .btn-delete{
@@ -29,7 +41,12 @@ div .btn-modify{
     background-color: #f80707;
     border-radius: 20px;
     color: black;
-    margin: 20px;
+    margin: auto 15px;
+
+}
+.btn-delete :hover{
+
+  box-shadow: -1px 13px 142px 0px #0000FF;
 }
 @media screen and (min-width: 412px) and (max-width: 500px){
 
