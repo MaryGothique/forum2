@@ -14,6 +14,7 @@
 
          <ul id="menu">
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li><a href="{{ path('user') }}" class="btn">Profile</a></li>
                 <li><a href="{{ path('app_logout') }}" class="btn">Logout</a></li>
                 <li><a href="{{ path('admin.article.create') }}" class="btn">Create Article</a></li>
                 <li><a href="{{ path('admin.category.create') }}" class="btn">Create Category</a></li>
