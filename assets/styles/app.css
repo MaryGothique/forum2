@@ -25,6 +25,7 @@ main{
     grid-template-columns: 10% 90%;
     grid-template-rows: 90% 10%;
     color:#74BED9;
+    margin-bottom: -50px;
 }
 
 h1{
@@ -38,7 +39,6 @@ h1{
     background-color: #74BED9;
     border: 2px solid #727272;
     color: black;
-    text-shadow: -1px 0 #0000FF, 0 1px #0000FF, 1px 0 #0000FF, 0 -1px #0000FF;
     margin: 20px 10px 30px 20px;
     border-radius: 20px;
     width: 200px;

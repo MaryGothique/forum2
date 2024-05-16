@@ -24,22 +24,94 @@ ul.social li {
 }
 
 ul.social li img {
-  height: 140px;
-  width: 140px;
+  height: 100px; /* Altezza fissa per tutte le immagini */
+  width: 100px; /* Larghezza fissa per tutte le immagini */
   padding: 5px;
 }
-
+ul.social li.facebook img {
+  height: 120px;
+  width: 120px;
+  
+}
+ul.social li.instagram img {
+  height: 100px;
+  width: 100px;
+  padding: 5px;
+  display: block;
+}
+@media screen and (min-width: 800px) and (max-width: 1000px){
+  footer {
+    color: #000000;
+    text-align: center;
+    width: 100%;
+    grid-column: 2;
+    grid-row: 2;
+  }
+  
+  footer a {
+    text-decoration: underline;
+    color: #000000;
+    background-color: white;
+  }
+  #container {
+    display: flex;
+    border: 2px solid #727272;
+    border-radius: 20px;
+    padding: 2px;
+    margin: 20px auto;
+    -webkit-box-shadow: 0px 5px 50px 25px #74BED9;
+    box-shadow: 0px 5px 50px 25px #74BED9;
+    width: 500px;
+  }
+  footer a:hover,
+  footer a:active {
+    text-decoration: underline overline; 
+    color: #0000FF;
+  }
+  
+  ul.social li {
+    display: inline-block;
+    margin: 5px;
+  }
+  
+  ul.social li img {
+    height: 100px; /* Altezza fissa per tutte le immagini */
+    width: 100px; /* Larghezza fissa per tutte le immagini */
+    padding: 5px;
+  }
+  ul.social li.facebook img {
+    height: 120px;
+    width: 120px;
+  }
+  ul.social li.instagram img {
+    height: 100px;
+    width: 100px;
+    margin-top: -10px;
+    padding: 5px;
+  }
+}
 @media screen and (max-width: 500px) {
+  .social{
+    margin-left: -35px;
+    margin-top: 60px;
+  
+  }
   ul.social li {
     height: 100px;
     width: 100px;
     margin: 10px;
+    display: inline-grid;
   }
 
-  ul.social li img {
-    height: auto;
-    width: auto; 
-    max-height: 100%;
-    max-width: 100%;
+  ul.social li.facebook img {
+    height: 110px;
+    width: 110px;
+    display: ruby-text-container;
+  }
+  ul.social li.instagram img {
+    height: 90px;
+    width: 90px;
+    padding: 5px;
+    display: flex;
   }
 }
