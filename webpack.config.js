@@ -27,6 +27,7 @@ Encore
     .addStyleEntry('register', './assets/styles/register.css')
     .addStyleEntry('login', './assets/styles/login.css')
     .addStyleEntry('rgpd','./assets/styles/rgpd.css')
+    .addStyleEntry('concerts', './assets/styles/concerts.css')
    
 
     

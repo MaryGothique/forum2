@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Concerts{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('concerts') }}
+{% endblock %}
+
+{% block body %}
+  
+        <h1>{{ concerts }}</h1>
+
+     
+    <div class="card-article">
+        <h2>Concerts of this month</h2>
+        <h3>Maneskin</h3>
+            <p class="card-text">
+            22 August 2024 Paris
+           
+            </p>
+        <h3>White Stripes</h3>
+            <p class="card-text">
+            30 August 2024 Paris
+           
+            </p>
+    </div>
+{% endblock %}

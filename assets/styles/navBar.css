@@ -1,3 +1,9 @@
+.logo{
+  width: 80%;
+  display: block;
+  margin: 20px;
+
+}
 nav{
   border: 2px solid #727272;
   position: relative;
@@ -17,11 +23,6 @@ a.btn{
   background-color: white;
   border-radius: 20px;
   color: black;
-}
-img{
- width:100%;
-
-padding: 10px;
 }
 
 #menu ul{
@@ -72,6 +73,7 @@ padding: 10px;
 }
 /*CSS pour écran >= 500px*/
 @media screen and ( max-width: 500px){
+
 .checkbox{
     visibility: visible;
   }
@@ -83,13 +85,15 @@ position: relative;
 background-color: #74bed900;
 height: 50px;
 width: 50px;
-
+margin-left: -50px;
   
 }
 
 .logo{
-  width: 1000%;
-padding: 10px;
+  width: 100px;
+  display: block;
+  margin: 15px auto -100px 60px;
+
 }
 
 .home .btn{
@@ -101,13 +105,13 @@ margin-left: 150px;
 /*I added a css burger menu for the mobile version*/
 #menuToggle
 {
-display: block;
-position: relative;
-top: 100px;
-z-index: 1;
-
--webkit-user-select: none;
-user-select: none;
+  display: block;
+  position: relative;
+  top: 100px;
+  z-index: 1;
+  margin-left: -70px; /* Aggiungi un margine sinistro al menu burger */
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 #menuToggle a
@@ -218,7 +222,7 @@ transform-origin: 0% 0%;
 transform: translate(-100%, 0);
 transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 width: 265px;
-height: 700px;
+height: 400px;
 position: absolute;
 /* to stop flickering of text in safari */
 

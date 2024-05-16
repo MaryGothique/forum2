@@ -9,22 +9,29 @@ figcaption {
     display: flex;
     border: 2px solid #727272;
     border-radius: 20px;
-    padding: 2px;
-    margin: 50px 150px;
+    padding: 10px; 
+    margin: 50px 150px -300px 150px;
     -webkit-box-shadow: 0px 5px 50px 25px #74BED9;
     box-shadow: 0px 5px 50px 25px #74BED9;
+    justify-content: space-between; 
+    align-items: center; 
 }
-button {
-    height: 40px;
-    margin: auto;
+figure img{
+    width: 30%;
+    padding: 10px;
 }
-button:hover{
-    box-shadow: -1px 13px 142px 0px #0000FF;
- 
+.arrow {
+    width: 50px; /* Imposta la larghezza desiderata per le frecce */
+    height: 50px; /* Imposta l'altezza desiderata per le frecce */
+    cursor: pointer;
 }
-figure {
-    padding:10px;
-    max-width: 25%;
+
+.previous {
+    left: 0;
+}
+
+.next {
+    right: 0;
 }
 @media screen and (min-width: 800px) and (max-width: 1000px){
     #container {
@@ -37,16 +44,29 @@ figure {
         box-shadow: 0px 5px 50px 25px #74BED9;
         width: 500px;
     }
-    button {
-        height: 40px;
-        width: 100px;
-        margin: auto;
+    .arrow {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        display: ruby;
+    }
+    
+    .previous {
+        left: 0;
+    }
+    
+    .next {
+        right: 0;
     }
 }
 @media screen and (max-width: 500px){
     figcaption {
         color: black;
         font-size: 15px;
+    }
+    figure img{
+        width: 50%;
+        padding: 10px;
     }
     #container {
         display: flex;
@@ -56,13 +76,20 @@ figure {
         margin: 20px;
         box-shadow: 0px 5px 50px 25px #74BED9;
     }
-    button {
-        height: 40px;
-        width: 80px;
-        margin: auto;
+
+    .arrow {
+        position: absolute;
+        width: 50px; /* Imposta la larghezza desiderata per le frecce */
+        height: 50px; /* Imposta l'altezza desiderata per le frecce */
+        cursor: pointer;
+        margin: inherit;
     }
-    figure {
-        padding:10px;
-        max-width: 30%;
+    
+    .previous {
+        margin: 20px;
+    }
+    
+    .next {
+        margin: 20px;
     }
 }

@@ -22,9 +22,9 @@
             <h1>IcedTears</h1>
                 <h2>the latest released albums</h2>
             <div id="container">
-                
-                <button class="previous">Previous</button>
-                
+                <div class="arrow previous">
+                    <img src="{{ asset('img/back.svg') }}"  alt="return back!">
+                </div>
                 <figure>
                     <img src="{{ asset('img/30.adele.jpg') }}" alt="adele_album"class="adele">
                     <figcaption>30-Adele</figcaption>
@@ -41,7 +41,10 @@
                     <img src="{{ asset('img/lanadelrey.jpg') }}" alt="lana_album" class="lana">
                     <figcaption>Chemtrails over the country club-Lana del Rey</figcaption>
                 </figure>
-                <button class="next">Next</button>
+                <div class="arrow next">
+                    <img src="{{ asset('img/foreward.svg') }}"  alt="next!">
+                </div>
+            </div>
             </div>
         </div>
 {% endblock %}

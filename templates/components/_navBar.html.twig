@@ -1,7 +1,10 @@
 <nav role="navigation">
-    <a href="{{ path('home') }}">
-        <img class="logo" src="{{ asset('img/LOGO.svg') }}"  alt="It's an image!">
-    </a>
+    <div >
+        <a href="{{ path('home') }}">
+            <img class="logo" src="{{ asset('img/LOGO.svg') }}"  alt="It's an image!">
+        </a>
+    </div>
+
 
     <div id="menuToggle">
         <input type="checkbox" class="checkbox" />
@@ -22,6 +25,7 @@
             {% endif %}
                 <li><a href="{{ path('admin.article.read') }}" class="btn"> All articles</a></li>
                 <li><a href="{{ path('admin.category.read') }}" class="btn"> All categories</a></li>
+                <li><a href="{{ path('concerts') }}" class="btn"> Concerts</a></li>
         </ul>
     </div>
 </nav>
