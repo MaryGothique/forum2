@@ -1,10 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-	Article list|
-	{{ parent() }}
+    Article list |
+    {{ parent() }}
+{% endblock %}
 
-<h1>Your articles! </h1>
-<!-- Here there are all articles -->
-{% include 'components/_card.html.twig' with { form } only %}
-
+{% block body %}
+    <h1>Your articles!</h1>
+    <!-- Here there are all articles -->
+    {% include 'components/_card.html.twig' with { form } only %}
 {% endblock %}

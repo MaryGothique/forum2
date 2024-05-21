@@ -1,48 +1,57 @@
 {% extends 'base.html.twig' %}
+{# Extends the base.html.twig template, which provides the basic structure of the page #}
 
 {% block title %}Cookies{% endblock %}
+{# Sets the title of the page to "Cookies" #}
 
 
 {% block body %}
-<h1>Cookies policy</h1>
-    <p>
-        To make the websites of the Publications Office of the European Union work properly, we sometimes place small data files called ‘cookies’ on your device.
-What are cookies?
+{# Begins the body block where the main content of the page is defined #}
 
-A cookie is a small text file that a website stores on your computer or mobile device when you visit the site. It enables the website to remember your actions and preferences (such as login, language, font size and other display preferences) over a period of time, so you don’t have to keep re-entering them whenever you come back to the site or browse from one page to another.
+<h1>Cookies policy</h1>
+{# Displays the heading indicating the topic of the page #}
+
+<p>
+    To make the websites of the Publications Office of the European Union work properly, we sometimes place small data files called ‘cookies’ on your device.
+    {# Provides an introductory paragraph explaining the purpose of cookies on the website #}
+
+    What are cookies?
+
+    A cookie is a small text file that a website stores on your computer or mobile device when you visit the site. It enables the website to remember your actions and preferences (such as login, language, font size and other display preferences) over a period of time, so you don’t have to keep re-entering them whenever you come back to the site or browse from one page to another.
+    {# Describes what cookies are and how they work #}
 
     First-party cookies are cookies set by the website you’re visiting. Only that website can read them. In addition, a website might potentially use external services, which also set their own cookies, known as third-party cookies.
     Persistent cookies are cookies that are saved on your computer and are not deleted automatically when you quit your browser, unlike a session cookie, which is deleted when you quit your browser.
+    {# Explains the difference between first-party and third-party cookies, as well as persistent and session cookies #}
 
-Every time you visit the Publications Office’s websites, you will be prompted to accept or refuse cookies.
+    Every time you visit the Publications Office’s websites, you will be prompted to accept or refuse cookies.
+    {# Informs the user that they will be prompted to accept or refuse cookies when visiting the website #}
 
-Cookies can also be used to establish anonymised statistics about the browsing experience on our sites.
-How do we use cookies?
+    Cookies can also be used to establish anonymised statistics about the browsing experience on our sites.
+    {# Mentions that cookies can be used to gather anonymized statistics about browsing experience #}
 
-The Publications Office websites mostly use ‘first-party cookies’. These are cookies set and controlled by the Publications Office, not by any external organisations.
+    How do we use cookies?
 
-However, to view some of our pages, you will have to accept cookies from external organisations.
+    The Publications Office websites mostly use ‘first-party cookies’. These are cookies set and controlled by the Publications Office, not by any external organisations.
 
-You can delete or block these cookies, but if you do that, some features of this site may not work as intended. These cookies are used to remember:
+    However, to view some of our pages, you will have to accept cookies from external organisations.
 
-    your display preferences, such as browsing language, contrast colour, font size, device used, search results preferences and notification preferences;
-    your latest visit to the website (for statistical purposes) and the three most recent pages visited (to help our helpdesk if you send a request);
-    if you have agreed (or not) to our use of cookies on this site.
+    You can delete or block these cookies, but if you do that, some features of this site may not work as intended. These cookies are used to remember:
+    {# Describes how cookies are used on the website and mentions the implications of blocking or deleting cookies #}
 
-Visitor preferences
+    - your display preferences, such as browsing language, contrast colour, font size, device used, search results preferences and notification preferences;
+    - your latest visit to the website (for statistical purposes) and the three most recent pages visited (to help our helpdesk if you send a request);
+    - if you have agreed (or not) to our use of cookies on this site.
+    {# Lists the types of information that cookies remember #}
 
-These are set by us and only we can read them. They remember if you have agreed to (or refused) this site’s cookie policy.
-Name 	Service 	Purpose 	Cookie type and duration 	EUR-Lex 	CheckLex
-cck1 	Cookie consent kit 	Stores your cookie preferences (so you won’t be asked again) 	First-party persistent cookie, 6 months 	✔ 	✔
-Operational cookies
+    Visitor preferences
 
-There are some cookies that we have to include in order for certain web pages to function. For this reason, they do not require your consent. In particular:
+    These are set by us and only we can read them. They remember if you have agreed to (or refused) this site’s cookie policy.
+    Name 	Service 	Purpose 	Cookie type and duration 	EUR-Lex 	CheckLex
+    cck1 	Cookie consent kit 	Stores your cookie preferences (so you won’t be asked again) 	First-party persistent cookie, 6 months 	✔ 	✔
+    {# Provides information about specific cookies used on the website #}
 
-    authentication cookies;
-    technical cookies required by certain IT systems.
+    Operational cookies
 
-Authentication cookies
+    There are some cookies that we have to include in order for certain web pages to function. For
 
-These are stored when you log in to the Publications Office sites, using our authentication service (EU Login). When you do this, you accept the associated privacy policy​​ .
-    </p>
-{% endblock %}

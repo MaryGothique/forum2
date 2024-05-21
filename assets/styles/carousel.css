@@ -1,3 +1,5 @@
+/* carousel css */
+/* desktop version*/
 h2{
     margin: auto;
 }
@@ -15,14 +17,15 @@ figcaption {
     box-shadow: 0px 5px 50px 25px #74BED9;
     justify-content: space-between; 
     align-items: center; 
+    overflow: hidden;
 }
 figure img{
     width: 30%;
     padding: 10px;
 }
 .arrow {
-    width: 50px; /* Imposta la larghezza desiderata per le frecce */
-    height: 50px; /* Imposta l'altezza desiderata per le frecce */
+    width: 50px; 
+    height: 50px; 
     cursor: pointer;
 }
 
@@ -33,6 +36,8 @@ figure img{
 .next {
     right: 0;
 }
+/*tablet version */
+/* This media query applies styles to screens with a width between 810px and 1080px */
 @media screen and (min-width: 800px) and (max-width: 1000px){
     #container {
         display: flex;
@@ -59,6 +64,11 @@ figure img{
         right: 0;
     }
 }
+/* mobile version */
+/*This is version mobile :
+version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
+in this case for a creen max of the 500px
+*/
 @media screen and (max-width: 500px){
     figcaption {
         color: black;
@@ -79,8 +89,8 @@ figure img{
 
     .arrow {
         position: absolute;
-        width: 50px; /* Imposta la larghezza desiderata per le frecce */
-        height: 50px; /* Imposta l'altezza desiderata per le frecce */
+        width: 50px; 
+        height: 50px; 
         cursor: pointer;
         margin: inherit;
     }

@@ -11,50 +11,37 @@
         <link rel="icon" href="{{ asset('/img/fav.png') }}" type="image/x-icon" />
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
+        {# Include parent stylesheets and add additional stylesheets specific to the page #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
-                {% block specificStylesheets %}{% endblock %}
+            {% block specificStylesheets %}{% endblock %}
         {% endblock %}
 
+        {# Include parent JavaScript files and add additional JavaScript files specific to the page #}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
-           
         {% endblock %}
         
     </head>
     <body>
         <div class="container">
+            {# Include the navigation bar component #}
             {% include 'components/_navBar.html.twig' %}      
                 <main>
+                    {# Start of the body block #}
                     {% block body %}
                        <section id="container">
-
+                    
+                    {# Start of the content block #}
                     {% block content %}
-                    {# this is the flash messages, you can see the message on src->controller-> article or category controller #}
-                {% for flash in app.flashes('flash-message-error') %}
-                    <div class="flash-message flash-message-error" role="alert">
-                        {{ flash }}
-                    </div>
-                {% endfor %}
-                {% for flash in app.flashes('flash-message-success') %}
-                    <div class="flash-message flash-message-success" role="alert">
-                        {{ flash }}
-                    </div>
-                {% endfor %}
-                {% for flash in app.flashes('flash-message') %}
-                    <div class="flash-message" role="alert">
-                        {{ flash }}
-                    </div>
-                {% endfor %}
-                {% for flash in app.flashes('flash-message-warning') %}
-                    <div class="flash-message flash-message-warning" role="alert">
-                        {{ flash }}
-                    </div>
-                {% endfor %}
+
+                    {# End of the content block #}
                     {% endblock %}
+                    
+                    {# End of the body block #}
                      {% endblock %}
                 </main>
+            {# Include the footer component #}
             {% include 'components/_footer.html.twig' %} 
         </div>
     </body>

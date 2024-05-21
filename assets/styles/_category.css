@@ -1,5 +1,5 @@
 /*CSS all the categories*/
-
+/* desktop version*/
 .card-category{
     display: grid;
     width: 25px;
@@ -11,6 +11,7 @@
     width: fit-content;
     box-shadow: 0px 5px 50px 25px #74BED9;
   }
+  /*all buttons */ 
   .card-buttons {
     display: flex;
     justify-content: space-between; 
@@ -22,7 +23,7 @@ div .btn-modify{
   height: auto;
   width: 80px;
   border: 2px solid #727272;
-  background-color: white;
+  background-color: rgb(0, 255, 140);
   border-radius: 20px;
   color: black;
   margin: auto 20px;
@@ -48,6 +49,11 @@ div .btn-modify :hover{
 
   box-shadow: -1px 13px 142px 0px #0000FF;
 }
+/* mobile version */
+/*This is version mobile :
+version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
+in this case for a creen max of the 500px
+*/
 @media screen and (min-width: 412px) and (max-width: 500px){
 
     .card-category{

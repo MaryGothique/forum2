@@ -11,16 +11,18 @@ class LoginType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        // Build the form fields for login
         $builder
-            ->add('nickname')
-            ->add('password');
+            ->add('nickname') // Field for username/nickname
+            ->add('password'); // Field for password
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
+        // Configure the form options
         $resolver->setDefaults([
-            'data_class' => User::class,
+            'data_class' => User::class, // The data class for the form
         ]);
     }
-    
 }
+

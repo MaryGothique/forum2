@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 {# this is my home page  #}
- {% block specificStylesheets %}
-  {{ encore_entry_link_tags('carousel-style') }}
-  {% endblock %}
-   {% block javascripts %}
-  {{ encore_entry_script_tags('carousel') }}
-  {% endblock %}
-{% block body %}
-    {% for flashMessage in app.flashes('success') %}
-        <div class="flash-message flash-message-success">
-            {{ flashMessage }}
-        </div>
-    {% endfor %}
+    {% block specificStylesheets %}
+        {{ encore_entry_link_tags('carousel-style') }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('carousel') }}
+    {% endblock %}
+    {% block body %}
+        {% for flashMessage in app.flashes('success') %}
+            <div class="flash-message flash-message-success">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
 
     {% for flashMessage in app.flashes('error') %}
         <div class="flash-message flash-message-error">

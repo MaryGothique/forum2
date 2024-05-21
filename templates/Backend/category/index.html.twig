@@ -1,13 +1,16 @@
 {% extends 'base.html.twig' %}
+{# Extends the base.html.twig template which provides the basic structure of the page #}
 
 {% block title %}
-    Tous les categories
+    All Categories
     {{ parent() }}
+    {# Sets the page title as "All Categories". parent() calls the title block of the parent template for any additions or customizations. #}
 {% endblock %}
 
 {% block body %}
+    {# Begins the main body block of the page #}
 
-{% for flashMessage in app.flashes('success') %}
+    {% for flashMessage in app.flashes('success') %}
         <div class="flash-message flash-message-success">
             {{ flashMessage }}
         </div>
@@ -18,13 +21,21 @@
             {{ flashMessage }}
         </div>
     {% endfor %}
+    {# Loops through flash messages of success and error types and displays them if present #}
+
     <h1>All the categories!</h1>
+    {# Heading indicating the purpose of the page, which is to display all categories #}
 
     {% block content %}
         <div>
             {% for category in categories %}
                 {% include 'components/_cardCategory.html.twig' %}
             {% endfor %}
+            {# Includes the _cardCategory.html.twig template for each category to display them in a card format #}
         </div>
     {% endblock %}
+    {# Ends the content block #}
+
 {% endblock %}
+{# Ends the main body block of the page #}
+

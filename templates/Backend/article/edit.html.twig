@@ -1,39 +1,51 @@
 {% extends 'base.html.twig' %}
 
+{# This block sets the title of the page to 'Edit Article' #}
 {% block title %}Edit Article{% endblock %}
 
- {% block body %}
- 
-
+{% block body %}
+    {# Display success flash messages if any #}
     {% for flashMessage in app.flashes('success') %}
         <div class="flash-message flash-message-success">
             {{ flashMessage }}
         </div>
     {% endfor %}
 
+    {# Display error flash messages if any #}
     {% for flashMessage in app.flashes('error') %}
         <div class="flash-message flash-message-error">
             {{ flashMessage }}
         </div>
     {% endfor %}
 
- {% block content %}
- <h1>Edit an article!</h1>
- <div class="form-article">
+    {# Content block for the form #}
+    {% block content %}
+        <h1>Edit an article!</h1>
+        <div class="form-article">
 
-{{ form_start(form) }}
-    {{ form_errors(form) }}
-    
-    {{ form_row(form.title) }}
-    {{ form_widget(form.category) }}
- 
-    {{ form_row(form.content) }}
+            {# Start the form rendering #}
+            {{ form_start(form) }}
+                {# Display any form validation errors #}
+                {{ form_errors(form) }}
+                
+                {# Render the title field with its label and errors #}
+                {{ form_row(form.title) }}
+                
+                {# Render the category field's widget (input element) #}
+                {{ form_widget(form.category) }}
+             
+                {# Render the content field with its label and errors #}
+                {{ form_row(form.content) }}
 
-    {{ form_row(form.validate, {'label': 'Modify' }) }}
-{{ form_end(form) }} 
- </div>  
-{{ form_rest(form) }}
+                {# Render the submit button with a custom label 'Modify' #}
+                {{ form_row(form.validate, {'label': 'Modify' }) }}
+            {# End the form rendering #}
+            {{ form_end(form) }}
+        </div>  
 
- {% endblock %}
+        {# Render remaining form fields that haven't been rendered yet #}
+        {{ form_rest(form) }}
 
+    {% endblock %}
 {% endblock %}
+

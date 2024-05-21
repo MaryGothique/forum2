@@ -1,5 +1,6 @@
 /*CSS de _details.html.twig*/
 /*css of the single article page*/
+/* desktop version*/
 .detail{
     border: 2px solid #727272;
     background-color: #74BED9;
@@ -9,7 +10,15 @@
     border-radius: 20px;
     box-shadow: 0px 5px 50px 25px #74BED9;
 }
-
+h3{
+  border-radius: 20px;
+  color: rgb(41, 41, 41);
+  text-align: center;
+  height: max-content;
+  padding: 10px;
+  font-size: 20px;
+  overflow: hidden;
+}
 .category_title{
     border: solid 2px #0000FF;
     border-radius: 20px;
@@ -27,7 +36,7 @@
   width: auto;
   padding: 1px;
   color: black;
-  text-shadow: #0000FF 2px 2px 2px;
+  
 }
 .card-text {
   border-radius: 20px;
@@ -58,7 +67,7 @@ div .btn-modify{
   background-color: white;
   border-radius: 20px;
   color: black;
-  margin: 1px auto 20px 350px;
+  margin: 22px auto 20px 350px;;
   display: inline-block;
   padding: 4px;
  
@@ -107,9 +116,52 @@ div .btn-modify:hover{
     border-color: #faebcc;
     color: #8a6d3b;
   }
+  .comments{
+        border: 2px solid #727272;
+    background-color: #74BED9;
+    margin: 20px;
+    color: black;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 5px 50px 25px #74BED9;
+  }
+  form{
+    border: 2px solid #727272;
+    background-color: #74BED9;
+    margin: 20px;
+    color: black;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 5px 50px 25px #74BED9;
+  }
+  #comment_title{
+    border-radius: 20px;
+    color: rgb(41, 41, 41);
+    text-align: center;
+    background: white;
+    height: max-content;
+    border: 2px solid #727272;
+    margin: -15px 20px 20px 20px;
+    padding: 10px;
+    font-size: 20px;
+    overflow: hidden;
+  }
+  #comment_content{
+    border-radius: 20px;
+    color: rgb(41, 41, 41);
+    text-align: center;
+    background: white;
+    height: max-content;
+    border: 2px solid #727272;
+    margin: -15px 20px 20px 20px;
+    padding: 10px;
+    font-size: 20px;
+    overflow: hidden;
+  }
 
   /*tablet version iPad OS14.7.1*/
-  @media screen and (min-width: 800px) and (max-width: 1000px){
+  /* This media query applies styles to screens with a width between 810px and 1080px */
+  @media screen and (min-width: 810px) and (max-width: 1080px){
     .detail{
       border: 2px solid #727272;
       background-color: #74BED9;
@@ -118,7 +170,9 @@ div .btn-modify:hover{
       height: auto;
       border-radius: 20px;
   }
-
+  p{
+    margin-bottom: 35px;
+  }
   .category_title{
       border: solid 2px #0000FF;
       border-radius: 20px;
@@ -170,80 +224,125 @@ div .btn-modify:hover{
     margin: auto 35px;
   
   }
-  }
-
-  @media screen and (max-width: 500px){
-    
-.detail{
+  .comments{
+    border: 2px solid #727272;
+    background-color: #74BED9;
+    margin: auto 20px auto 100px;
+    color: black;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 5px 50px 25px #74BED9;
+    }
+  form{
   border: 2px solid #727272;
   background-color: #74BED9;
   margin: 20px;
   color: black;
   height: auto;
   border-radius: 20px;
-}
-
-.category_title{
-  border: solid 2px #0000FF;
-  border-radius: 20px;
-  width: fit-content;
-  color: black;
-  background-color: white;
-  list-style-type: none;
-  padding: inherit;
-  margin: auto;
-  display: ruby-text;
-}
-.title {
-  color: black;
-  text-shadow: #0000FF 2px 2px 2px;
-}
-.card-text {
-border-radius: 20px;
-color: rgb(41, 41, 41);
-text-align: center;
-background: white;
-height: auto;
-border: 2px solid #727272;
-margin:30px;
-padding: 10px;
-font-size: 20px;
-overflow: clip;
-}
-.card-buttons {
-  display: flex;
-  justify-content: space-between; 
-  margin-top: 10px; 
-}
-div .btn-modify{
-margin: auto 25px;
-}
-.btn-delete{
-  margin: auto 30px;
-}
-  /*flash messages*/ 
-.flash-message{
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.flash-message-success{
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-  color: #3c763d;
-}
-
-.flash-message-error{
-  background-color: #f2dede;
-  border-color: #ebccd1;
-  color: #a94442;
-}
-
-.flash-message-warning{
-  background-color: #fcf8e3;
-  border-color: #faebcc;
-  color: #8a6d3b;
-}
+  box-shadow: 0px 5px 50px 25px #74BED9;
   }
+  #comment_title{
+  border-radius: 20px;
+  color: rgb(41, 41, 41);
+  text-align: center;
+  background: white;
+  height: max-content;
+  border: 2px solid #727272;
+  margin: -15px 20px 20px 20px;
+  padding: 10px;
+  font-size: 20px;
+  overflow: hidden;
+  }
+  #comment_content{
+  border-radius: 20px;
+  color: rgb(41, 41, 41);
+  text-align: center;
+  background: white;
+  height: max-content;
+  border: 2px solid #727272;
+  margin: -15px 20px 20px 20px;
+  padding: 10px;
+  font-size: 20px;
+  overflow: hidden;
+  }
+    }
+/*This is version mobile :
+version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
+in this case for a creen max of the 500px
+*/
+  @media screen and (max-width: 500px){
+    
+  .detail{
+    border: 2px solid #727272;
+    background-color: #74BED9;
+    margin: 20px;
+    color: black;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .category_title{
+    border: solid 2px #0000FF;
+    border-radius: 20px;
+    width: fit-content;
+    color: black;
+    background-color: white;
+    list-style-type: none;
+    padding: inherit;
+    margin: auto;
+    display: ruby-text;
+  }
+  .title {
+    color: black;
+    text-shadow: #0000FF 2px 2px 2px;
+  }
+  .card-text {
+  border-radius: 20px;
+  color: rgb(41, 41, 41);
+  text-align: center;
+  background: white;
+  height: auto;
+  border: 2px solid #727272;
+  margin:30px;
+  padding: 10px;
+  font-size: 20px;
+  overflow: clip;
+  }
+  .card-buttons {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 10px; 
+  }
+  div .btn-modify{
+  margin: auto 25px;
+  }
+  .btn-delete{
+    margin: auto 30px;
+  }
+    /*flash messages*/ 
+  .flash-message{
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .flash-message-success{
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+  }
+
+  .flash-message-error{
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+  }
+
+  .flash-message-warning{
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    color: #8a6d3b;
+  }
+}

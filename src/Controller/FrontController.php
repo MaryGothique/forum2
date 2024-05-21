@@ -1,15 +1,18 @@
 <?php
+
 namespace App\Controller;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response; // <- va permettre de pouvoir récupérerla reponse de la requete
-use Symfony\Component\Routing\Annotation\Route; // <- va permettre de définir lesroutes pour les functions
+use Symfony\Component\HttpFoundation\Response; // <- will allow to get the response of the request
+use Symfony\Component\Routing\Annotation\Route; // <- will allow to define the routes for the functions
+
 class FrontController extends AbstractController
 {
-#[Route('/', name: 'home')]
-public function index(): Response
-{
-    //take all the articles
-    return $this->render('./home.html.twig');
-}
-
+    // Route for the home page
+    #[Route('/', name: 'home')]
+    public function index(): Response
+    {
+        // Render the home page template
+        return $this->render('./home.html.twig');
+    }
 }

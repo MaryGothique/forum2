@@ -1,3 +1,4 @@
+
 * {
     margin: 0px;
     box-sizing: border-box;
@@ -11,9 +12,7 @@ body {
     height: 100%;
     background-color: white;
 }
-.container{
-   text-align: center;
-}
+
 main{
     min-height: 600px;
     grid-column: 2;
@@ -25,7 +24,8 @@ main{
     grid-template-columns: 10% 90%;
     grid-template-rows: 90% 10%;
     color:#74BED9;
-    margin-bottom: -50px;
+    text-align: center;
+
 }
 
 h1{
@@ -66,8 +66,21 @@ h1{
     color: #8a6d3b;
   }
   /* end flash messages*/
-
+  /* This media query applies styles to screens with a width between 810px and 1080px */
+  @media screen and (min-width: 800px) and (max-width: 1000px){
+    .container {
+      display: grid;
+      grid-template-columns: 10% 90%;
+      grid-template-rows: 90% 10%;
+      color: #74BED9;
+      margin-bottom: -200px;
+    }
+  }
 /*Css mediaquery*/
+/*This is version mobile :
+version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
+in this case for a creen max of the 500px
+*/
 @media screen and (max-width: 500px){
 
     .container{

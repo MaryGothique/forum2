@@ -13,10 +13,7 @@ class Comment
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $Title = null;
-
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: 'text')]
     private ?string $Content = null;
 
     #[ORM\Column]
@@ -34,18 +31,6 @@ class Comment
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getTitle(): ?string
-    {
-        return $this->Title;
-    }
-
-    public function setTitle(string $Title): static
-    {
-        $this->Title = $Title;
-
-        return $this;
     }
 
     public function getContent(): ?string
@@ -108,3 +93,4 @@ class Comment
         return $this;
     }
 }
+

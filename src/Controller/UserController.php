@@ -8,18 +8,19 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class UserController extends AbstractController
 {
+    // Route for the user profile page
     #[Route('/user', name: 'user')]
     public function profile(): Response
     {
-        // Ottieni l'utente corrente
+        // Get the current user
         $user = $this->getUser();
 
-        // Verifica se l'utente è autenticato
+        // Check if the user is authenticated
         if (!$user) {
-            throw $this->createNotFoundException('Utente non trovato.');
+            throw $this->createNotFoundException('User not found.');
         }
 
-        // Passa i dati dell'utente al template Twig
+        // Pass the user data to the Twig template
         return $this->render('user/index.html.twig', [
             'user' => $user,
         ]);

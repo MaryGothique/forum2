@@ -16,109 +16,108 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class CategoryController extends AbstractController
 {
+    // Dependency injection of the CategoryRepository and EntityManager
     public function __construct(
         private CategoryRepository $categoryRepository,
         private EntityManagerInterface $em
     ) {    
     }
-        // create
+
+    // Route for creating a new category
     #[Route('/admin/category/create', name: 'admin.category.create')]
     #[IsGranted('ROLE_USER')]
     public function createCategory(Request $request): Response|RedirectResponse
     {
         $category = new Category();
 
-        
-
+        // Create and handle the form for the new category
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
 
-        if($form->isSubmitted()&& $form->isValid()){
+        if($form->isSubmitted() && $form->isValid()){
+            // Persist and flush the category to the database
             $this->em->persist($category);
             $this->em->flush();
+
+            // Add a success flash message and redirect to the category list page
             $this->addFlash('success', 'Category created');
             return $this->redirectToRoute('admin.category.read');
         }
        
+        // Render the category creation form view
         return $this->render('Backend/category/create.html.twig',[
             'form' => $form->createView()
         ]);
-
     }
-    // CRUD ->read 
+
+    // Route for reading (listing) categories
     #[Route('/admin/category/read', name:'admin.category.read')]
-    public function readCategory():Response
+    public function readCategory(): Response
     {
+        // Retrieve all categories from the repository
         $categories = $this->categoryRepository->findAll();
 
+        // Render the category list view and pass the current user to the template
         return $this->render('Backend/category/index.html.twig', [
             'categories' => $categories,
-            'current_user' => $this->getUser() // Passa l'utente corrente al template Twig
+            'current_user' => $this->getUser()
         ]);
     }
-// edit update
-#[Route('/admin/category/edit/{id}', name: 'admin.category.edit', methods: ['GET', 'POST'])]
-#[IsGranted('ROLE_USER')]
-public function edit(Category $category, Request $request): Response|RedirectResponse
 
-{
-
-    // Check if the user is logged in
-    if (!$this->getUser()) {
-        throw new AccessDeniedException('You must be logged in to edit category.');
-    }
-    $form = $this->createForm(CategoryType::class, $category);
-    $form->handleRequest($request);
-
-    if ($form->isSubmitted() && $form->isValid()) {
-        $this->em->persist($category);
-        $this->em->flush();
-
-        $this->addFlash('success', 'Category modified successfully');
-        return $this->redirectToRoute('admin.category.read');
-    }
-
-    return $this->render('Backend/category/edit.html.twig', [
-        'form' => $form->createView()
-    ]);
-    $form = $this -> createForm(CategoryType::class, $category);
-    $form->handleRequest($request);
-    if ($form->isSubmitted() && $form->isValid())
+    // Route for editing an existing category
+    #[Route('/admin/category/edit/{id}', name: 'admin.category.edit', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_USER')]
+    public function edit(Category $category, Request $request): Response|RedirectResponse
     {
-        $this->em->persist($category);
-        $this->em->flush();
+        // Ensure the user is logged in
+        if (!$this->getUser()) {
+            throw new AccessDeniedException('You must be logged in to edit category.');
+        }
 
-        $this->addFlash('success', 'category modified successifully');
-       
-        return $this->redirectToRoute('admin.category.read');
-    }
-    return $this->render('Backend/category/edit.html.twig', [
-        'form' => $form->createView()
+        // Create and handle the form for editing the category
+        $form = $this->createForm(CategoryType::class, $category);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Persist and flush the changes to the database
+            $this->em->persist($category);
+            $this->em->flush();
+
+            // Add a success flash message and redirect to the category list page
+            $this->addFlash('success', 'Category modified successfully');
+            return $this->redirectToRoute('admin.category.read');
+        }
+
+        // Render the category edit form view
+        return $this->render('Backend/category/edit.html.twig', [
+            'form' => $form->createView()
         ]);
-}
-// Delete 
-#[Route('/admin/category/delete/{id}', name: 'admin.category.delete', methods:['POST', 'DELETE'])]
-#[IsGranted('ROLE_USER')]
-public function deleteCategory(?Category $category, Request $request): RedirectResponse
-{ 
-    
-    // Controllo se l'utente è autenticato
-   
-    if (!$category instanceof Category) {
-        $this->addFlash('error',  'category not found');
+    }
 
+    // Route for deleting a category
+    #[Route('/admin/category/delete/{id}', name: 'admin.category.delete', methods:['POST', 'DELETE'])]
+    #[IsGranted('ROLE_USER')]
+    public function deleteCategory(?Category $category, Request $request): RedirectResponse
+    { 
+        // Ensure the category exists
+        if (!$category instanceof Category) {
+            $this->addFlash('error', 'Category not found');
+            return $this->redirectToRoute('admin.category.read');
+        }
+
+        // Validate the CSRF token before deleting the category
+        if ($this->isCsrfTokenValid('delete' . $category->getId(), $request->request->get('token'))) {
+            // Remove the category and flush the changes to the database
+            $this->em->remove($category, true);
+            $this->em->flush();
+
+            // Add a success flash message and redirect to the category list page
+            $this->addFlash('success', 'Category deleted successfully');
+            return $this->redirectToRoute('admin.category.read');
+        }
+
+        // Add an error flash message for an invalid token and redirect to the category list page
+        $this->addFlash('error', 'Invalid token');
         return $this->redirectToRoute('admin.category.read');
     }
-   
-
-    if ($this->isCsrfTokenValid('delete' . $category->getId(), $request->request->get('token'))) {
-        $this->em->remove($category, true);
-        $this->em->flush();
-
-        $this->addFlash('success', 'category deleted successfully');
-
-        return $this->redirectToRoute('admin.category.read');
-    }
-}
-
 }

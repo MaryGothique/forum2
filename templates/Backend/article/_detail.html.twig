@@ -1,62 +1,84 @@
 {# templates/Backend/article/_detail.html.twig #}
+
+{# This template extends the base template #}
 {% extends 'base.html.twig' %}
 
+{# Block for specific stylesheets, includes the 'detail' entry #}
 {% block specificStylesheets %}{{ encore_entry_link_tags('detail') }}{% endblock %}
 
+{# Block for the main content of the page #}
 {% block body %}
-<h1>Iced Tears</h1>
-<article class="detail">
-    <h2 class="title">{{ article.title }}</h2>
-    <p class="author">Author: {{ article.user.nickname }}</p>
-    <p class="date">Published on: {{ article.createAt|date('j/m/Y') }}</p>
-    <div class="categories">
-        <h3>Categories:</h3>
-        <div>
-            {% for category in article.categories %}
-                <p class="category_title">{{ category.title }}</p>
-            {% endfor %}
+    {# Display flash messages for success #}
+    {% for flashMessage in app.flashes('success') %}
+        <div class="flash-message flash-message-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {# Display flash messages for error #}
+    {% for flashMessage in app.flashes('error') %}
+        <div class="flash-message flash-message-error">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    
+    <h1>Iced Tears</h1>
+    
+    {# Article detail section #}
+    <article class="detail">
+        <h2 class="title">{{ article.title }}</h2>
+        <p class="author">Author: {{ article.user.nickname }}</p>
+        <p class="date">Published on: {{ article.createAt|date('j/m/Y') }}</p>
+        
+        {# Display categories associated with the article #}
+        <div class="categories">
+            <h3>Categories:</h3>
+            <div>
+                {% for category in article.categories %}
+                    <p class="category_title">{{ category.title }}</p>
+                {% endfor %}
+            </div>
             <div class="content card-text">
                 {{ article.content|raw }}
             </div>
         </div>
-    </div>
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-    <div class="card-buttons">
-        <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn-modify">Edit</a>
-        <form method="POST" action="{{ path('admin.article.delete', {'id': article.id}) }}"
-              onsubmit="return confirm('Are you sure you want to delete this article? This action cannot be undone.')">
-            <input type="hidden" name="token" value="{{ csrf_token('delete' ~ article.id) }}">
-            <button class="btn-delete">Delete</button>
-        </form>
-    </div>
-    {% endif %}
-</article>
-
-<section class="comments">
-    <h2>Comments</h2>
-    {% for comment in article.comments %}
-        <div class="comment">
-            <h3>{{ comment.title }}</h3>
-            <p>{{ comment.content }}</p>
-            <p>By {{ comment.user.nickname }} on {{ comment.createdAt|date('j/m/Y H:i') }}</p>
+        
+        {# Edit and delete buttons, visible only to authenticated users #}
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <div class="card-buttons">
+            <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn-modify">Edit</a>
+            <form method="POST" action="{{ path('admin.article.delete', {'id': article.id}) }}"
+                onsubmit="return confirm('Are you sure you want to delete this article? This action cannot be undone.')">
+                <input type="hidden" name="token" value="{{ csrf_token('delete' ~ article.id) }}">
+                <button class="btn-delete">Delete</button>
+            </form>
         </div>
+        {% endif %}
+    </article>
+
+    {# Comments section #}
+    <section class="comments">
+        <h2>Comments</h2>
+        {% for comment in article.comments %}
+            <div class="card-text">
+                <p>{{ comment.content }}</p>
+            </div>
+            <p>By {{ comment.user.nickname }} on {{ comment.createdAt|date('j/m/Y H:i') }}</p>
+        {% else %}
+            <p>No comments yet. Be the first to comment!</p>
+        {% endfor %}
+    </section>
+
+    {# Add a comment section, visible only to authenticated users #}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <section class="add-comment">
+        <h2>Add a Comment</h2>
+        {{ form_start(commentForm) }}
+        <h3>{{ form_row(commentForm.content) }}</h3>
+        <button class="btn">Submit</button>
+        {{ form_end(commentForm) }}
+    </section>
     {% else %}
-        <p>No comments yet. Be the first to comment!</p>
-    {% endfor %}
-</section>
-
-{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-<section class="add-comment">
-    <h2>Add a Comment</h2>
-    {{ form_start(commentForm) }}
-    {{ form_row(commentForm.title) }}
-    {{ form_row(commentForm.content) }}
-
-    <button class="btn">Submit</button>
-    {{ form_end(commentForm) }}
-</section>
-{% else %}
-<p>You must be logged in to add a comment.</p>
-{% endif %}
+    <p>You must be logged in to add a comment.</p>
+    {% endif %}
 {% endblock %}
- 
