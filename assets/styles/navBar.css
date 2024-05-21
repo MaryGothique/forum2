@@ -1,19 +1,18 @@
+/* css navbar */ 
+/* desktop version*/
 .logo{
   width: 80%;
   display: block;
-  margin: 20px;
+  margin: 10px;
 
 }
 nav{
   border: 2px solid #727272;
-  position: relative;
+  position: absolute;
   background-color: #74BED9;
-  height: 842px;
-  grid-column:1;
-  grid-row-start: 1;
-  grid-row-end: 3;
+  min-width: 100px;
   box-shadow: -1px 13px 142px 0px #0000FF;
-
+  height: 100%;
 }
 a.btn{
   margin-left: -35px;
@@ -27,13 +26,37 @@ a.btn{
 
 #menu ul{
       display:block;
-      margin: 90px;
-      padding:160px;
+      margin: 45px;
+      padding:80px;
   }
 
 .checkbox{
   visibility: hidden;
 }
+a.btn-log{
+  margin: 15px auto auto -30px;
+  height: 30px;
+  width: 15vh;
+  border: 2px solid #727272;
+  background-color: rgb(0, 255, 140);
+  border-radius: 20px;
+  color: black;
+  display: inline-block;
+  padding: 4px;
+}
+a.btn-logout{
+  margin: auto 33px auto auto;
+  height: 30px;
+  width: 15vh;
+  border: 2px solid #727272;
+  background-color: red;
+  border-radius: 20px;
+  color: black;
+  display: inline-block;
+  padding: 4px;
+}
+/*tablet vesion */ 
+/* This media query applies styles to screens with a width between 810px and 1080px */
 @media screen and (min-width: 810px) and (max-width: 1080px){
   nav{
     border: 2px solid #727272;
@@ -55,9 +78,8 @@ a.btn{
     color: black;
   }
   img{
-   width:100%;
-  
-  padding: 10px;
+    width:100%;
+    padding: 10px;
   }
   
   #menu ul{
@@ -69,39 +91,43 @@ a.btn{
   .checkbox{
     visibility: hidden;
   }
-  /*CSS pour écran >= 500px*/
+  /*CSS for display >= 500px*/
 }
-/*CSS pour écran >= 500px*/
+/*CSS for displat >= 500px*/
+/*This is version mobile :
+version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
+in this case for a creen max of the 500px
+*/
 @media screen and ( max-width: 500px){
 
 .checkbox{
     visibility: visible;
   }
  
-nav{
-border: 2px solid #72727200;
-display: flex;
-position: relative;
-background-color: #74bed900;
-height: 50px;
-width: 50px;
-margin-left: -50px;
-  
-}
+  nav{
+  border: 2px solid #72727200;
+  display: flex;
+  position: relative;
+  background-color: #74bed900;
+  height: 50px;
+  width: 50px;
+  margin-left: -50px;
+    
+  }
 
-.logo{
-  width: 100px;
-  display: block;
-  margin: 15px auto -100px 60px;
+  .logo{
+    width: 100px;
+    display: block;
+    margin: 15px auto -100px 60px;
 
-}
+  }
 
-.home .btn{
-height: 70px;
-width: 80px;
-margin-bottom: -7px;
-margin-left: 150px;
-}
+  .home .btn{
+  height: 70px;
+  width: 80px;
+  margin-bottom: -7px;
+  margin-left: 150px;
+  }
 /*I added a css burger menu for the mobile version*/
 #menuToggle
 {

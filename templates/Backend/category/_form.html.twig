@@ -1,5 +1,8 @@
 {{ form_start(form) }}
-{{ form_widget(form) }}
-	<button type="submit" class="btn-category">Create</button>
+    {{ form_errors(form) }} {# Display any form errors at the top #}
+    {{ form_row(form.title) }} {# Render the 'title' field individually #}
+  
 
+    <button type="submit" class="btn-category">Create</button>
 {{ form_end(form) }}
+

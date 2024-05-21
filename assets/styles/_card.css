@@ -1,6 +1,7 @@
 /*
 *All article page
 */
+/* desktop version*/
 .card-list {
     width: 90%;
     list-style: none;
@@ -12,7 +13,7 @@
     box-shadow: 0px 5px 50px 25px #74BED9;
     border: 2px solid #727272;
     background-color: #74BED9;
-    margin: 20px;
+    margin: auto 50px 50px 80px;
     color: black;
     height: auto;
     border-radius: 20px;
@@ -52,6 +53,7 @@ a{
     background-color: white;
     height: 150px;
 }
+/* all buttons */
 .card-buttons {
     display: flex;
     justify-content: space-between; 
@@ -69,7 +71,7 @@ a{
     height: 30px;
     width: 80px;
     border: 2px solid #727272;
-    background-color: white;
+    background-color: rgb(0, 255, 140);
     border-radius: 20px;
     color: black;
     margin: auto;
@@ -118,6 +120,7 @@ a{
   }
   /* end flash messages*/
   /*I Pad version*/
+  /* This media query applies styles to screens with a width between 810px and 1080px */
   @media screen and (min-width: 810px) and (max-width: 1080px){
     .card-article{
         border: 2px solid #727272;
@@ -138,7 +141,7 @@ a{
         height: 30px;
         width: 80px;
         border: 2px solid #727272;
-        background-color: white;
+        background-color: rgb(0, 255, 140);
         border-radius: 20px;
         color: black;
         margin: auto 65px;
@@ -155,7 +158,11 @@ a{
         margin: auto 300px;
       }
   }
-/*mediaquery*/
+/*mediaquery mobile version*/
+/*This is version mobile :
+version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
+in this case for a creen max of the 500px
+*/
 @media screen and (max-width: 500px){
     .card-list {
         display: flex;
@@ -184,7 +191,7 @@ a{
         height: 30px;
         width: 80px;
         border: 2px solid #727272;
-        background-color: white;
+        background-color: rgb(0, 255, 140);
         border-radius: 20px;
         color: black;
         padding: 4px;

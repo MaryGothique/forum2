@@ -1,14 +1,23 @@
 {% extends 'base.html.twig' %}
+{# Extends the base.html.twig template which provides the basic structure of the page #}
 
 {% block title %}
-	Create the category |
-	{{ parent() }}
+    Create the category |
+    {{ parent() }}
+    {# Sets the page title as "Create the category". parent() calls the title block of the parent template for any additions or customizations. #}
 {% endblock %}
 
 {% block body %}
-	
-		<h1>Create a Category</h1>
-	<section class="category-form">
-		{% include 'Backend/category/_form.html.twig' with {button_label: "Create"} %}
-	</section>
+    {# Begins the main body block of the page #}
+
+    <h1>Create a Category</h1>
+    {# Heading indicating the purpose of the page, which is to create a category #}
+
+    <section class="category-form">
+        {# Section enclosing the form for creating a category #}
+
+        {% include 'Backend/category/_form.html.twig' with {button_label: "Create"} %}
+        {# Includes the _form.html.twig template from the Backend/category directory and passes the button_label variable with the value "Create". This variable can be used to customize the label of the submit button in the included template. #}
+    </section>
 {% endblock %}
+{# Ends the main body block of the page #}

@@ -1,19 +1,22 @@
 {% extends 'base.html.twig' %}
+{# Extends the base.html.twig template providing the basic structure of the page #}
 
 {% block title %}Log in!{% endblock %}
+{# Sets the title of the page as "Log in!" #}
 
 {% block specificStylesheets %}
     {{ encore_entry_link_tags('login') }}
-
+    {# Includes specific stylesheets for the "login" page #}
 {% endblock %}
 
 {% block body %}
-      {% for flashMessage in app.flashes('success') %}
+    {# Start of the body block #}
+
+    {% for flashMessage in app.flashes('success') %}
         <div class="flash-message flash-message-success">
             {{ flashMessage }}
         </div>
     {% endfor %}
-
     {% for flashMessage in app.flashes('error') %}
         <div class="flash-message flash-message-error">
             {{ flashMessage }}
@@ -22,15 +25,27 @@
     {% if error %}
         <div class="flash-message flash-message-error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
+    {# Displays flash messages for success and error #}
+    
     <h1>Login</h1>
+    {# Heading indicating the login form #}
+    
     <form class="form-login" action="{{ path('login') }}" method="post">
-    <label for="_nickname">Nickname:</label>
-    <input type="text" id="_nickname" name="_nickname" value="{{ last_username }}">
-
+        {# Start of the login form #}
+        
+        <label for="_nickname">Nickname:</label>
+        <input type="text" id="_nickname" name="_nickname" value="{{ last_username }}">
+        {# Input field for entering the nickname #}
+        
         <label for="password">Password:</label>
         <input type="password" id="password" name="_password">
+        {# Input field for entering the password #}
+        
         <button class="btn" type="submit">Login</button>
+        {# Submit button for submitting the login form #}
+        
     </form>
-             
-{% endblock %}
+    {# End of the login form #}
 
+{% endblock %}
+{# End of the body block #}

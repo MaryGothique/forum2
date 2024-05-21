@@ -9,30 +9,29 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
+    // Route for the login page
     #[Route('/login', name: 'login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        // get the login error if there is one
+        // Get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
+        // Get the last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
         
-        
-        
+        // Render the login template and pass the last username and error to the template
         return $this->render('security/login.html.twig', [
-            'last_username' => $lastUsername, 
+            'last_username' => $lastUsername,
             'error' => $error,
-        ]); 
-        
+        ]);
     }
-       
     
+    // Route for logging out
     #[Route(path: '/logout', name: 'app_logout')]
     public function logout()
     {
-        //throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+        // This method can be blank - it will be intercepted by the logout key on your firewall.
+        // This is a placeholder to avoid logic exceptions.
+        // Render the home page template after logging out
         return $this->render('home.html.twig');
     }
-
-       
 }

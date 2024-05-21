@@ -1,9 +1,10 @@
+/* footer's css */
+/* desktop version*/
 footer {
   color: #000000;
   text-align: center;
   width: 100%;
-  grid-column: 2;
-  grid-row: 2;
+  overflow: hidden;
 }
 
 footer a {
@@ -24,22 +25,24 @@ ul.social li {
 }
 
 ul.social li img {
-  height: 100px; /* Altezza fissa per tutte le immagini */
-  width: 100px; /* Larghezza fissa per tutte le immagini */
+  height: 100px;
+  width: 100px; 
   padding: 5px;
 }
 ul.social li.facebook img {
   height: 120px;
   width: 120px;
-  
+  margin-bottom: -10px;
 }
 ul.social li.instagram img {
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   padding: 5px;
   display: block;
 }
-@media screen and (min-width: 800px) and (max-width: 1000px){
+/* ipad version */ 
+/* This media query applies styles to screens with a width between 810px and 1080px */
+@media screen and (min-width: 810px) and (max-width: 1080px){
   footer {
     color: #000000;
     text-align: center;
@@ -75,8 +78,8 @@ ul.social li.instagram img {
   }
   
   ul.social li img {
-    height: 100px; /* Altezza fissa per tutte le immagini */
-    width: 100px; /* Larghezza fissa per tutte le immagini */
+    height: 100px; 
+    width: 100px; 
     padding: 5px;
   }
   ul.social li.facebook img {
@@ -90,6 +93,11 @@ ul.social li.instagram img {
     padding: 5px;
   }
 }
+/* mobile version */
+/*This is version mobile :
+version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
+in this case for a creen max of the 500px
+*/
 @media screen and (max-width: 500px) {
   .social{
     margin-left: -35px;

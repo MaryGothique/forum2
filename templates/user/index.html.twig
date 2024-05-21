@@ -1,15 +1,34 @@
 {% extends 'base.html.twig' %}
+{# Extends the base.html.twig template providing the basic structure of the page #}
 
 {% block title %}Profile{% endblock %}
+{# Sets the title of the page as "Profile" #}
 
 {% block body %}
+    {# Start of the body block #}
 
-<div class="">
-    <h1>My Profile</h1>
-    <div class='form-login'>
-        <p><strong>Nickname:</strong> {{ user.nickname }}</p>
-        <p><strong>Email:</strong> {{ user.email }}</p>
+    <div class="">
+        {# Start of the profile information section #}
+
+        <h1>My Profile</h1>
+        {# Heading indicating the profile information section #}
+
+        <div class='form-login'>
+            {# Start of the form-login div containing profile details #}
+
+            <p><strong>Nickname:</strong> {{ user.nickname }}</p>
+            {# Displaying the nickname of the user #}
+
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            {# Displaying the email of the user #}
+
+        </div>
+        {# End of the form-login div containing profile details #}
+
     </div>
-   
-</div>
+    {# End of the profile information section #}
+
 {% endblock %}
+{# End of the body block #}
+
+

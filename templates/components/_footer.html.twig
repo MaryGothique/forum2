@@ -1,33 +1,49 @@
 <footer>
-           
-     <ul class="social">
+    <!-- Begins the footer section -->
+    <ul class="social">
+        <!-- Begins the social media links list -->
+        <li class="spotify">
+            <a href="https://open.spotify.com/user/31wvfuofvbw3245pmbmdakt7uo4u" target="_blank">
+                <img src="{{ asset('img/spotify.svg') }}" alt="spotify img">
+            </a>
+        </li>
+        <li class="deezer">
+            <a href="https://www.deezer.com/fr/profile/5915894923" target="_blank">
+                <img src="{{ asset('img/deezer.svg') }}" alt="deezer img">
+            </a>
+        </li>
+        <li class="facebook">
+            <a href="https://www.facebook.com/profile.php?id=61557115244373" target="_blank">
+                <img src="{{ asset('img/Facebook.svg') }}" alt="facebook img">
+            </a>
+        </li>
+        <li class="instagram">
+            <a href="https://www.instagram.com/icedtears6/" target="_blank">
+                <img src="{{ asset('img/instagram.svg') }}" alt="instagram img">
+            </a>
+        </li>
+    </ul>
+    <!-- Ends the social media links list -->
 
-        <ul class="social">
-
-            <li class="spotify"><a href="https://open.spotify.com/user/31wvfuofvbw3245pmbmdakt7uo4u" target="_blank"><img src="{{ asset('img/spotify.svg') }}" alt="spotify img"></a></li>
-            <li class="deezer"><a href="https://www.deezer.com/fr/profile/5915894923" target="_blank"><img src="{{ asset('img/deezer.svg') }}" alt="deezer img"></a></li>
-            <li class="facebook"><a href="https://www.facebook.com/profile.php?id=61557115244373" target="_blank"><img src="{{ asset('img/Facebook.svg') }}" alt="facebook img"></a></li>
-            <li class="instagram"><a href="https://www.instagram.com/icedtears6/" target="_blank"><img src="{{ asset('img/instagram.svg') }}" alt="instagram img"></a></li>
-    </ul>       
-        
-        </ul>
-
-<p>
-    <address>
-        <p>Maria Paola Mingrino</p>
-        <p>Tel: <a href="tel:0752029237">0752029237</a></p>
-        <p>Email: <a href="mailto:potofih846@hdrlog.com">potofih846@hdrlog.com</a></p>
-    </address>
     <p>
+        <!-- Begins the contact information paragraph -->
+        <address>
+            <!-- Begins the address element -->
+            <p>Maria Paola Mingrino</p>
+            <p>Tel: <a href="tel:0752029237">0752029237</a></p>
+            <p>Email: <a href="mailto:potofih846@hdrlog.com">potofih846@hdrlog.com</a></p>
+        </address>
+        <!-- Ends the address element -->
+    </p>
 
-   <!--"noopener noreferrer" is an attribute often added to HTML anchor tags (<a>) used to create hyperlinks.
-    "noopener" is a security measure that prevents the new page from being able to access the window.opener property and ensures that the new page does not have access to the window object of the originating page.
-    This helps to mitigate certain security risks, such as cross-site scripting attacks.
-    "noreferrer" instructs the browser not to send the HTTP referer header if the user navigates to the linked page.
-     This helps to maintain the user's privacy by not disclosing the URL of the originating page to the linked page.
-Together, "noopener noreferrer" is often used when creating links that open in a new tab or window to enhance security and privacy. --> 
+    <p>
+        <!-- Begins the additional links paragraph -->
         <a href="{{ path('cookies') }}" rel="noopener noreferrer">Cookies Policy</a>
+        <!-- Link to the Cookies Policy page with the rel attribute set for security -->
         <a href="{{ path('rgpd') }}" rel="noopener noreferrer">User Condition</a>
+        <!-- Link to the User Condition page with the rel attribute set for security -->
     </p>
 </footer>
+<!-- Ends the footer section -->
+
 

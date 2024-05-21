@@ -1,27 +1,38 @@
 <div class="card-category">
-     <!-- category front file/page -->
+    <!-- Begins the card-category div, representing a card for displaying a category -->
     <h2>{{ category.title }}</h2>
-    <!-- category title -->
+    <!-- Displays the title of the category -->
+
     <div class="category">
-    
+        <!-- Begins the category div -->
+
         <div class="card-container">
+            <!-- Begins the card-container div, which contains the buttons for editing and deleting the category -->
+
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            {# if the user or admin is connected #}
-            <div class="card-buttons">
-           <a href="{{ path('admin.category.edit', {id: category.id}) }}" class="btn-modify">Edit</a>
-                
-                {# if the author that has created the category is the same of the user, twig shows me the buttons #}
+                <!-- Checks if the user is authenticated -->
+                <div class="card-buttons">
+                    <!-- Begins the card-buttons div, representing buttons for modifying and deleting the category -->
+                    <a href="{{ path('admin.category.edit', {id: category.id}) }}" class="btn-modify">Edit</a>
+                    <!-- Displays a button for editing the category, which leads to the edit page of the category -->
+
                     <form method="POST" action="{{ path('admin.category.delete', {'id': category.id}) }}"
                           onsubmit="return confirm('Are you sure you want to delete this category? This action cannot be undone.')">
+                        <!-- Begins a form for deleting the category -->
                         <input type="hidden" name="token" value="{{ csrf_token('delete' ~ category.id) }}">
-                        {# here there are the buttons #}
-                        
-                        <button class="btn-delete">Delete</button>
-                    </form>
-            </div>   
+                        <!-- Adds a hidden input field for CSRF protection -->
 
+                        <button class="btn-delete">Delete</button>
+                        <!-- Displays a button for deleting the category, which triggers a confirmation dialog -->
+                    </form>
+                </div>
+                <!-- Ends the card-buttons div -->
             {% endif %}
         </div>
+        <!-- Ends the card-container div -->
     </div>
+    <!-- Ends the category div -->
 </div>
+<!-- Ends the card-category div -->
+
 

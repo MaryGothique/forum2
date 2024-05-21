@@ -1,17 +1,25 @@
 {% extends 'base.html.twig' %}
+{# Extends the base.html.twig template which provides the basic structure of the page #}
 
 {% block title %}
-	Edit a category|
-	{{ parent() }}
+    Edit a category|
+    {{ parent() }}
+    {# Sets the page title as "Edit a category". parent() calls the title block of the parent template for any additions or customizations. #}
 {% endblock %}
 
 {% block body %}
- 
-		<h1>Edit a category</h1>
-	{#<section class="card-list">#}
-	<section class="category-form">	
-		{% include 'Backend/category/_form.html.twig' with {button_label: "Create"} %}
-		
-	</section>
+    {# Begins the main body block of the page #}
+
+    <h1>Edit a category</h1>
+    {# Heading indicating the purpose of the page, which is to edit a category #}
+
+    <section class="category-form">
+        {# Section enclosing the form for editing a category #}
+
+        {% include 'Backend/category/_form.html.twig' with {button_label: "Edit"} %}
+        {# Includes the _form.html.twig template from the Backend/category directory and passes the button_label variable with the value "Edit". This variable can be used to customize the label of the submit button in the included template. #}
+    </section>
 {% endblock %}
+{# Ends the main body block of the page #}
+
 

@@ -1,10 +1,9 @@
 {% extends 'base.html.twig' %}
-{# this is the registration page#}
+{# This is the registration page #}
 {% block title %}Register{% endblock %}
 
 {% block specificStylesheets %}
     {{ encore_entry_link_tags('register') }}
-
 {% endblock %}
 
 {% block body %}
@@ -21,18 +20,22 @@
     {% endfor %}
     <h1>Register</h1>
     <div class="registrationForm">
-        
+        <!-- Display any success or error messages -->
         {{ form_errors(registrationForm) }}
+        <!-- Start the registration form -->
         {{ form_start(registrationForm) }}
+        <!-- Render form fields -->
         {{ form_row(registrationForm.nickname) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
+        <!-- Link to User Conditions page -->
         <a href="{{ path('rgpd') }}">User Conditions</a>
-
+        <!-- Submit button -->
         <button class="btn" type="submit">Register</button>
+        <!-- End the registration form -->
         {{ form_end(registrationForm) }}
     </div>
 {% endblock %}

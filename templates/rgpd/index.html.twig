@@ -1,35 +1,47 @@
 {% extends 'base.html.twig' %}
+{# Extends the base.html.twig template providing the basic structure of the page #}
 
 {% block title %}rgpd{% endblock %}
- {% block specificStylesheets %}
-  {{ encore_entry_link_tags('rgpd') }}
-  {% endblock %}
+{# Sets the title of the page as "rgpd" #}
+
+{% block specificStylesheets %}
+    {{ encore_entry_link_tags('rgpd') }}
+    {# Includes specific stylesheets for the "rgpd" page #}
+{% endblock %}
+
 {% block body %}
+    {# Start of the body block #}
+
     <h1>User Conditions</h1>
+    {# Heading indicating the user conditions #}
+    
     <p>REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
 
-of 27 April 2016
+    of 27 April 2016
 
-on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation)
+    on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation)
 
-(Text with EEA relevance)
+    (Text with EEA relevance)
 
-THE EUROPEAN PARLIAMENT AND THE COUNCIL OF THE EUROPEAN UNION,
+    THE EUROPEAN PARLIAMENT AND THE COUNCIL OF THE EUROPEAN UNION,
 
-Having regard to the Treaty on the Functioning of the European Union, and in particular Article 16 thereof,
+    Having regard to the Treaty on the Functioning of the European Union, and in particular Article 16 thereof,
 
-Having regard to the proposal from the European Commission,
+    Having regard to the proposal from the European Commission,
 
-After transmission of the draft legislative act to the national parliaments,
+    After transmission of the draft legislative act to the national parliaments,
 
-Having regard to the opinion of the European Economic and Social Committee (1),
+    Having regard to the opinion of the European Economic and Social Committee (1),
 
-Having regard to the opinion of the Committee of the Regions (2),
+    Having regard to the opinion of the Committee of the Regions (2),
 
-Acting in accordance with the ordinary legislative procedure (3),
+    Acting in accordance with the ordinary legislative procedure (3),
 
-Whereas:
+    Whereas:
+    </p>
+    {# Paragraph providing information about the General Data Protection Regulation (GDPR) #}
 
-
-</p>
 {% endblock %}
+{# End of the body block #}
+
+

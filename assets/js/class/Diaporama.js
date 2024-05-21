@@ -1,4 +1,6 @@
-class Diaporama {
+// This class represents a Diaporama component for displaying a slideshow of images
+
+export class Diaporama {
     // Constructor method initializes the Diaporama object
     constructor(containerId) {
         // Get the container element by its ID
@@ -41,11 +43,3 @@ class Diaporama {
         this.images[this.index].style.display = 'block';
     }
 }
-
-// Wait for the DOM content to be fully loaded before initializing the Diaporama
-document.addEventListener("DOMContentLoaded", function() {
-    const diaporama = new Diaporama("container");
-});
-
-// This line will throw an error because diaporama is not accessible here
-// diaporama.show(); 

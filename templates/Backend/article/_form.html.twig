@@ -1,10 +1,20 @@
-{{form_start (form)}}
+{# Start the form rendering #}
+{{ form_start(form) }}
     <div class="form-article"> 
+        {# Render a single form row (label, widget, and errors) for the 'title' field #}
         {{ form_row(form.title) }}
+        
+        {# Render the label for the 'category' field #}
         {{ form_label(form.category) }} {# this is the label #}
+        
+        {# Render the widget for the 'category' field, which includes the input element #}
         {{ form_widget(form.category) }} {# this is the widget of the menu #}
+        
+        {# Render a single form row (label, widget, and errors) for the 'content' field #}
         {{ form_row(form.content) }}
+        
+        {# Render a single form row (label, widget, and errors) for the 'author' field #}
         {{ form_row(form.author) }}
     </div>
-  
-{{form_end}}
+{# End the form rendering #}
+{{ form_end(form) }}

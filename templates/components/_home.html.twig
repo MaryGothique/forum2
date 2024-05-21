@@ -1,7 +1,14 @@
 <div>
+    <!-- Begins the body block -->
     {% block body %}
+        <!-- Begins the body block content -->
         <a href="{{ path('home') }}">
+            <!-- Link to the home page -->
             <img src="{{ asset('img/logo.png') }}" alt="My cool logo!">
+            <!-- Image tag with the source pointing to the logo image and alt text for accessibility -->
         </a>
     {% endblock %}
+    <!-- Ends the body block content -->
 </div>
+<!-- Ends the body block -->
+
