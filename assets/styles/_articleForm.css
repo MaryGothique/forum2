@@ -124,6 +124,47 @@ button #article_validate {
 }
 
 /* End flash messages */
+/*tablet version for min width 810 and a max width 1080*/
+@media screen and (min-width: 810px) and (max-width: 1080px){
+  .form-article{
+    /* Sets the text color to black */
+    color: black;
+    /* Adds a solid border of 2px with a grey color */
+    border: 2px solid #727272;
+    /* Sets the height of the form */
+    height: 525px;
+    /* Sets the width of the form */
+    width: 300px;
+    /* Uses flexbox for layout */
+    display: flex;
+    /* Sets the background color to light blue */
+    background-color: #74BED9;
+}
+#article_title{
+  /* Sets the width of the title field */
+  width: 200px;
+  /* Sets the height of the title field */
+  height: 50px;
+  /* Adds automatic horizontal margin and 47px vertical margin to the title field */
+  margin: auto 47px;
+  /* Adds internal padding to the title field */
+  padding: 5px;
+  /* Rounds the corners of the title field */
+  border-radius: 20px;    
+}
+#article_content{
+    /* Adds external margin to the content field */
+    margin: 5px;
+    /* Rounds the corners of the content field */
+    border-radius: 20px;
+    /* Sets the height of the content field */
+    height: 300px;
+    /* Sets the width of the content field */
+    width: 200px;
+    /* Adds internal padding to the content field */
+    padding: 15px;
+}
+}
 
 /* Mobile version:
    Mobile version is called with @media for media queries. 
