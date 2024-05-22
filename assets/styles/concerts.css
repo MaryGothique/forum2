@@ -42,11 +42,12 @@
 /* Media query for screens with a width between 810px and 1080px */
 @media screen and (min-width: 810px) and (max-width: 1080px) {
     /* Overrides styles for card article */
+    /* Overrides styles for card article */
     .card-article {
         box-shadow: 0px 5px 50px 25px #74BED9;
         border: 2px solid #727272;
         background-color: #74BED9;
-        margin: auto 50px auto 80px;
+        margin: auto 50px auto 180px;
         color: black;
         height: auto;
         border-radius: 20px;

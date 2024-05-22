@@ -44,7 +44,7 @@ a.btn-log{
   padding: 4px;
 }
 a.btn-logout{
-  margin: auto 33px auto auto;
+  margin: auto 33px auto -15px;
   height: 30px;
   width: 15vh;
   border: 2px solid #727272;
@@ -65,7 +65,7 @@ a.btn-logout{
     grid-column:1;
     grid-row-start: 1;
     grid-row-end: 3;
-    width: fit-content;
+    width: 210px;
   }
   a.btn{
     margin-left: -35px;
