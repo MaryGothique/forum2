@@ -1,108 +1,172 @@
-/*CSS article form*/
-/* desktop version*/
+/* CSS article form */
+/* desktop version */
 .form-article{
+  /* Sets the text color to black */
   color: #000000;
-border: 2px solid #727272;
-height: 500px;
-width: 500px;
-display: flex;
-margin: auto;
-background-color: #74BED9;
-border-radius: 20px;
-box-shadow: 0px 5px 50px 25px #74BED9;
+  /* Adds a solid border of 2px with a grey color */
+  border: 2px solid #727272;
+  /* Sets the height of the form */
+  height: 500px;
+  /* Sets the width of the form */
+  width: 500px;
+  /* Uses flexbox for layout */
+  display: flex;
+  /* Centers the form horizontally */
+  margin: auto;
+  /* Sets the background color to light blue */
+  background-color: #74BED9;
+  /* Rounds the corners of the form */
+  border-radius: 20px;
+  /* Adds a box shadow with specific blur and spread */
+  box-shadow: 0px 5px 50px 25px #74BED9;
+}
 
-}
 #article_title{
+  /* Sets the width of the title field */
   width: 450px;
+  /* Sets the height of the title field */
   height: 50px;
+  /* Adds external margin to the title field */
   margin: 25px;
+  /* Adds internal padding to the title field */
   padding: 5px;
+  /* Rounds the corners of the title field */
   border-radius: 20px;
 }
+
 #article_content{
+  /* Adds external margin to the content field */
   margin: 5px;
+  /* Rounds the corners of the content field */
   border-radius: 20px;
+  /* Sets the height of the content field */
   height: 200px;
+  /* Sets the width of the content field */
   width: 450px;
+  /* Adds internal padding to the content field */
   padding: 25px;
 }
+
 .required{
- 
+  /* Adds external margin to required elements */
   margin: 10px;
+  /* Sets display to block */
   display: block;
+  /* Rounds the corners of required elements */
   border-radius: 20px;
+  /* Centers text within required elements */
   text-align: center;
 }
 
 button #article_validate {
+  /* Adds external margin to the validate button, centered horizontally */
   margin: 10px auto;
+  /* Adds internal padding to the validate button */
   padding: 5px;
+  /* Sets the height to auto */
   height: auto;
+  /* Sets the width of the validate button */
   width: 20vh;
+  /* Adds a solid border of 2px with a grey color */
   border: 2px solid #727272;
+  /* Sets the background color to a bright green */
   background-color: rgb(0, 255, 140);
+  /* Rounds the corners of the validate button */
   border-radius: 20px;
+  /* Sets the text color to black */
   color: black;
+  /* Sets display to inline-block */
   display: inline-block;
+  /* Adds a box shadow with specific offset and blur */
   box-shadow: -1px 13px 142px 0px #0000FF;
 }
 
-/*
-*Flash messages
-*/
+/* Flash messages */
 .flash-message{
+  /* Adds bottom margin to flash messages */
   margin-bottom: 10px;
+  /* Adds internal padding to flash messages */
   padding: 10px;
+  /* Adds a solid border of 1px with a light grey color */
   border: 1px solid #ccc;
+  /* Rounds the corners of flash messages */
   border-radius: 5px;
 }
-/*success message flash*/
+
+/* Success message flash */
 .flash-message-success{
+  /* Sets the background color to light green */
   background-color: #dff0d8;
+  /* Sets the border color to a slightly darker green */
   border-color: #d6e9c6;
+  /* Sets the text color to dark green */
   color: #3c763d;
 }
-/*error message flash*/
+
+/* Error message flash */
 .flash-message-error{
+  /* Sets the background color to light red */
   background-color: #f2dede;
+  /* Sets the border color to a slightly darker red */
   border-color: #ebccd1;
+  /* Sets the text color to dark red */
   color: #a94442;
 }
-/*warning message flash*/
+
+/* Warning message flash */
 .flash-message-warning{
+  /* Sets the background color to light yellow */
   background-color: #fcf8e3;
+  /* Sets the border color to a slightly darker yellow */
   border-color: #faebcc;
+  /* Sets the text color to dark yellow */
   color: #8a6d3b;
 }
-/* end flash messages*/
 
-/*This is version mobile :
-version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
-in this case for a creen max of the 500px
+/* End flash messages */
+
+/* Mobile version:
+   Mobile version is called with @media for media queries. 
+   Each media query defines the screen size. 
+   In this case, it is for screens with a max width of 500px. 
 */
 @media screen and (max-width: 500px){
   .form-article{
+      /* Sets the text color to black */
       color: black;
+      /* Adds a solid border of 2px with a grey color */
       border: 2px solid #727272;
+      /* Sets the height of the form */
       height: 525px;
+      /* Sets the width of the form */
       width: 300px;
+      /* Uses flexbox for layout */
       display: flex;
-     
+      /* Sets the background color to light blue */
       background-color: #74BED9;
-      
   }
   #article_title{
+    /* Sets the width of the title field */
     width: 200px;
+    /* Sets the height of the title field */
     height: 50px;
+    /* Adds automatic horizontal margin and 47px vertical margin to the title field */
     margin: auto 47px;
+    /* Adds internal padding to the title field */
     padding: 5px;
+    /* Rounds the corners of the title field */
     border-radius: 20px;    
   }
   #article_content{
+      /* Adds external margin to the content field */
       margin: 5px;
+      /* Rounds the corners of the content field */
       border-radius: 20px;
+      /* Sets the height of the content field */
       height: 300px;
+      /* Sets the width of the content field */
       width: 200px;
+      /* Adds internal padding to the content field */
       padding: 15px;
   }
 }

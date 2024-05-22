@@ -13,7 +13,9 @@ class CategoryType extends AbstractType
     {
         // Build the form fields
         $builder
-            ->add('title'); // Title field
+            ->add('title', null, [
+                'label' => 'Title' // Add the label option here
+            ]); 
     }
 
     public function configureOptions(OptionsResolver $resolver): void
