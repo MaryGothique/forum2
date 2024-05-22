@@ -72,8 +72,9 @@
     {# Add a comment section, visible only to authenticated users #}
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
     <section class="add-comment">
-        <h2>Add a Comment</h2>
+        
         {{ form_start(commentForm) }}
+        <h2>Add a Comment</h2>
         <h3>{{ form_row(commentForm.content) }}</h3>
         <button class="btn">Submit</button>
         {{ form_end(commentForm) }}

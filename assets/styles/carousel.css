@@ -1,44 +1,64 @@
-/* carousel css */
-/* desktop version*/
-h2{
+/* Carousel CSS */
+/* Desktop version */
+
+/* Heading 2 */
+/* Centers the margin */
+h2 {
     margin: auto;
 }
+
+/* Figure caption */
+/* Sets text color to black and font size to 15px */
 figcaption {
     color: black;
     font-size: 15px;
 }
+
+/* Container */
+/* Defines a flex container with border, padding, margin, shadow, and alignment */
 #container {
     display: flex;
     border: 2px solid #727272;
     border-radius: 20px;
-    padding: 10px; 
-    margin: 50px 150px -300px 150px;
+    padding: 10px;
+    margin: 50px 150px auto 150px;
     -webkit-box-shadow: 0px 5px 50px 25px #74BED9;
     box-shadow: 0px 5px 50px 25px #74BED9;
-    justify-content: space-between; 
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
     overflow: hidden;
 }
-figure img{
+
+/* Figure image */
+/* Sets image width and padding */
+figure img {
     width: 30%;
     padding: 10px;
 }
+
+/* Arrow buttons */
+/* Sets width, height, and cursor style */
 .arrow {
-    width: 50px; 
-    height: 50px; 
+    width: 50px;
+    height: 50px;
     cursor: pointer;
 }
 
+/* Previous button */
+/* Positions to the left */
 .previous {
     left: 0;
 }
 
+/* Next button */
+/* Positions to the right */
 .next {
     right: 0;
 }
-/*tablet version */
+
+/* Tablet version */
 /* This media query applies styles to screens with a width between 810px and 1080px */
-@media screen and (min-width: 800px) and (max-width: 1000px){
+@media screen and (min-width: 800px) and (max-width: 1000px) {
     #container {
         display: flex;
         border: 2px solid #727272;
@@ -55,26 +75,22 @@ figure img{
         cursor: pointer;
         display: ruby;
     }
-    
     .previous {
         left: 0;
     }
-    
     .next {
         right: 0;
     }
 }
-/* mobile version */
-/*This is version mobile :
-version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
-in this case for a creen max of the 500px
-*/
-@media screen and (max-width: 500px){
+
+/* Mobile version */
+/* This media query applies styles to screens with a width up to 500px */
+@media screen and (max-width: 500px) {
     figcaption {
         color: black;
         font-size: 15px;
     }
-    figure img{
+    figure img {
         width: 50%;
         padding: 10px;
     }
@@ -86,19 +102,16 @@ in this case for a creen max of the 500px
         margin: 20px;
         box-shadow: 0px 5px 50px 25px #74BED9;
     }
-
     .arrow {
         position: absolute;
-        width: 50px; 
-        height: 50px; 
+        width: 50px;
+        height: 50px;
         cursor: pointer;
         margin: inherit;
     }
-    
     .previous {
         margin: 20px;
     }
-    
     .next {
         margin: 20px;
     }

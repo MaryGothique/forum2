@@ -4,7 +4,9 @@ footer {
   color: #000000;
   text-align: center;
   width: 100%;
-  overflow: hidden;
+  display: grid;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 footer a {
@@ -40,13 +42,15 @@ ul.social li.instagram img {
   padding: 5px;
   display: block;
 }
-/* ipad version */ 
+
+/* iPad version */ 
 /* This media query applies styles to screens with a width between 810px and 1080px */
 @media screen and (min-width: 810px) and (max-width: 1080px){
   footer {
     color: #000000;
     text-align: center;
     width: 100%;
+    display: grid;
     grid-column: 2;
     grid-row: 2;
   }
@@ -93,16 +97,13 @@ ul.social li.instagram img {
     padding: 5px;
   }
 }
-/* mobile version */
-/*This is version mobile :
-version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
-in this case for a creen max of the 500px
-*/
+
+/* Mobile version */
+/* This media query applies styles to screens with a width of up to 500px */
 @media screen and (max-width: 500px) {
-  .social{
+  .social {
     margin-left: -35px;
     margin-top: 60px;
-  
   }
   ul.social li {
     height: 100px;
@@ -123,3 +124,4 @@ in this case for a creen max of the 500px
     display: flex;
   }
 }
+

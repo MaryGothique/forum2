@@ -1,43 +1,48 @@
-/*CSS de _details.html.twig*/
-/*css of the single article page*/
-/* desktop version*/
-.detail{
-    border: 2px solid #727272;
-    background-color: #74BED9;
-    margin: 20px;
-    color: black;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0px 5px 50px 25px #74BED9;
+/* CSS of the single article page */
+
+/* Desktop version */
+.detail {
+  border: 2px solid #727272;
+  background-color: #74BED9;
+  margin: auto 50px 20px 80px;
+  color: black;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0px 5px 50px 25px #74BED9;
 }
-h3{
+
+h3 {
   border-radius: 20px;
   color: rgb(41, 41, 41);
   text-align: center;
   height: max-content;
   padding: 10px;
   font-size: 20px;
-  overflow: hidden;
+  margin: 20px auto 50px auto;
 }
-.category_title{
-    border: solid 2px #0000FF;
-    border-radius: 20px;
-    width: fit-content;
-    color: black;
-    background-color: white;
-    list-style-type: none;
-    padding: inherit;
-    margin: auto;
-    display: ruby-text;
+p {
+  color: rgb(0, 0, 0);
+  margin: -5px auto 50px auto;
 }
+.category_title {
+  border: solid 2px #0000FF;
+  border-radius: 20px;
+  width: fit-content;
+  color: black;
+  background-color: white;
+  list-style-type: none;
+  padding: inherit;
+  margin: auto;
+  display: ruby-text;
+}
+
 .title {
- 
   height: auto;
   width: auto;
   padding: 1px;
   color: black;
-  
 }
+
 .card-text {
   border-radius: 20px;
   color: rgb(41, 41, 41);
@@ -50,34 +55,30 @@ h3{
   font-size: 20px;
   overflow: hidden;
 }
-
-.card-btn{
-    display: inline-flex;
-    
-}
-.card-buttons {
+/*Buttons*/
+.card-btn, .card-buttons {
   display: flex;
-  justify-content: space-between; 
-  margin-top: 10px; 
+  justify-content: space-between;
+  margin-top: 10px;
 }
-div .btn-modify{
+
+div .btn-modify {
   height: 30px;
   width: 80px;
   border: 2px solid #727272;
-  background-color: white;
+  background-color: rgb(0, 255, 140);
   border-radius: 20px;
   color: black;
-  margin: 22px auto 20px 350px;;
+  margin: 22px auto 20px 350px;
   display: inline-block;
   padding: 4px;
- 
 }
-div .btn-modify:hover{
+
+div .btn-modify:hover {
   box-shadow: -1px 13px 142px 0px #0000FF;
 }
 
-
-.btn-delete{
+.btn-delete {
   height: auto;
   width: 80px;
   border: 2px solid #6a0303;
@@ -85,264 +86,220 @@ div .btn-modify:hover{
   border-radius: 20px;
   color: black;
   margin: auto 30px 20px -800px;
-
 }
 
-.btn-delete:hover{
+.btn-delete:hover {
   box-shadow: -1px 13px 142px 0px #0000FF;
 }
-    /*flash messages*/ 
-.flash-message{
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .flash-message-success{
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #3c763d;
-  }
-  
-  .flash-message-error{
-    background-color: #f2dede;
-    border-color: #ebccd1;
-    color: #a94442;
-  }
-  
-  .flash-message-warning{
-    background-color: #fcf8e3;
-    border-color: #faebcc;
-    color: #8a6d3b;
-  }
-  .comments{
-        border: 2px solid #727272;
-    background-color: #74BED9;
-    margin: 20px;
-    color: black;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0px 5px 50px 25px #74BED9;
-  }
-  form{
-    border: 2px solid #727272;
-    background-color: #74BED9;
-    margin: 20px;
-    color: black;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0px 5px 50px 25px #74BED9;
-  }
-  #comment_title{
-    border-radius: 20px;
-    color: rgb(41, 41, 41);
-    text-align: center;
-    background: white;
-    height: max-content;
-    border: 2px solid #727272;
-    margin: -15px 20px 20px 20px;
-    padding: 10px;
-    font-size: 20px;
-    overflow: hidden;
-  }
-  #comment_content{
-    border-radius: 20px;
-    color: rgb(41, 41, 41);
-    text-align: center;
-    background: white;
-    height: max-content;
-    border: 2px solid #727272;
-    margin: -15px 20px 20px 20px;
-    padding: 10px;
-    font-size: 20px;
-    overflow: hidden;
-  }
 
-  /*tablet version iPad OS14.7.1*/
-  /* This media query applies styles to screens with a width between 810px and 1080px */
-  @media screen and (min-width: 810px) and (max-width: 1080px){
-    .detail{
-      border: 2px solid #727272;
-      background-color: #74BED9;
-      margin-left: 100px;
-      color: black;
-      height: auto;
-      border-radius: 20px;
-  }
-  p{
-    margin-bottom: 35px;
-  }
-  .category_title{
-      border: solid 2px #0000FF;
-      border-radius: 20px;
-      width: fit-content;
-      color: black;
-      background-color: white;
-      list-style-type: none;
-      padding: inherit;
-      margin: auto;
-      display: ruby-text;
-  }
+/* Flash messages */
+.flash-message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-  .card-text {
-    border-radius: 20px;
-    color: rgb(41, 41, 41);
-    text-align: center;
-    background: white;
-    height: max-content;
-    border: 2px solid #727272;
-    margin: -15px 20px 20px 20px;
-    padding: 10px;
-    font-size: 20px;
-    overflow: hidden;
-  }
-  .card-buttons {
-    display: flex;
-    justify-content: space-between; 
-    margin-top: 10px; 
-  }
-  div .btn-modify{
-    height: 30px;
-    width: 80px;
-    border: 2px solid #727272;
-    background-color: white;
-    border-radius: 20px;
-    color: black;
-    margin: auto 35px;
-    display: inline-block;
-    padding: 4px;
-   
-  }
-  .btn-delete{
-    height: auto;
-    width: 80px;
-    border: 2px solid #6a0303;
-    background-color: #f80707;
-    border-radius: 20px;
-    color: black;
-    margin: auto 35px;
-  
-  }
-  .comments{
-    border: 2px solid #727272;
-    background-color: #74BED9;
-    margin: auto 20px auto 100px;
-    color: black;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0px 5px 50px 25px #74BED9;
-    }
-  form{
+.flash-message-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+
+.flash-message-error {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+
+.flash-message-warning {
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
+
+.comments {
   border: 2px solid #727272;
   background-color: #74BED9;
-  margin: 20px;
+  margin: auto 50px 10px 80px;
   color: black;
   height: auto;
   border-radius: 20px;
   box-shadow: 0px 5px 50px 25px #74BED9;
-  }
-  #comment_title{
-  border-radius: 20px;
-  color: rgb(41, 41, 41);
-  text-align: center;
-  background: white;
-  height: max-content;
+}
+.add-comment{
   border: 2px solid #727272;
-  margin: -15px 20px 20px 20px;
-  padding: 10px;
-  font-size: 20px;
-  overflow: hidden;
-  }
-  #comment_content{
+  background-color: #74BED9;
+  margin: auto 50px 10px 80px;
+  color: black;
+  height: auto;
   border-radius: 20px;
-  color: rgb(41, 41, 41);
-  text-align: center;
-  background: white;
-  height: max-content;
-  border: 2px solid #727272;
-  margin: -15px 20px 20px 20px;
-  padding: 10px;
-  font-size: 20px;
-  overflow: hidden;
+  box-shadow: 0px 5px 50px 25px #74BED9;
+}
+#comment_content {
+    border-radius: 20px;
+    color: rgb(41, 41, 41);
+    text-align: center;
+    background: white;
+    height: 200px;
+    border: 2px solid #727272;
+    margin: -15px 20px 20px 20px;
+    padding: 10px;
+    font-size: 20px;
+    width: 600px;
   }
-    }
-/*This is version mobile :
-version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
-in this case for a creen max of the 500px
-*/
-  @media screen and (max-width: 500px){
-    
-  .detail{
+.required {
+  margin: 20px;
+  display: block;
+  border-radius: 20px;
+  text-align: center;
+}
+/* Tablet version (iPad OS14.7.1) */
+/* This media query applies styles to screens with a width between 810px and 1080px */
+@media screen and (min-width: 810px) and (max-width: 1080px) {
+  .detail {
+    margin: auto 20px 20px 180px;
     border: 2px solid #727272;
     background-color: #74BED9;
-    margin: 20px;
     color: black;
     height: auto;
     border-radius: 20px;
+    box-shadow: 0px 5px 50px 25px #74BED9;
   }
-
-  .category_title{
-    border: solid 2px #0000FF;
+  h3 {
     border-radius: 20px;
-    width: fit-content;
-    color: black;
-    background-color: white;
-    list-style-type: none;
-    padding: inherit;
-    margin: auto;
-    display: ruby-text;
-  }
-  .title {
-    color: black;
-    text-shadow: #0000FF 2px 2px 2px;
-  }
-  .card-text {
-  border-radius: 20px;
-  color: rgb(41, 41, 41);
-  text-align: center;
-  background: white;
-  height: auto;
-  border: 2px solid #727272;
-  margin:30px;
-  padding: 10px;
-  font-size: 20px;
-  overflow: clip;
-  }
-  .card-buttons {
-    display: flex;
-    justify-content: space-between; 
-    margin-top: 10px; 
-  }
-  div .btn-modify{
-  margin: auto 25px;
-  }
-  .btn-delete{
-    margin: auto 30px;
-  }
-    /*flash messages*/ 
-  .flash-message{
-    margin-bottom: 10px;
+    color: rgb(41, 41, 41);
+    text-align: center;
+    height: max-content;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-size: 20px;
+    margin: 20px auto 50px auto;
   }
-
-  .flash-message-success{
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #3c763d;
+  p {
+    color: rgb(0, 0, 0);
+    margin: -5px auto 50px auto;
   }
-
-  .flash-message-error{
-    background-color: #f2dede;
-    border-color: #ebccd1;
-    color: #a94442;
+.comments {
+     margin: auto 20px 20px 180px;
+    border: 2px solid #727272;
+    background-color: #74BED9;
+    color: black;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 5px 50px 25px #74BED9;
   }
+  .add-comment{
+    margin: auto 20px auto 180px;
+    border: 2px solid #727272;
+    background-color: #74BED9;
+    color: black;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 5px 50px 25px #74BED9;
+  }
+  .required {
+    margin: 30px 20px;
+    display: block;
+    border-radius: 20px;
+    text-align: center;
+  }
+#comment_content{
+  height: 500px ;
+  width: 500px;
+  margin: auto;
 
-  .flash-message-warning{
-    background-color: #fcf8e3;
-    border-color: #faebcc;
-    color: #8a6d3b;
+}
+  /*Buttons*/ 
+   div .btn-modify, .btn-delete {
+      margin: auto 35px;
+  }
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn-modify {
+  height: 30px;
+  border: 2px solid #727272;
+  background-color: rgb(0, 255, 140);
+  border-radius: 20px;
+  color: black;
+  display: inline-block;
+  padding: 4px;
+}
+
+div .btn-modify:hover {
+  box-shadow: -1px 13px 142px 0px #0000FF;
+}
+
+.btn-delete {
+  height: auto;
+  border: 2px solid #6a0303;
+  background-color: #f80707;
+  border-radius: 20px;
+  color: black;
+  
+}
+
+.btn-delete:hover {
+  box-shadow: -1px 13px 142px 0px #0000FF;
+}
+
+}
+/* Mobile version */
+/* This media query applies styles to screens with a width of up to 500px */
+@media screen and (max-width: 500px) {
+  .card-text {
+      margin: 30px;
+      overflow: clip;
+  }
+  .detail {
+    border: 2px solid #727272;
+    background-color: #74BED9;
+    margin: 10px;
+    color: black;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 5px 50px 25px #74BED9;
+  }
+  .comments {
+    border: 2px solid #727272;
+    background-color: #74BED9;
+    margin: 10px;
+    color: black;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 5px 50px 25px #74BED9;
+  }
+  .required {
+    margin: 30px 20px;
+    display: block;
+    border-radius: 20px;
+    text-align: center;
+  }
+  .add-comment{
+    border: 2px solid #727272;
+    background-color: #74BED9;
+    margin: 10px;
+    color: black;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 5px 50px 25px #74BED9;
+  }
+  #comment_content {
+    border-radius: 20px;
+    color: rgb(41, 41, 41);
+    text-align: center;
+    background: white;
+    height: 200px;
+    border: 2px solid #727272;
+    margin: -15px 20px 20px 20px;
+    padding: 10px;
+    font-size: 20px;
+    width: 300px;
+  }
+  div .btn-modify, .btn-delete {
+      margin: auto 25px;
   }
 }

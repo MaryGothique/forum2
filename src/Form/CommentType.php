@@ -22,7 +22,7 @@ class CommentType extends AbstractType
                 'required' => true,
                 'constraints' => [
                     new Length([
-                        'min' => 50,
+                        'min' => 2,
                         'max' => 1000,
                         'maxMessage' => 'The content of your comment cannot have {{ limit }} character',
                     ]),

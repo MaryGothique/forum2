@@ -1,163 +1,258 @@
 /*
-*All article page
+* All article page
 */
-/* desktop version*/
+/* desktop version */
 .card-list {
+    /* Sets the width of the card list to 90% */
     width: 90%;
+    /* Removes the default list style */
     list-style: none;
 }
 .tous-article{
+    /* Uses flexbox for layout */
     display: flex;
 }
 .card-article{
+    /* Adds a box shadow with specific blur and spread */
     box-shadow: 0px 5px 50px 25px #74BED9;
+    /* Adds a solid border of 2px with a grey color */
     border: 2px solid #727272;
+    /* Sets the background color to light blue */
     background-color: #74BED9;
+    /* Adds margin to the card */
     margin: auto 50px 50px 80px;
+    /* Sets the text color to black */
     color: black;
+    /* Sets the height to auto */
     height: auto;
+    /* Rounds the corners of the card */
     border-radius: 20px;
+    /* Adds padding to the bottom of the card */
     padding-bottom: 20px;
 }
 .category_title{
+    /* Adds a solid border of 2px with blue color */
     border: solid 2px #0000FF;
+    /* Rounds the corners of the title */
     border-radius: 20px;
+    /* Sets the text color to black */
     color: black;
+    /* Sets the background color to white */
     background-color: white;
+    /* Removes the default list style */
     list-style-type: none;
+    /* Inherits padding from the parent */
     padding: inherit;
+    /* Centers the element horizontally */
     margin: auto;
+    /* Uses ruby-text display for inline annotations */
     display: ruby-text;
+    /* Sets the font size to 20px */
     font-size: 20px;
 }
 a{
-    color:black;
-    
+    /* Sets the text color to black for all links */
+    color: black;
 }
 .card-title {
+    /* Centers the content horizontally */
     justify-content: center;
+    /* Centers the text */
     text-align: center;
+    /* Sets font display to flex (incorrect property, should be display: flex;) */
     font-display: flex;
+    /* Sets the height to auto */
     height: auto;
+    /* Sets the width of the card title */
     width: 1100px;
+    /* Adds padding to the card title */
     padding: 15px;
+    /* Sets the text color to black */
     color: black;
+    /* Adds a blue text shadow */
     text-shadow: #0000FF 2px 2px 2px;
 }
 .card-text {
+    /* Hides the overflow content */
     overflow: hidden;
+    /* Sets the text color to black */
     color: black;
+    /* Adds padding to the text */
     padding: 10px;
+    /* Adds margin to the text */
     margin: 10px;
+    /* Rounds the corners of the text */
     border-radius: 20px;
+    /* Sets the background color to white */
     background-color: white;
+    /* Sets the height of the text area */
     height: 150px;
 }
-/* all buttons */
+/* All buttons */
 .card-buttons {
+    /* Uses flexbox for layout */
     display: flex;
+    /* Distributes space between buttons */
     justify-content: space-between; 
+    /* Adds margin to the top of the buttons */
     margin-top: 10px; 
 }
 .card-btn{
+    /* Sets the display to inline */
     display: inline;
 }
 
 .card-btn:hover{
+    /* Adds a box shadow on hover */
     box-shadow: -1px 13px 142px 0px #0000FF;
-    
 }
 .card-article .btn-modify{
+    /* Sets the height of the modify button */
     height: 30px;
+    /* Sets the width of the modify button */
     width: 80px;
+    /* Adds a solid border of 2px with grey color */
     border: 2px solid #727272;
+    /* Sets the background color to bright green */
     background-color: rgb(0, 255, 140);
+    /* Rounds the corners of the button */
     border-radius: 20px;
+    /* Sets the text color to black */
     color: black;
+    /* Centers the button horizontally */
     margin: auto;
+    /* Sets the display to inline-block */
     display: inline-block;
+    /* Adds padding to the button */
     padding: 4px;
+    /* Removes the default list style */
     list-style: none;
-    }
-    .card-article .btn-modify:hover {
-        box-shadow: -1px 13px 142px 0px #0000FF;
-        }
-    
+}
+.card-article .btn-modify:hover {
+    /* Adds a box shadow on hover */
+    box-shadow: -1px 13px 142px 0px #0000FF;
+}
+
 .card-article .btn-delete{
+    /* Sets the height of the delete button */
     height: 30px;
+    /* Sets the width of the delete button */
     width: 80px;
+    /* Adds a solid border of 2px with red color */
     border: 2px solid #ff0101;
-    background-color:#f80707;
+    /* Sets the background color to bright red */
+    background-color: #f80707;
+    /* Rounds the corners of the button */
     border-radius: 20px;
+    /* Sets the text color to black */
     color: black;
+    /* Adds margin to the delete button */
     margin: auto 345px;
-    }
-   
-    /*flash messages*/ 
+}
+
+/* Flash messages */
 .flash-message{
+    /* Adds margin to the bottom of flash messages */
     margin-bottom: 10px;
+    /* Adds padding to flash messages */
     padding: 10px;
+    /* Adds a solid border of 1px with light grey color */
     border: 1px solid #ccc;
+    /* Rounds the corners of flash messages */
     border-radius: 5px;
-  }
-  
-  .flash-message-success{
+}
+
+.flash-message-success{
+    /* Sets the background color to light green */
     background-color: #dff0d8;
+    /* Sets the border color to a slightly darker green */
     border-color: #d6e9c6;
+    /* Sets the text color to dark green */
     color: #3c763d;
-  }
-  
-  .flash-message-error{
+}
+
+.flash-message-error{
+    /* Sets the background color to light red */
     background-color: #f2dede;
+    /* Sets the border color to a slightly darker red */
     border-color: #ebccd1;
+    /* Sets the text color to dark red */
     color: #a94442;
-  }
-  
-  .flash-message-warning{
+}
+
+.flash-message-warning{
+    /* Sets the background color to light yellow */
     background-color: #fcf8e3;
+    /* Sets the border color to a slightly darker yellow */
     border-color: #faebcc;
+    /* Sets the text color to dark yellow */
     color: #8a6d3b;
-  }
-  /* end flash messages*/
-  /*I Pad version*/
-  /* This media query applies styles to screens with a width between 810px and 1080px */
-  @media screen and (min-width: 810px) and (max-width: 1080px){
+}
+/* End flash messages */
+
+/* iPad version */
+/* This media query applies styles to screens with a width between 810px and 1080px */
+@media screen and (min-width: 810px) and (max-width: 1080px){
     .card-article{
+        /* Adds a solid border of 2px with grey color */
         border: 2px solid #727272;
+        /* Sets the background color to light blue */
         background-color: #74BED9;
-        margin-left: 100px;
-        margin-right: 20px;
+        /* Adds margin to the card */
+        margin: auto 20px 20px 180px;
+        /* Sets the text color to black */
         color: black;
+        /* Sets the height to auto */
         height: auto;
+        /* Rounds the corners of the card */
         border-radius: 20px;
     }
     .card-buttons {
+        /* Uses flexbox for layout */
         display: flex;
+        /* Distributes space between buttons */
         justify-content: space-between; 
+        /* Adds margin to the top of the buttons */
         margin-top: 10px; 
     }
-
     .card-article .btn-modify{
+        /* Sets the height of the modify button */
         height: 30px;
+        /* Sets the width of the modify button */
         width: 80px;
+        /* Adds a solid border of 2px with grey color */
         border: 2px solid #727272;
+        /* Sets the background color to bright green */
         background-color: rgb(0, 255, 140);
+        /* Rounds the corners of the button */
         border-radius: 20px;
+        /* Sets the text color to black */
         color: black;
+        /* Adds margin to the modify button */
         margin: auto 65px;
+        /* Adds padding to the button */
         padding: 4px;
+        /* Removes the default list style */
         list-style: none;
-        }
+    }
     .card-article .btn-delete {
+        /* Sets the height of the delete button */
         height: 30px;
+        /* Sets the width of the delete button */
         width: 80px;
+        /* Adds a solid border of 2px with red color */
         border: 2px solid #ff0101;
+        /* Sets the background color to bright red */
         background-color: #f80707;
+        /* Rounds the corners of the button */
         border-radius: 20px;
+        /* Sets the text color to black */
         color: black;
-        margin: auto 300px;
-      }
-  }
+        /* Adds margin to the delete button */
+        margin: auto 50px;
+    }
+}
+
 /*mediaquery mobile version*/
 /*This is version mobile :
 version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
@@ -165,46 +260,89 @@ in this case for a creen max of the 500px
 */
 @media screen and (max-width: 500px){
     .card-list {
+        /* Uses flexbox for layout */
         display: flex;
+        /* Arranges items in a column */
         flex-direction: column; 
+        /* Centers the items */
         align-items: center; 
-        margin: -10px 20 ;
+        /* Adds margin to the card list */
+        margin: -10px 20;
+        /* Allows scrolling if content overflows */
         overflow: scroll;
     }
-    .tous-article{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: -10px 20px;
+    .card-text {
+        /* Allows scrolling if content overflows */
         overflow: scroll;
+        /* Sets the text color to black */
+        color: black;
+        /* Adds padding to the card text */
+        padding: 10px;
+        /* Adds margin to the card text */
+        margin: 10px;
+        /* Rounds the corners of the card text */
+        border-radius: 20px;
+        /* Sets the background color to white */
+        background-color: white;
+        /* Sets the height of the card text */
+        height: 150px;
+    }
+    .tous-article{
+        /* Uses flexbox for layout */
+        display: flex;
+        /* Arranges items in a column */
+        flex-direction: column;
+        /* Centers the items */
+        align-items: center;
+        /* Adds margin to the article container */
+        margin: -10px 20px;
+        /* Allows scrolling if content overflows */
+        overflow: scroll;
+        /* Centers the article container */
         margin: auto;
     }
     .card-article{
-
+        /* Adds a solid border of 2px with grey color */
         border: 2px solid #727272;
+        /* Sets the background color to light blue */
         background-color: #74BED9;
+        /* Sets the text color to black */
         color: black;
-        padding: 10px;
-      
+        /* Adds margin to the card */
+        margin: auto 10px 10px 10px;
     }
     .card-article .btn-modify{
+        /* Sets the height of the modify button */
         height: 30px;
+        /* Sets the width of the modify button */
         width: 80px;
+        /* Adds a solid border of 2px with grey color */
         border: 2px solid #727272;
+        /* Sets the background color to bright green */
         background-color: rgb(0, 255, 140);
+        /* Rounds the corners of the button */
         border-radius: 20px;
+        /* Sets the text color to black */
         color: black;
+        /* Adds padding to the button */
         padding: 4px;
+        /* Removes the default list style */
         list-style: none;
-        }
+    }
     .card-article .btn-delete{
+        /* Sets the height of the delete button */
         height: 30px;
+        /* Sets the width of the delete button */
         width: 80px;
+        /* Adds a solid border of 2px with red color */
         border: 2px solid #ff0101;
-        background-color:#f80707;
+        /* Sets the background color to bright red */
+        background-color: #f80707;
+        /* Rounds the corners of the button */
         border-radius: 20px;
+        /* Sets the text color to black */
         color: black;
+        /* Adds margin to the delete button */
         margin: auto 45px;
     }
 }
-

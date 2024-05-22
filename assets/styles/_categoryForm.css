@@ -1,80 +1,134 @@
 /*
-*css category form
+* CSS for the category form
 */
-/* desktop version*/
-.category-form{
+
+/* Desktop version */
+.category-form {
+  /* Adds a solid border of 2px with grey color */
   border: 2px solid #727272;
+  /* Sets the background color to light blue */
   background-color: #74BED9;
+  /* Rounds the corners of the form */
   border-radius: 20px;
+  /* Sets the width of the form */
   width: 200px;
+  /* Sets the height of the form */
   height: 130px;
+  /* Centers the form */
   margin: auto;
+  /* Adds padding to the form */
   padding: 10px;
+  /* Sets the text color to black */
   color: #000000;
+  /* Adds a box shadow with light blue color */
   box-shadow: 0px 5px 50px 25px #74BED9;
 }
-.btn-category{
+
+.btn-category {
+  /* Adds margin to the button */
   margin: 20px auto;
+  /* Adds padding to the button */
   padding: 5px;
+  /* Sets the height of the button */
   height: auto;
+  /* Sets the width of the button */
   width: auto;
+  /* Adds a solid border of 2px with grey color */
   border: 2px solid #727272;
+  /* Sets the background color to bright green */
   background-color: rgb(0, 255, 140);
+  /* Rounds the corners of the button */
   border-radius: 20px;
+  /* Sets the text color to black */
   color: black;
+  /* Sets the display to inline-block */
   display: inline-block;
 }
-/*tablet vesion */ 
-/* This media query applies styles to screens with a width between 810px and 1080px */
-@media screen and (min-width: 853px) and (max-width: 1080px){
-  .category-form{
-    border: 2px solid #727272;
-    background-color: #74BED9;
-    border-radius: 20px;
-    width: 200px;
-    height: 130px;
-    margin: auto;;
-    padding: 10px;
-    color: #000000;
-  }
-  .btn-category{
-    margin: 20px auto;
-    padding: 5px;
-    height: auto;
-    width: 10vh;
-    border: 2px solid #727272;
-    background-color: rgb(0, 255, 140);
-    border-radius: 20px;
-    color: black;
-    display: inline-block;
-  }
-}
-/* mobile version */ 
-/*This is version mobile :
-version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
-in this case for a creen max of the 500px
-*/
-  @media screen and (min-width: 412px) and (max-width: 500px){
-    .category-form{
+
+/* Tablet version */
+/* This media query applies styles to screens with a width between 853px and 1080px */
+@media screen and (min-width: 853px) and (max-width: 1080px) {
+  .category-form {
+      /* Adds a solid border of 2px with grey color */
       border: 2px solid #727272;
+      /* Sets the background color to light blue */
       background-color: #74BED9;
+      /* Rounds the corners of the form */
       border-radius: 20px;
+      /* Sets the width of the form */
       width: 200px;
+      /* Sets the height of the form */
       height: 130px;
-      margin: 50px;
+      /* Centers the form */
+      margin: auto;
+      /* Adds padding to the form */
       padding: 10px;
+      /* Sets the text color to black */
       color: #000000;
-    }
-    .btn-category{
-      margin: 20px auto;
-      padding: 5px;
-      height: auto;
-      width: 10vh;
-      border: 2px solid #727272;
-      background-color: white;
-      border-radius: 20px;
-      color: black;
-      display: inline-block;
-    }
   }
 
+  .btn-category {
+      /* Adds margin to the button */
+      margin: 20px auto;
+      /* Adds padding to the button */
+      padding: 5px;
+      /* Sets the height of the button */
+      height: auto;
+      /* Sets the width of the button to 10vh */
+      width: 10vh;
+      /* Adds a solid border of 2px with grey color */
+      border: 2px solid #727272;
+      /* Sets the background color to bright green */
+      background-color: rgb(0, 255, 140);
+      /* Rounds the corners of the button */
+      border-radius: 20px;
+      /* Sets the text color to black */
+      color: black;
+      /* Sets the display to inline-block */
+      display: inline-block;
+  }
+}
+
+/* Mobile version */
+/* This media query applies styles to screens with a width between 412px and 500px */
+@media screen and (min-width: 412px) and (max-width: 500px) {
+  .category-form {
+      /* Adds a solid border of 2px with grey color */
+      border: 2px solid #727272;
+      /* Sets the background color to light blue */
+      background-color: #74BED9;
+      /* Rounds the corners of the form */
+      border-radius: 20px;
+      /* Sets the width of the form */
+      width: 200px;
+      /* Sets the height of the form */
+      height: 130px;
+      /* Adds margin to the form */
+      margin: 50px;
+      /* Adds padding to the form */
+      padding: 10px;
+      /* Sets the text color to black */
+      color: #000000;
+  }
+
+  .btn-category {
+      /* Adds margin to the button */
+      margin: 20px auto;
+      /* Adds padding to the button */
+      padding: 5px;
+      /* Sets the height of the button */
+      height: auto;
+      /* Sets the width of the button to 10vh */
+      width: 10vh;
+      /* Adds a solid border of 2px with grey color */
+      border: 2px solid #727272;
+      /* Sets the background color to white */
+      background-color: white;
+      /* Rounds the corners of the button */
+      border-radius: 20px;
+      /* Sets the text color to black */
+      color: black;
+      /* Sets the display to inline-block */
+      display: inline-block;
+  }
+}
