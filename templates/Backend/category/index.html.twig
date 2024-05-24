@@ -26,8 +26,8 @@
             {% for category in categories %}
                 {% include 'components/_cardCategory.html.twig' with { 'category': category } %}
                 {% if category.createdBy == current_user %}
-                    <a href="{{ path('admin.category.edit', {id: category.id}) }}">Edit</a>
-                    <form action="{{ path('admin.category.delete', {id: category.id}) }}" method="post" style="display:inline;">
+                    <a href="{{ path('user.category.edit', {id: category.id}) }}">Edit</a>
+                    <form action="{{ path('user.category.delete', {id: category.id}) }}" method="post" style="display:inline;">
                         <input type="hidden" name="token" value="{{ csrf_token('delete' ~ category.id) }}">
                         <button type="submit">Delete</button>
                     </form>

@@ -65,7 +65,7 @@ class ArticleController extends AbstractController
     /**
      * Route for creating a new article
      */
-    #[Route('/admin/article/create', name: 'admin.article.create')]
+    #[Route('/user/article/create', name: 'user.article.create')]
     #[IsGranted('ROLE_USER')]
     public function createArticle(Request $request, CategoryRepository $categoryRepo): Response|RedirectResponse
     {
@@ -85,7 +85,7 @@ class ArticleController extends AbstractController
 
             // Add a success flash message and redirect to the article list page
             $this->addFlash('success', 'Article created');
-            return $this->redirectToRoute('admin.article.read');
+            return $this->redirectToRoute('user.article.read');
         }
 
         // Render the article creation form view with categories
@@ -98,7 +98,7 @@ class ArticleController extends AbstractController
     /**
      * Route for reading (listing) articles
      */
-    #[Route('/admin/article/read', name: 'admin.article.read')]
+    #[Route('/user/article/read', name: 'user.article.read')]
     public function readArticle(): Response
     {
         // Retrieve all articles from the repository
@@ -113,7 +113,7 @@ class ArticleController extends AbstractController
     /**
      * Route for editing an article
      */
-    #[Route('/admin/article/edit/{id}', name: 'admin.article.edit', methods: ['GET', 'POST'])]
+    #[Route('/user/article/edit/{id}', name: 'user.article.edit', methods: ['GET', 'POST'])]
     public function edit(Article $article, Request $request): Response|RedirectResponse
     {
         // Ensure the user is logged in
@@ -124,7 +124,7 @@ class ArticleController extends AbstractController
         // Ensure the logged-in user is the author of the article
         if ($article->getUser() !== $this->getUser()) {
             $this->addFlash('error', 'You are not allowed to edit this article.');
-            return $this->redirectToRoute('admin.article.read');
+            return $this->redirectToRoute('user.article.read');
         }
 
         // Create and handle the form for editing the article
@@ -136,7 +136,7 @@ class ArticleController extends AbstractController
             $this->em->persist($article);
             $this->em->flush();
             $this->addFlash('success', 'Article modified successfully!');     
-            return $this->redirectToRoute('admin.article.read');
+            return $this->redirectToRoute('user.article.read');
         }
 
         // Render the article edit form view
@@ -148,7 +148,7 @@ class ArticleController extends AbstractController
     /**
      * Route for deleting an article
      */
-    #[Route('/admin/article/delete/{id}', name: 'admin.article.delete', methods: ['POST', 'DELETE'])]
+    #[Route('/user/article/delete/{id}', name: 'user.article.delete', methods: ['POST', 'DELETE'])]
     public function deleteArticle(?Article $article, Request $request): RedirectResponse
     {
         // Ensure the user is logged in
@@ -159,13 +159,13 @@ class ArticleController extends AbstractController
         // Ensure the article exists
         if (!$article instanceof Article) {
             $this->addFlash('error', 'Article not found');
-            return $this->redirectToRoute('admin.article.read');
+            return $this->redirectToRoute('user.article.read');
         }
 
         // Ensure the logged-in user is the author of the article
         if ($article->getUser() !== $this->getUser()) {
             $this->addFlash('error', 'You are not allowed to delete this article.');
-            return $this->redirectToRoute('admin.article.read');
+            return $this->redirectToRoute('user.article.read');
         }
 
         // Validate the CSRF token before deleting the article
@@ -176,13 +176,11 @@ class ArticleController extends AbstractController
 
             // Add a success flash message and redirect to the article list page
             $this->addFlash('success', 'Article deleted successfully');
-            return $this->redirectToRoute('admin.article.read');
+            return $this->redirectToRoute('user.article.read');
         }
 
         // Add an error flash message for an invalid token and redirect to the article list page
         $this->addFlash('error', 'Invalid token');
-        return $this->redirectToRoute('admin.article.read');
+        return $this->redirectToRoute('user.article.read');
     }
 }
-
-

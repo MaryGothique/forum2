@@ -6,27 +6,44 @@
 
 {% block body %}
     {# Start of the body block #}
+{# Block for specific stylesheets, includes the 'detail' entry #}
+{% block specificStylesheets %}{{ encore_entry_link_tags('profile') }}{% endblock %}
 
-    <div class="">
+ 
         {# Start of the profile information section #}
 
         <h1>My Profile</h1>
         {# Heading indicating the profile information section #}
 
-        <div class='form-login'>
-            {# Start of the form-login div containing profile details #}
+        <div class='form-profile'>
+
+       
+                       {# Start of the form-login div containing profile details #}
 
             <p><strong>Nickname:</strong> {{ user.nickname }}</p>
             {# Displaying the nickname of the user #}
 
             <p><strong>Email:</strong> {{ user.email }}</p>
             {# Displaying the email of the user #}
+                <div class="buttons">
+                                   <a href="{{ path('user_edit', {id: user.id}) }}" class="btn-modify-user">Edit</a>
+            <form method="POST" action="{{ path('user_delete', {'id': user.id}) }}"
+                onsubmit="return confirm('Are you sure you want to delete this user? This action cannot be undone.')">
+                <input type="hidden" name="token" value="{{ csrf_token('delete' ~ user.id) }}">
+                <button class="btn-delete">Delete</button>
+                </div>
+ 
+            </form>
+            </div>
 
-        </div>
+
+        
         {# End of the form-login div containing profile details #}
 
-    </div>
-    {# End of the profile information section #}
+
+
+
+            {# End of the profile information section #}
 
 {% endblock %}
 {# End of the body block #}

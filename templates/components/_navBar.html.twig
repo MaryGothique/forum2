@@ -24,16 +24,16 @@
                 <!-- Links for authenticated users -->
                 <li><a href="{{ path('user') }}" class="btn">Profile</a></li>
                 <li><a href="{{ path('app_logout') }}" class="btn-logout">Logout</a></li>
-                <li><a href="{{ path('admin.article.create') }}" class="btn">Create Article</a></li>
-                <li><a href="{{ path('admin.category.create') }}" class="btn">Create Category</a></li>
+                <li><a href="{{ path('user.article.create') }}" class="btn">Create Article</a></li>
+                <li><a href="{{ path('user.category.create') }}" class="btn">Create Category</a></li>
             {% else %}
                 <!-- Links for non-authenticated users -->
                 <li><a href="{{ path('login') }}" class="btn-log">Login</a></li>
                 <li><a href="{{ path('register') }}" class="btn-log">Register</a></li>
             {% endif %}
             <!-- Common links for all users -->
-            <li><a href="{{ path('admin.article.read') }}" class="btn"> All articles</a></li>
-            <li><a href="{{ path('admin.category.read') }}" class="btn"> All categories</a></li>
+            <li><a href="{{ path('user.article.read') }}" class="btn"> All articles</a></li>
+            <li><a href="{{ path('user.category.read') }}" class="btn"> All categories</a></li>
             <li><a href="{{ path('concerts') }}" class="btn"> Concerts</a></li>
         </ul>
     </div>
