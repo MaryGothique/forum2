@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
- 
+
 {% block title %}
     All Articles!
     {{ parent() }}
@@ -7,14 +7,12 @@
 
 {% block body %}
 
-    {# Display success flash messages if any #}
     {% for flashMessage in app.flashes('success') %}
         <div class="flash-message flash-message-success">
             {{ flashMessage }}
         </div>
     {% endfor %}
 
-    {# Display error flash messages if any #}
     {% for flashMessage in app.flashes('error') %}
         <div class="flash-message flash-message-error">
             {{ flashMessage }}
@@ -25,7 +23,6 @@
         <h1>All articles!</h1>
       
         <div class="ALL-article">
-            {# Loop through the articles and include a partial template for each one #}
             {% for article in articles %}
                {% include 'components/_card.html.twig' %}
             {% endfor %}
@@ -33,3 +30,4 @@
     {% endblock %}
 
 {% endblock %}
+

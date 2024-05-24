@@ -3,28 +3,13 @@
 {% block body %}
     <h1>Write an article!</h1>
     <div class="form-article">
-        
-            {{ form_start(form) }} 
-                {# Start the form rendering #}
-
-                {{ form_errors(form) }} 
-                {# Display any form errors #}
-
-                {{ form_row(form.title) }} 
-                {# Render the title field with its label and errors #}
-
-                {{ form_widget(form.category) }}
-                {# Render the category field's widget (input element) #}
-                {# widget form #}
-
-                {{ form_row(form.content) }} 
-                {# Render the content field with its label and errors #}
-
-                {{ form_row(form.validate, { 'label': 'Create' }) }} 
-                {# Render the submit button with the label 'Create' #}
-
-            {{ form_end(form) }} 
-            {# End the form rendering #}
+        {{ form_start(form) }} 
+            {{ form_errors(form) }} 
+            {{ form_row(form.title) }} 
+            {{ form_widget(form.category) }}
+            {{ form_row(form.content) }} 
+            {{ form_row(form.validate, { 'label': 'Create' }) }} 
+        {{ form_end(form) }} 
     </div>
-           
 {% endblock %}
+

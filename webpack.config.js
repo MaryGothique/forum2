@@ -28,6 +28,8 @@ Encore
     .addStyleEntry('login', './assets/styles/login.css')
     .addStyleEntry('rgpd','./assets/styles/rgpd.css')
     .addStyleEntry('concerts', './assets/styles/concerts.css')
+    .addStyleEntry('profile','./assets/styles/profile.css')
+    .addStyleEntry('edit_profile','./assets/styles/edit_profile.css')
    
 
     
