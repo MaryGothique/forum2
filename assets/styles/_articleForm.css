@@ -132,7 +132,9 @@ button #article_validate {
     /* Adds a solid border of 2px with a grey color */
     border: 2px solid #727272;
     /* Sets the height of the form */
-    height: 525px;
+   
+      height: auto;
+    
     /* Sets the width of the form */
     width: 300px;
     /* Uses flexbox for layout */
@@ -140,6 +142,7 @@ button #article_validate {
     /* Sets the background color to light blue */
     background-color: #74BED9;
 }
+
 #article_title{
   /* Sets the width of the title field */
   width: 200px;

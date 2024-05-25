@@ -23,7 +23,7 @@
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <!-- Links for authenticated users -->
                 <li><a href="{{ path('user') }}" class="btn">Profile</a></li>
-                <li><a href="{{ path('app_logout') }}" class="btn-logout">Logout</a></li>
+                <li><a href="{{ path('app_logout') }}" class=" btn-logout">Logout</a></li>
                 <li><a href="{{ path('user.article.create') }}" class="btn">Create Article</a></li>
                 <li><a href="{{ path('user.category.create') }}" class="btn">Create Category</a></li>
             {% else %}
