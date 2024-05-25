@@ -76,6 +76,17 @@ a.btn-logout{
     border-radius: 20px;
     color: black;
   }
+  a.btn-logout {
+    margin: auto 33px auto -15px;
+    height: 30px;
+    width: 15vh;
+    border: 2px solid #727272;
+    background-color: red;
+    border-radius: 20px;
+    color: black;
+    display: inline-block;
+    padding: 4px;
+  }
   img{
     width:100%;
     padding: 10px;
