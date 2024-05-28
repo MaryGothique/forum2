@@ -34,27 +34,32 @@ class Category
         $this->articles = new ArrayCollection();
     }
 
+    // Get the ID of the category
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    // Get the title of the category
     public function getTitle(): ?string
     {
         return $this->title;
     }
 
+    // Set the title of the category
     public function setTitle(string $title): static
     {
         $this->title = $title;
         return $this;
     }
 
+    // Get the articles associated with the category
     public function getArticles(): Collection
     {
         return $this->articles;
     }
 
+    // Add an article to the category
     public function addArticle(Article $article): static
     {
         if (!$this->articles->contains($article)) {
@@ -64,6 +69,7 @@ class Category
         return $this;
     }
 
+    // Remove an article from the category
     public function removeArticle(Article $article): static
     {
         if ($this->articles->removeElement($article)) {
@@ -72,27 +78,32 @@ class Category
         return $this;
     }
 
+    // Get the user who created the category
     public function getCreatedBy(): ?UserInterface
     {
         return $this->createdBy;
     }
 
+    // Set the user who created the category
     public function setCreatedBy(?UserInterface $createdBy): static
     {
         $this->createdBy = $createdBy;
         return $this;
     }
 
+    // Get the author of the category
     public function getAuthor(): ?string
     {
         return $this->author;
     }
 
+    // Set the author of the category
     public function setAuthor(?string $author): static
     {
         $this->author = $author;
         return $this;
     }
 }
+
 
 

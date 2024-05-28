@@ -3,11 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Article;
-use App\Entity\Comment;
 use App\Form\ArticleType;
-use App\Form\CommentType;
 use App\Repository\ArticleRepository;
-use App\Repository\CommentRepository;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,11 +17,10 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class ArticleController extends AbstractController
 {
-    // Dependency injection of the ArticleRepository, EntityManager, and CommentRepository
+    // Dependency injection of the ArticleRepository and EntityManager
     public function __construct(
         private ArticleRepository $articleRepository,
-        private EntityManagerInterface $em,
-        private CommentRepository $repoComment
+        private EntityManagerInterface $em
     )
     {   
     }
@@ -33,32 +29,9 @@ class ArticleController extends AbstractController
     #[Route('/article/{id}', name: 'article_detail')]
     public function articleDetail(Article $article, Request $request): Response
     {
-        // Create a new Comment entity and form
-        $comment = new Comment();
-        $commentForm = $this->createForm(CommentType::class, $comment);
-        $commentForm->handleRequest($request);
-
-        // Handle form submission
-        if ($commentForm->isSubmitted() && $commentForm->isValid()) {
-            // Set comment properties
-            $comment->setArticle($article);
-            $comment->setUser($this->getUser());
-            $comment->setCreatedAt(new \DateTimeImmutable());
-            $comment->setUpdatedAt(new \DateTimeImmutable());
-
-            // Persist and flush the comment to the database
-            $this->em->persist($comment);
-            $this->em->flush();
-
-            // Add a success flash message and redirect to the article detail page
-            $this->addFlash('success', 'Comment added successfully!');
-            return $this->redirectToRoute('article_detail', ['id' => $article->getId()]);
-        }
-
-        // Render the article detail view with the comment form
+        // Render the article detail view without comment form
         return $this->render('Backend/article/_detail.html.twig', [
             'article' => $article,
-            'commentForm' => $commentForm->createView(),
         ]);
     }
 
@@ -144,6 +117,7 @@ class ArticleController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
 
     /**
      * Route for deleting an article

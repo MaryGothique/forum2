@@ -46,15 +46,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 30)]
     private ?string $nickname = null;
 
-    // Comments made by the user
-    #[ORM\OneToMany(mappedBy: 'User', targetEntity: Comment::class)]
-    private Collection $comments;
-
     // Constructor to initialize collections
     public function __construct()
     {
         $this->articles = new ArrayCollection();
-        $this->comments = new ArrayCollection();
     }
 
     // Get the ID of the user
@@ -162,36 +157,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setNickname(string $nickname): static
     {
         $this->nickname = $nickname;
-
-        return $this;
-    }
-
-    // Get the comments made by the user
-    public function getComments(): Collection
-    {
-        return $this->comments;
-    }
-
-    // Add a comment made by the user
-    public function addComment(Comment $comment): static
-    {
-        if (!$this->comments->contains($comment)) {
-            $this->comments->add($comment);
-            $comment->setUser($this);
-        }
-
-        return $this;
-    }
-
-    // Remove a comment made by the user
-    public function removeComment(Comment $comment): static
-    {
-        if ($this->comments->removeElement($comment)) {
-            // set the owning side to null (unless already changed)
-            if ($comment->getUser() === $this) {
-                $comment->setUser(null);
-            }
-        }
 
         return $this;
     }

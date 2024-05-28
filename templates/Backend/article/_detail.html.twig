@@ -56,7 +56,7 @@
         {% endif %}
     </article>
 
-    {# Comments section #}
+    {# Comments section 
     <section class="comments">
         <h2>Comments</h2>
         {% for comment in article.comments %}
@@ -67,9 +67,9 @@
         {% else %}
             <p>No comments yet. Be the first to comment!</p>
         {% endfor %}
-    </section>
+    </section>#}
 
-    {# Add a comment section, visible only to authenticated users #}
+    {# Add a comment section, visible only to authenticated users 
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
     <section class="add-comment">
         
@@ -81,6 +81,6 @@
     </section>
     {% else %}
     <p>You must be logged in to add a comment.</p>
-    {% endif %}
+    {% endif %} #}
 {% endblock %}
 

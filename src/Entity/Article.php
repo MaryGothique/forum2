@@ -9,6 +9,7 @@ use App\Repository\ArticleRepository;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use App\Entity\User; // Assicurati di importare la classe User se non è già importata
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article
@@ -26,7 +27,7 @@ class Article
         min: 2,
         max: 60,
         minMessage: 'Your title must be at least {{limit}} character long',
-        maxMessage: 'Your title cannot be longer than {{ limit }}characters',
+        maxMessage: 'Your title cannot be longer than {{ limit }} characters',
     )]
     private ?string $title = null;
 
@@ -48,18 +49,13 @@ class Article
     #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'articles')]
     private Collection $category;
 
-    // Comments on the article
-    #[ORM\OneToMany(mappedBy: 'Article', targetEntity: Comment::class)]
-    private Collection $comments;
-
     public function __construct()
     {
         // Initialize collections
         $this->category = new ArrayCollection();
-        $this->comments = new ArrayCollection();
     }
 
-    // Getters and setters for id, title, content, createAt, user, category, and comments properties
+    // Getters and setters for id, title, content, createAt, user, and category properties
     // Get the ID of the article
     public function getId(): ?int
     {
@@ -148,36 +144,6 @@ class Article
     public function removeCategory(Category $category): static
     {
         $this->category->removeElement($category);
-
-        return $this;
-    }
-
-    // Get the comments on the article
-    public function getComments(): Collection
-    {
-        return $this->comments;
-    }
-
-    // Add a comment to the article
-    public function addComment(Comment $comment): static
-    {
-        if (!$this->comments->contains($comment)) {
-            $this->comments->add($comment);
-            $comment->setArticle($this);
-        }
-
-        return $this;
-    }
-
-    // Remove a comment from the article
-    public function removeComment(Comment $comment): static
-    {
-        if ($this->comments->removeElement($comment)) {
-            // set the owning side to null (unless already changed)
-            if ($comment->getArticle() === $this) {
-                $comment->setArticle(null);
-            }
-        }
 
         return $this;
     }
