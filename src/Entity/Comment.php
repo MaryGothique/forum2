@@ -14,19 +14,16 @@ class Comment
     private ?int $id = null;
 
     #[ORM\Column(type: 'text')]
-    private ?string $Content = null;
+    private ?string $content = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $CreatedAt = null;
+    #[ORM\ManyToOne(targetEntity: User::class)]
+    private ?User $user = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $UpdatedAt = null;
+    #[ORM\ManyToOne(targetEntity: Article::class, inversedBy: 'comments')]
+    private ?Article $article = null;
 
-    #[ORM\ManyToOne(inversedBy: 'comments')]
-    private ?User $User = null;
-
-    #[ORM\ManyToOne(inversedBy: 'comments')]
-    private ?Article $Article = null;
+    #[ORM\Column(type: 'datetime')]
+    private ?\DateTimeInterface $createdAt = null;
 
     public function getId(): ?int
     {
@@ -35,60 +32,48 @@ class Comment
 
     public function getContent(): ?string
     {
-        return $this->Content;
+        return $this->content;
     }
 
-    public function setContent(string $Content): static
+    public function setContent(string $content): static
     {
-        $this->Content = $Content;
-
-        return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->CreatedAt;
-    }
-
-    public function setCreatedAt(\DateTimeImmutable $CreatedAt): static
-    {
-        $this->CreatedAt = $CreatedAt;
-
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeImmutable
-    {
-        return $this->UpdatedAt;
-    }
-
-    public function setUpdatedAt(\DateTimeImmutable $UpdatedAt): static
-    {
-        $this->UpdatedAt = $UpdatedAt;
+        $this->content = $content;
 
         return $this;
     }
 
     public function getUser(): ?User
     {
-        return $this->User;
+        return $this->user;
     }
 
-    public function setUser(?User $User): static
+    public function setUser(?User $user): static
     {
-        $this->User = $User;
+        $this->user = $user;
 
         return $this;
     }
 
     public function getArticle(): ?Article
     {
-        return $this->Article;
+        return $this->article;
     }
 
-    public function setArticle(?Article $Article): static
+    public function setArticle(?Article $article): static
     {
-        $this->Article = $Article;
+        $this->article = $article;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): static
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

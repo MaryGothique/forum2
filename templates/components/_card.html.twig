@@ -10,7 +10,7 @@
     <p>{{ article.user.nickname }}</p>
     {# Displays the nickname of the user who created the article #}
 
-    <p>{{ article.createAt|date('F j, Y') }}</p>
+    <p>{{ article.createdAt|date('F j, Y') }}</p>
     {# Displays the creation date of the article in a human-readable format #}
 
     {% if article.categories is not empty %}

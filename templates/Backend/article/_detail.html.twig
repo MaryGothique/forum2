@@ -1,6 +1,6 @@
 {# templates/Backend/article/_detail.html.twig #}
 
-{# This template extends the base template #}
+{# This is a base template Twig #}
 {% extends 'base.html.twig' %}
 
 {# Block for specific stylesheets, includes the 'detail' entry #}
@@ -8,14 +8,14 @@
 
 {# Block for the main content of the page #}
 {% block body %}
-    {# Display flash messages for success #}
+    {# Display success flash messages #}
     {% for flashMessage in app.flashes('success') %}
         <div class="flash-message flash-message-success">
             {{ flashMessage }}
         </div>
     {% endfor %}
 
-    {# Display flash messages for error #}
+    {# Display error flash messages #}
     {% for flashMessage in app.flashes('error') %}
         <div class="flash-message flash-message-error">
             {{ flashMessage }}
@@ -28,7 +28,7 @@
     <article class="detail">
         <h2 class="title">{{ article.title }}</h2>
         <p class="author">Author: {{ article.user.nickname }}</p>
-        <p class="date">Published on: {{ article.createAt|date('j/m/Y') }}</p>
+        <p class="date">Published on: {{ article.createdAt|date('j/m/Y') }}</p>
         
         {# Display categories associated with the article #}
         <div class="categories">
@@ -60,10 +60,12 @@
     <section class="comments">
         <h2>Comments</h2>
         {% for comment in article.comments %}
-            <div class="card-text">
-                <p>{{ comment.content }}</p>
+            <div class="comment">
+                <div class="card-text">
+                    <p>{{ comment.content }}</p>
+                </div>
+                <p>By {{ comment.user.nickname }} on {{ comment.createdAt|date('j/m/Y H:i') }}</p>
             </div>
-            <p>By {{ comment.user.nickname }} on {{ comment.createdAt|date('j/m/Y H:i') }}</p>
         {% else %}
             <p>No comments yet. Be the first to comment!</p>
         {% endfor %}
@@ -81,6 +83,5 @@
     </section>
     {% else %}
     <p>You must be logged in to add a comment.</p>
-    {% endif %}
+    {% endif %} 
 {% endblock %}
-
