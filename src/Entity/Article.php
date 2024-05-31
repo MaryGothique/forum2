@@ -38,7 +38,7 @@ class Article
     // Creation timestamp of the article
     #[ORM\Column]
     #[Gedmo\Timestampable(on: 'create')]
-    private ?\DateTimeImmutable $CreateAt = null;
+    private ?\DateTimeImmutable $CreatedAt = null;
 
     // User who authored the article
     #[ORM\ManyToOne(inversedBy: 'articles')]
@@ -55,7 +55,7 @@ class Article
         $this->category = new ArrayCollection();
     }
 
-    // Getters and setters for id, title, content, createAt, user, and category properties
+    // Getters and setters for id, title, content, createdAt, user, and category properties
     // Get the ID of the article
     public function getId(): ?int
     {
@@ -91,15 +91,15 @@ class Article
     }
 
     // Get the creation timestamp of the article
-    public function getCreateAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): ?\DateTimeImmutable
     {
-        return $this->CreateAt;
+        return $this->CreatedAt;
     }
 
     // Set the creation timestamp of the article
-    public function setCreateAt(\DateTimeImmutable $CreateAt): static
+    public function setCreatedAt(\DateTimeImmutable $CreatedAt): static
     {
-        $this->CreateAt = $CreateAt;
+        $this->CreatedAt = $CreatedAt;
 
         return $this;
     }

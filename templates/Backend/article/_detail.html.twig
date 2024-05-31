@@ -28,7 +28,7 @@
     <article class="detail">
         <h2 class="title">{{ article.title }}</h2>
         <p class="author">Author: {{ article.user.nickname }}</p>
-        <p class="date">Published on: {{ article.createAt|date('j/m/Y') }}</p>
+        <p class="date">Published on: {{ article.createdAt|date('j/m/Y') }}</p>
         
         {# Display categories associated with the article #}
         <div class="categories">
