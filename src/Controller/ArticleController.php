@@ -3,8 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\Comment;
 use App\Form\ArticleType;
+use App\Form\CommentType;
 use App\Repository\ArticleRepository;
+use App\Repository\CommentRepository;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,19 +23,37 @@ class ArticleController extends AbstractController
     // Dependency injection of the ArticleRepository and EntityManager
     public function __construct(
         private ArticleRepository $articleRepository,
-        private EntityManagerInterface $em
+        private EntityManagerInterface $em,
+        private CommentRepository $commentRepository
     )
     {   
     }
 
     // Route for displaying the details of an article
     #[Route('/article/{id}', name: 'article_detail')]
-    public function articleDetail(Article $article, Request $request): Response
-    {
-        // Render the article detail view without comment form
-        return $this->render('Backend/article/_detail.html.twig', [
-            'article' => $article,
-        ]);
+public function articleDetail(Article $article, Request $request, CommentRepository $commentRepository): Response
+{
+    // Crea il form per i commenti
+    $comment = new Comment();
+    $commentForm = $this->createForm(CommentType::class, $comment);
+    $commentForm->handleRequest($request);
+
+    if ($commentForm->isSubmitted() && $commentForm->isValid()) {
+        $comment->setUser($this->getUser());
+        $comment->setArticle($article);
+        $comment->setCreatedAt(new \DateTime());
+        
+        $this->em->persist($comment);
+        $this->em->flush();
+
+        return $this->redirectToRoute('article_detail', ['id' => $article->getId()]);
+    }
+
+    // Renderizza il template con i dati necessari
+    return $this->render('Backend/article/_detail.html.twig', [
+        'article' => $article,
+        'commentForm' => $commentForm->createView(),
+    ]);
     }
 
     /**

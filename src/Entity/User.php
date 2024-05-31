@@ -46,10 +46,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 30)]
     private ?string $nickname = null;
 
+    #[ORM\OneToMany(mappedBy: 'User', targetEntity: Comment::class)]
+    private Collection $Article;
+
     // Constructor to initialize collections
     public function __construct()
     {
         $this->articles = new ArrayCollection();
+        $this->Article = new ArrayCollection();
     }
 
     // Get the ID of the user
@@ -159,6 +163,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->nickname = $nickname;
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Comment>
+     */
+    public function getArticle(): Collection
+    {
+        return $this->Article;
     }
 
 }
