@@ -19,9 +19,8 @@ class Category
     #[ORM\Column(length: 50)]
     private ?string $title = null;
 
-    #[ORM\ManyToMany(targetEntity: Article::class, mappedBy: 'category')]
+    #[ORM\ManyToMany(targetEntity: Article::class, mappedBy: 'categories')]
     private Collection $articles;
-
     #[ORM\ManyToOne(targetEntity: User::class)]
     #[ORM\JoinColumn(nullable: false)]
     private ?UserInterface $createdBy = null;
@@ -33,6 +32,7 @@ class Category
     {
         $this->articles = new ArrayCollection();
     }
+    
 
     // Get the ID of the category
     public function getId(): ?int
@@ -54,18 +54,19 @@ class Category
     }
 
     // Get the articles associated with the category
+
     public function getArticles(): Collection
     {
         return $this->articles;
     }
 
-    // Add an article to the category
     public function addArticle(Article $article): static
     {
         if (!$this->articles->contains($article)) {
             $this->articles->add($article);
             $article->addCategory($this);
         }
+
         return $this;
     }
 
@@ -75,6 +76,7 @@ class Category
         if ($this->articles->removeElement($article)) {
             $article->removeCategory($this);
         }
+
         return $this;
     }
 

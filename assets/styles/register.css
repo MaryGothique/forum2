@@ -25,7 +25,7 @@ button.btn{
   height: auto;
   width: 17vh;
   border: 2px solid #727272;
-  background-color: rgb(0, 255, 140);
+  background-color: #00FF8C;
   border-radius: 20px;
   color: black;
   display: inline-block;
@@ -85,7 +85,7 @@ in this case for a creen max of the 500px
             height: auto;
             width: 20vh;
             border: 2px solid #727272;
-            background-color: rgb(0, 255, 140);
+            background-color: #00FF8C;
             border-radius: 20px;
             color: black;
             display: inline-block;

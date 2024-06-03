@@ -70,7 +70,7 @@ button #article_validate {
   /* Adds a solid border of 2px with a grey color */
   border: 2px solid #727272;
   /* Sets the background color to a bright green */
-  background-color: rgb(0, 255, 140);
+  background-color: #00FF8C;
   /* Rounds the corners of the validate button */
   border-radius: 20px;
   /* Sets the text color to black */

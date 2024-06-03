@@ -76,43 +76,6 @@ class UserController extends AbstractController
     {
         
  
-         //delete every article made by the user 
-       
-        /**
-         * Retrieving user's articles: Utilizing the getArticles() method of the user object,
-         *  we obtain a collection of all articles created by that user. 
-         * This collection represents a relationship between the user entity 
-         * and the article entity defined within your Symfony application.
-         */
-        $articles = $user->getArticles();
-        /**
-         * Iterating over the articles: For each article found,
-         *  we loop through every article in the retrieved collection. 
-         * This is done using a foreach loop that iterates over each
-         *  article in the collection.
-         */
-        foreach ($articles as $article) {
-            /**
-             * Removing the articles: For each article encountered, 
-             * we call the remove() method on the $entityManager object (EntityManagerInterface)
-             *  to mark the article for removal from the database.
-             */
-            $entityManager->remove($article);
-        }
-        /**
-         * Flushing the changes: Once all articles are marked for removal,
-         *  the changes are actually applied by calling the flush() method on the $entityManager object.
-         * This triggers the actual deletion of the articles from the database.
-         */
-
-        // delete every category made by the user 
-        foreach ($articles as $article) {
-            $categories = $article->getCategories();
-            foreach ($categories as $category) {
-                $entityManager->remove($category);
-            }
-        }
-
         // delete user
         $entityManager->remove($user);
     

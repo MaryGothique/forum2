@@ -61,34 +61,27 @@ public function articleDetail(Article $article, Request $request, CommentReposit
      */
     #[Route('/user/article/create', name: 'user.article.create')]
     #[IsGranted('ROLE_USER')]
-    public function createArticle(Request $request, CategoryRepository $categoryRepo): Response|RedirectResponse
+    public function createArticle(Request $request): Response|RedirectResponse
     {
-        // Create a new Article entity and retrieve all categories
         $article = new Article();
-        $categories = $categoryRepo->findAll();
-        
-        // Create and handle the form for the new article
-        $form = $this->createForm(ArticleType::class, $article);       
+        $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Set the user and persist the article to the database
+            $article->setCreatedAt(new \DateTimeImmutable());
             $article->setUser($this->getUser());
+            
             $this->em->persist($article);
             $this->em->flush();
 
-            // Add a success flash message and redirect to the article list page
             $this->addFlash('success', 'Article created');
             return $this->redirectToRoute('user.article.read');
         }
 
-        // Render the article creation form view with categories
         return $this->render('Backend/article/create.html.twig', [
             'form' => $form->createView(),
-            'categories' => $categories
         ]);
     }
-
     /**
      * Route for reading (listing) articles
      */
