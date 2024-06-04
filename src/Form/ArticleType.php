@@ -1,10 +1,5 @@
 <?php
-/**
- *     The buildForm method defines the fields of the form. It adds fields for the article's title,
- *  category, and content, along with a submit button.
- *   The configureOptions method configures the options for the form. It sets the default 
- * data class to Article and the category class to Category.
- */
+
 namespace App\Form;
 
 use App\Entity\Article;
@@ -17,31 +12,30 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
+//this is the class immplement, with the class name
 class ArticleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        // Build the form fields
+        //this is the builder pour building the article's form 
         $builder
-            ->add('title', TextType::class) // Title field
-            ->add('category', EntityType::class, [ // Category field
-                'class' => Category::class, // The entity class for the category
-                'label' => 'Categories:', // Label for the category field
-                'multiple' => true, // Allow selection of multiple categories
-                'expanded' => true, // Render as checkboxes/radio buttons
-                'choice_label' => 'title', // Property of the Category entity to use as the choice label
-                'by_reference' => true, // Pass by reference
+            ->add('title', TextType::class)
+            ->add('categories', EntityType::class, [
+                'class' => Category::class,
+                'label' => 'Categories:',
+                'multiple' => true,
+                'expanded' => true,
+                'choice_label' => 'title',
+                'by_reference' => false, // Set to false to allow adding/removing categories
             ])
-            ->add('content', TextareaType::class) // Content field
-            ->add('validate', SubmitType::class); // Submit button
+            ->add('content', TextareaType::class)
+            ->add('validate', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        // Configure the form options
         $resolver->setDefaults([
-            'data_class' => Article::class, // The data class for the form
-            'category' => Category::class, // The category class
+            'data_class' => Article::class,
         ]);
     }
 }

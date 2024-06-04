@@ -37,7 +37,7 @@ a.btn-log{
   height: 30px;
   width: 15vh;
   border: 2px solid #727272;
-  background-color: rgb(0, 255, 140);
+  background-color: #00FF8C;
   border-radius: 20px;
   color: black;
   display: inline-block;
@@ -103,7 +103,7 @@ a.btn-logout{
   }
   /*CSS for display >= 500px*/
 }
-/*CSS for displat >= 500px*/
+/*CSS for display >= 500px*/
 /*This is version mobile :
 version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
 in this case for a creen max of the 500px
@@ -279,7 +279,7 @@ a.btn-log{
   height: 30px;
   width: 15vh;
   border: 2px solid #727272;
-  background-color: rgb(0, 255, 140);
+  background-color: #00FF8C;
   border-radius: 20px;
   color: black;
   display: inline-block;
