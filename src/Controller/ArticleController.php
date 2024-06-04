@@ -33,7 +33,7 @@ class ArticleController extends AbstractController
     #[Route('/article/{id}', name: 'article_detail')]
 public function articleDetail(Article $article, Request $request, CommentRepository $commentRepository): Response
 {
-    // Crea il form per i commenti
+    // creating form comment
     $comment = new Comment();
     $commentForm = $this->createForm(CommentType::class, $comment);
     $commentForm->handleRequest($request);
@@ -49,7 +49,7 @@ public function articleDetail(Article $article, Request $request, CommentReposit
         return $this->redirectToRoute('article_detail', ['id' => $article->getId()]);
     }
 
-    // Renderizza il template con i dati necessari
+    //render the template with the datas
     return $this->render('Backend/article/_detail.html.twig', [
         'article' => $article,
         'commentForm' => $commentForm->createView(),
@@ -131,7 +131,6 @@ public function articleDetail(Article $article, Request $request, CommentReposit
             'form' => $form->createView(),
         ]);
     }
-
 
     /**
      * Route for deleting an article

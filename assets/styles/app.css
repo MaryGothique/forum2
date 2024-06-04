@@ -9,8 +9,11 @@
 /* Sets text color to black */
 p {
   color: rgb(0, 0, 0);
-}
 
+}
+p.text {
+  margin: auto 150px;
+}
 /* Body */
 /* Sets background color to black, then to white */
 /* Sets text color to grey, and height to 100% */

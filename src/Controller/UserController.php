@@ -74,16 +74,32 @@ class UserController extends AbstractController
     #[Route('/user/delete/{id}', name: 'user_delete', methods: ['POST', 'DELETE'])]
     public function deleteUser(User $user, EntityManagerInterface $entityManager): Response
     {
-        
- 
-        // delete user
+        // Elimina tutti gli articoli associati all'utente
+        $articles = $user->getArticles();
+        foreach ($articles as $article) {
+            // Elimina tutte le categorie associate all'articolo
+            $categories = $article->getCategories();
+            foreach ($categories as $category) {
+                $entityManager->remove($category);
+            }
+
+            // Elimina tutti i commenti associati all'articolo
+            $comments = $article->getComments();
+            foreach ($comments as $comment) {
+                $entityManager->remove($comment);
+            }
+
+            $entityManager->remove($article);
+        }
+
+        // Elimina l'utente
         $entityManager->remove($user);
-    
-        // execute the flush in the database
+
+        // Esegui il flush sul database
         $entityManager->flush();
-    
-        // Redirect on the homepage
-        return $this->redirectToRoute('home');
+
+        // Reindirizza alla homepage
+        return $this->redirectToRoute('app_logout');
     }
 }
 

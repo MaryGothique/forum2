@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-
+{# With this page the code shows every thinks token by the form builder #}
 {% block body %}
     <h1>Write an article!</h1>
     <div class="form-article">
@@ -8,6 +8,7 @@
             {{ form_row(form.title) }} 
             {{ form_widget(form.categories) }}
             {{ form_row(form.content) }} 
+            {# here the form bottom #}
             {{ form_row(form.validate, { 'label': 'Create' }) }} 
         {{ form_end(form) }} 
     </div>

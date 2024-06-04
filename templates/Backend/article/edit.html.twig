@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Edit Article{% endblock %}
-
+{# this is the form for modify the article #}
 {% block body %}
+{# this is the flash messages #}
     {% for flashMessage in app.flashes('success') %}
         <div class="flash-message flash-message-success">
             {{ flashMessage }}
@@ -17,11 +18,12 @@
 
     {% block content %}
         <h1>Edit an article!</h1>
+        {# With this page the code shows every thinks token by the form builder #}
         <div class="form-article">
             {{ form_start(form) }}
                 {{ form_errors(form) }}
                 {{ form_row(form.title) }}
-                {{ form_widget(form.category) }}
+                {{ form_widget(form.categories) }}
                 {{ form_row(form.content) }}
                 {{ form_row(form.validate, {'label': 'Modify' }) }}
             {{ form_end(form) }}

@@ -122,6 +122,7 @@ class CategoryController extends AbstractController
 
         // Ensure the user has permission to delete the category
         if ($category->getCreatedBy() !== $user) {
+            //CreatedBy is a function that give me the permission to delete or modify the category
             $this->addFlash('error', 'You do not have permission to delete this category.');
             return $this->redirectToRoute('user.category.read');
         }

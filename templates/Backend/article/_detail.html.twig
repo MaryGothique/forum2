@@ -59,6 +59,7 @@
     {# Comments section #}
     <section class="comments">
         <h2>Comments</h2>
+        {# with this can take all the user comment in the article for show it #}
         {% for comment in article.comments %}
             <div class="comment">
                 <div class="card-text">
@@ -72,9 +73,12 @@
     </section>
 
     {# Add a comment section, visible only to authenticated users #}
+ 
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    {# if the user is logged, user can reply in the article#}
     <section class="add-comment">
-        
+        {# this is a form of comment #}
+
         {{ form_start(commentForm) }}
         <h2>Add a Comment</h2>
         <h3>{{ form_row(commentForm.content) }}</h3>

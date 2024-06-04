@@ -12,10 +12,12 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
+//this is the class immplement, with the class name
 class ArticleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        //this is the builder pour building the article's form 
         $builder
             ->add('title', TextType::class)
             ->add('categories', EntityType::class, [
