@@ -47,8 +47,8 @@ a.btn-logout{
   margin: auto 33px auto auto;
   height: 30px;
   width: 15vh;
-  border: 2px solid #727272;
-  background-color: red;
+  border: 2px solid #ff0101;
+  background-color: #f80707;
   border-radius: 20px;
   color: black;
   display: inline-block;
@@ -80,8 +80,8 @@ a.btn-logout{
     margin: auto 33px auto -15px;
     height: 30px;
     width: 15vh;
-    border: 2px solid #727272;
-    background-color: red;
+    border: 2px solid #ff0101;
+    background-color: #f80707;
     border-radius: 20px;
     color: black;
     display: inline-block;
@@ -289,8 +289,8 @@ a.btn-logout{
   margin: auto 33px auto auto;
   height: 30px;
   width: 15vh;
-  border: 2px solid #727272;
-  background-color: red;
+  border: 2px solid #ff0101;
+  background-color: #f80707;
   border-radius: 20px;
   color: black;
   display: inline-block;
