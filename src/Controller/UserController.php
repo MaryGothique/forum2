@@ -4,49 +4,42 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Entity\Comment;
+use App\Entity\Category;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class UserController extends AbstractController
 {
-    // Defines a route for displaying the user's profile
     #[Route('/user', name: 'user')]
     public function profile(): Response
     {
-        // Gets the currently logged-in user
         $user = $this->getUser();
 
-        // Checks if the user exists
         if (!$user) {
             throw $this->createNotFoundException('User not found.');
         }
 
-        // Renders the user's profile view
         return $this->render('user/index.html.twig', [
             'user' => $user,
         ]);
     }
 
-    // Defines a route for editing user information
     #[Route('/user/edit/{id}', name: 'user_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, User $user, UserPasswordHasherInterface $passwordHasher, EntityManagerInterface $entityManager): Response
     {
-        // Checks if the user exists
         if (!$user) {
             throw $this->createNotFoundException('User not found.');
         }
 
-        // Creates the form for editing the user
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
-        // Processes the form submission
         if ($form->isSubmitted() && $form->isValid()) {
-            // If a new password is provided, hash it and set it on the user
             if ($form->get('plainPassword')->getData()) {
                 $user->setPassword(
                     $passwordHasher->hashPassword(
@@ -56,34 +49,36 @@ class UserController extends AbstractController
                 );
             }
 
-            // Saves the changes to the database
             $entityManager->flush();
 
-            // Redirects to the user profile page
             return $this->redirectToRoute('user');
         }
 
-        // Renders the form view for editing the user
         return $this->render('user/edit.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);
     }
 
-    // Defines a route for deleting a user
     #[Route('/user/delete/{id}', name: 'user_delete', methods: ['POST', 'DELETE'])]
     public function deleteUser(User $user, EntityManagerInterface $entityManager): Response
     {
-        // Elimina tutti gli articoli associati all'utente
+        // Delete all categories created by the user
+        $categories = $entityManager->getRepository(Category::class)->findBy(['createdBy' => $user]);
+        foreach ($categories as $category) {
+            $entityManager->remove($category);
+        }
+
+        // Delete all articles created by the user
         $articles = $user->getArticles();
         foreach ($articles as $article) {
-            // Elimina tutte le categorie associate all'articolo
-            $categories = $article->getCategories();
-            foreach ($categories as $category) {
+            // Delete all categories associated with the article
+            $articleCategories = $article->getCategories();
+            foreach ($articleCategories as $category) {
                 $entityManager->remove($category);
             }
 
-            // Elimina tutti i commenti associati all'articolo
+            // Delete all comments associated with the article
             $comments = $article->getComments();
             foreach ($comments as $comment) {
                 $entityManager->remove($comment);
@@ -92,15 +87,16 @@ class UserController extends AbstractController
             $entityManager->remove($article);
         }
 
-        // Elimina l'utente
-        $entityManager->remove($user);
+        // Delete all comments made by the user
+        $userComments = $entityManager->getRepository(Comment::class)->findBy(['user' => $user]);
+        foreach ($userComments as $comment) {
+            $entityManager->remove($comment);
+        }
 
-        // Esegui il flush sul database
+        // Finally, delete the user
+        $entityManager->remove($user);
         $entityManager->flush();
 
-        // Reindirizza alla homepage
         return $this->redirectToRoute('app_logout');
     }
 }
-
-

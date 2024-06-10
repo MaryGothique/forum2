@@ -26,12 +26,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
       #[ORM\Column(length: 30)]
       private ?string $nickname = null;
 
-    //mettre les contrainte de validité ici pour toutes les proprietes 
     #[ORM\Column(length: 180, unique: true)] 
     #[Assert\Email(
         message: 'The email {{ value }} is not a valid email.',
     )]
-    private ?string $email = null;// proprieté
+    private ?string $email = null;
 
     #[ORM\Column]
     private array $roles = [];
@@ -41,8 +40,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     #[Assert\PasswordStrength([ //constraint 
-        'minScore' => PasswordStrength::STRENGTH_VERY_STRONG, 
-        // Very strong password required
+        'minScore' => PasswordStrength::STRENGTH_MEDIUM, 
+        // MEDIUM password required
     ])]
     private ?string $password = null;
 

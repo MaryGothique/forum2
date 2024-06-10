@@ -63,7 +63,7 @@ div .btn-modify:hover {
   /* Sets the width of the delete button */
   width: 80px;
   /* Adds a solid border of 2px with dark red color */
-  border: 2px solid #6a0303;
+  border: 2px solid #ff0101;
   /* Sets the background color to bright red */
   background-color: #f80707;
   /* Rounds the corners of the button */

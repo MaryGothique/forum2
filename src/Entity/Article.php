@@ -41,7 +41,7 @@ class Article
         $this->createdAt = new \DateTimeImmutable(); 
     }
 
-    // Altri getter e setter...
+    // anothers getter & setter...
 
     #[ORM\PrePersist]
     public function setCreatedAtValue(): void

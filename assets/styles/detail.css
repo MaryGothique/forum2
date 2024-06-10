@@ -22,7 +22,7 @@ h3 {
 }
 p {
   color: black;
-  margin: -5px auto 50px auto;
+  margin: -5px auto 5px auto;
 }
 .category_title {
   border: solid 2px #0000FF;
@@ -81,7 +81,7 @@ div .btn-modify:hover {
 .btn-delete {
   height: auto;
   width: 80px;
-  border: 2px solid #6a0303;
+  border: 2px solid #ff0101;
   background-color: #f80707;
   border-radius: 20px;
   color: black;
@@ -235,7 +235,7 @@ div .btn-modify:hover {
 
 .btn-delete {
   height: auto;
-  border: 2px solid #6a0303;
+  border: 2px solid #ff0101;
   background-color: #f80707;
   border-radius: 20px;
   color: black;
