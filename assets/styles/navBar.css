@@ -50,7 +50,7 @@ a.btn-logout{
   border: 2px solid #ff0101;
   background-color: #f80707;
   border-radius: 20px;
-  color: black;
+  color: #040404;
   display: inline-block;
   padding: 4px;
 }
@@ -222,7 +222,7 @@ transform-origin: 0% 100%;
 {
 opacity: 1;
 transform: rotate(45deg) translate(-2px, -1px);
-background: black;
+background: #040404;
 }
 
 /*
@@ -281,7 +281,7 @@ a.btn-log{
   border: 2px solid #727272;
   background-color: #00FF8C;
   border-radius: 20px;
-  color: black;
+  color: #040404;
   display: inline-block;
   padding: 4px;
 }
