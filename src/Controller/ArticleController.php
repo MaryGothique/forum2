@@ -135,39 +135,48 @@ public function articleDetail(Article $article, Request $request, CommentReposit
     /**
      * Route for deleting an article
      */
-    #[Route('/user/article/delete/{id}', name: 'user.article.delete', methods: ['POST', 'DELETE'])]
-    public function deleteArticle(?Article $article, Request $request): RedirectResponse
-    {
-        // Ensure the user is logged in
-        if (!$this->getUser()) {
-            throw new AccessDeniedException('You must be logged in to delete articles.');
-        }
+   /**
+ * Route for deleting an article
+ */
+#[Route('/user/article/delete/{id}', name: 'user.article.delete', methods: ['POST', 'DELETE'])]
+public function deleteArticle(?Article $article, Request $request): RedirectResponse
+{
+    // Ensure the user is logged in
+    if (!$this->getUser()) {
+        throw new AccessDeniedException('You must be logged in to delete articles.');
+    }
 
-        // Ensure the article exists
-        if (!$article instanceof Article) {
-            $this->addFlash('error', 'Article not found');
-            return $this->redirectToRoute('user.article.read');
-        }
-
-        // Ensure the logged-in user is the author of the article
-        if ($article->getUser() !== $this->getUser()) {
-            $this->addFlash('error', 'You are not allowed to delete this article.');
-            return $this->redirectToRoute('user.article.read');
-        }
-
-        // Validate the CSRF token before deleting the article
-        if ($this->isCsrfTokenValid('delete' . $article->getId(), $request->request->get('token'))) {
-            // Remove the article and flush the changes to the database
-            $this->em->remove($article);
-            $this->em->flush();
-
-            // Add a success flash message and redirect to the article list page
-            $this->addFlash('success', 'Article deleted successfully');
-            return $this->redirectToRoute('user.article.read');
-        }
-
-        // Add an error flash message for an invalid token and redirect to the article list page
-        $this->addFlash('error', 'Invalid token');
+    // Ensure the article exists
+    if (!$article instanceof Article) {
+        $this->addFlash('error', 'Article not found');
         return $this->redirectToRoute('user.article.read');
     }
+
+    // Ensure the logged-in user is the author of the article
+    if ($article->getUser() !== $this->getUser()) {
+        $this->addFlash('error', 'You are not allowed to delete this article.');
+        return $this->redirectToRoute('user.article.read');
+    }
+
+    // Validate the CSRF token before deleting the article
+    if ($this->isCsrfTokenValid('delete' . $article->getId(), $request->request->get('token'))) {
+        // Remove comments associated with the article
+        foreach ($article->getComments() as $comment) {
+            $this->em->remove($comment);
+        }
+
+        // Remove the article and flush the changes to the database
+        $this->em->remove($article);
+        $this->em->flush();
+
+        // Add a success flash message and redirect to the article list page
+        $this->addFlash('success', 'Article deleted successfully');
+        return $this->redirectToRoute('user.article.read');
+    }
+
+    // Add an error flash message for an invalid token and redirect to the article list page
+    $this->addFlash('error', 'Invalid token');
+    return $this->redirectToRoute('user.article.read');
+}
+
 }

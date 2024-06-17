@@ -1,6 +1,8 @@
 <?php
-
-namespace App\Entity;
+/**
+ * the model manages the database logic
+ */
+namespace App\Entity;/*entity: is a php class that represents a table in a database */
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
@@ -11,7 +13,10 @@ use Symfony\Component\Validator\Constraints\PasswordStrength;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
-
+/**
+ * Class= is a model for creating objects. It defines the properties and methods that objects created from the class have.
+ *object= instance of a class: is created using the NEW keyword followed by the class name.
+ */
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
