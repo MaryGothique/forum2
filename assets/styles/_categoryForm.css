@@ -91,7 +91,7 @@
 
 /* Mobile version */
 /* This media query applies styles to screens with a width between 412px and 500px */
-@media screen and (min-width: 412px) and (max-width: 500px) {
+@media screen and (min-width: 300px) and (max-width: 799px) {
   .category-form {
       /* Adds a solid border of 2px with grey color */
       border: 2px solid #727272;

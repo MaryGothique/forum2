@@ -23,10 +23,7 @@ class Category
     private Collection $articles;
     #[ORM\ManyToOne(targetEntity: User::class)]
     #[ORM\JoinColumn(nullable: false)]
-    private ?UserInterface $createdBy = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $author = null;
+    private ?UserInterface $user = null;
 
     public function __construct()
     {
@@ -81,30 +78,19 @@ class Category
     }
 
     // Get the user who created the category
-    public function getCreatedBy(): ?UserInterface
+    public function getUser(): ?UserInterface
     {
-        return $this->createdBy;
+        return $this->user;
     }
 
     // Set the user who created the category
-    public function setCreatedBy(?UserInterface $createdBy): static
+    public function setUser(?UserInterface $user): static
     {
-        $this->createdBy = $createdBy;
+        $this->user = $user;
         return $this;
     }
 
-    // Get the author of the category
-    public function getAuthor(): ?string
-    {
-        return $this->author;
-    }
 
-    // Set the author of the category
-    public function setAuthor(?string $author): static
-    {
-        $this->author = $author;
-        return $this;
-    }
 }
 
 

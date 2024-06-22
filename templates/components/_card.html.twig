@@ -24,22 +24,24 @@
         {% endfor %}
     {% endif %}
     
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        {# Checks if the user is authenticated #}
-        <div class="card-buttons">
-            {# Begins the card-buttons div, representing buttons for editing and deleting the article #}
-            <a href="{{ path('user.article.edit', {id: article.id}) }}" class="btn-modify">Edit</a>
-            {# Displays a button for editing the article, which leads to the edit page of the article #}
-            <form method="POST" action="{{ path('user.article.delete', {'id': article.id}) }}"
-                  onsubmit="return confirm('Are you sure you want to delete this article? This action cannot be undone.')">
-                {# Begins a form for deleting the article #}
-                <input type="hidden" name="token" value="{{ csrf_token('delete' ~ article.id) }}">
-                {# Adds a hidden input field for CSRF protection #}
-                <button class="btn-delete">Delete</button>
-                {# Displays a button for deleting the article, which triggers a confirmation dialog #}
-            </form>
-        </div>
-        {# Ends the card-buttons div #}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') and app.user == article.user %}
+    {# Checks if the user is authenticated and is the author of the article #}
+    <div class="card-buttons">
+        {# Begins the card-buttons div, representing buttons for editing and deleting the article #}
+        <a href="{{ path('user.article.edit', {id: article.id}) }}" class="btn-modify">Edit</a>
+        {# Displays a button for editing the article, which leads to the edit page of the article #}
+        <form method="POST" action="{{ path('user.article.delete', {'id': article.id}) }}"
+              onsubmit="return confirm('Are you sure you want to delete this article? This action cannot be undone.')">
+            {# Begins a form for deleting the article #}
+            <input type="hidden" name="token" value="{{ csrf_token('delete' ~ article.id) }}">
+            {# Adds a hidden input field for CSRF protection #}
+            <button class="btn-delete">Delete</button>
+            {# Displays a button for deleting the article, which triggers a confirmation dialog #}
+        </form>
+    </div>
+    {# Ends the card-buttons div #}
     {% endif %}
+
+    
 </div>
 {# Ends the card-article div #}

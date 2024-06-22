@@ -248,7 +248,7 @@ div .btn-modify:hover {
 }
 /* Mobile version */
 /* This media query applies styles to screens with a width of up to 500px */
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 300px) and (max-width: 799px){
   .card-text {
       margin: 30px;
       overflow: clip;

@@ -25,7 +25,7 @@
         <div>
             {% for category in categories %}
                 {% include 'components/_cardCategory.html.twig' with { 'category': category } %}
-                {% if category.createdBy == current_user %}
+                {% if category.user == current_user %}
                 
 
                 {% endif %}

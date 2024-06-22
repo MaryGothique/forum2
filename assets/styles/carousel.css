@@ -85,7 +85,7 @@ figure img {
 
 /* Mobile version */
 /* This media query applies styles to screens with a width up to 500px */
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 300px) and (max-width: 799px){
     figcaption {
         color: black;
         font-size: 15px;

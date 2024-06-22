@@ -14,6 +14,22 @@
   display: inline-flex;
   margin: 20px 5px auto -5px;
 }
+.btn-danger{
+      /* Sets the height of the delete button */
+      height: 30px;
+      /* Sets the width of the delete button */
+      width: 80px;
+      /* Adds a solid border of 2px with red color */
+      border: 2px solid #ff0101;
+      /* Sets the background color to bright red */
+      background-color: #f80707;
+      /* Rounds the corners of the button */
+      border-radius: 20px;
+      /* Sets the text color to black */
+      color: black;
+      /* Adds margin to the delete button */
+      margin: auto 345px;
+}
 
 .btn-modify-user{
   /* Sets the height of the modify button */

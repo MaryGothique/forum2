@@ -174,7 +174,7 @@ button #article_validate {
    Each media query defines the screen size. 
    In this case, it is for screens with a max width of 500px. 
 */
-@media screen and (max-width: 500px){
+@media screen and (min-width: 300px) and (max-width: 799px){
   .form-article{
       /* Sets the text color to black */
       color: black;

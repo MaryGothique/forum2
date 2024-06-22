@@ -61,42 +61,48 @@ class UserController extends AbstractController
     }
 
     #[Route('/user/delete/{id}', name: 'user_delete', methods: ['POST', 'DELETE'])]
-    public function deleteUser(User $user, EntityManagerInterface $entityManager): Response
+    public function deleteUser(Request $request, User $user, EntityManagerInterface $entityManager): Response
     {
-        // Delete all categories created by the user
-        $categories = $entityManager->getRepository(Category::class)->findBy(['createdBy' => $user]);
-        foreach ($categories as $category) {
-            $entityManager->remove($category);
-        }
-
-        // Delete all articles created by the user
-        $articles = $user->getArticles();
-        foreach ($articles as $article) {
-            // Delete all categories associated with the article
-            $articleCategories = $article->getCategories();
-            foreach ($articleCategories as $category) {
+        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('token'))) {
+            // Delete all categories created by the user
+            $categories = $entityManager->getRepository(Category::class)->findBy(['user' => $user]);
+            foreach ($categories as $category) {
                 $entityManager->remove($category);
             }
 
-            // Delete all comments associated with the article
-            $comments = $article->getComments();
-            foreach ($comments as $comment) {
+            // Delete all articles created by the user
+            $articles = $user->getArticles();
+            foreach ($articles as $article) {
+                // Delete all categories associated with the article
+                $articleCategories = $article->getCategories();
+                foreach ($articleCategories as $category) {
+                    $entityManager->remove($category);
+                }
+
+                // Delete all comments associated with the article
+                $comments = $article->getComments();
+                foreach ($comments as $comment) {
+                    $entityManager->remove($comment);
+                }
+
+                $entityManager->remove($article);
+            }
+
+            // Delete all comments made by the user
+            $userComments = $entityManager->getRepository(Comment::class)->findBy(['user' => $user]);
+            foreach ($userComments as $comment) {
                 $entityManager->remove($comment);
             }
 
-            $entityManager->remove($article);
+            // Finally, delete the user
+            $entityManager->remove($user);
+            $entityManager->flush();
+
+            $this->addFlash('success', 'User deleted successfully');
+            return $this->redirectToRoute('home');
         }
 
-        // Delete all comments made by the user
-        $userComments = $entityManager->getRepository(Comment::class)->findBy(['user' => $user]);
-        foreach ($userComments as $comment) {
-            $entityManager->remove($comment);
-        }
-
-        // Finally, delete the user
-        $entityManager->remove($user);
-        $entityManager->flush();
-
-        return $this->redirectToRoute('app_logout');
+        $this->addFlash('error', 'Invalid token');
+        return $this->redirectToRoute('home');
     }
 }

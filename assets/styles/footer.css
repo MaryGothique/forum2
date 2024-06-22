@@ -100,7 +100,7 @@ ul.social li.instagram img {
 
 /* Mobile version */
 /* This media query applies styles to screens with a width of up to 500px */
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 300px) and (max-width: 799px) {
   .social {
     margin-left: -35px;
     margin-top: 60px;

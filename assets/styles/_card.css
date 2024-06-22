@@ -258,7 +258,7 @@ a{
 version mobile is called with @media for @media queries. Every mediaquery define the size of the screen 
 in this case for a creen max of the 500px
 */
-@media screen and (max-width: 500px){
+@media screen and (min-width: 300px) and (max-width: 799px){
     .card-list {
         /* Uses flexbox for layout */
         display: flex;

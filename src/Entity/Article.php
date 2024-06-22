@@ -16,7 +16,7 @@ class Article
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 350)]
     private ?string $title = null;
 
     #[ORM\Column(type: 'text')]

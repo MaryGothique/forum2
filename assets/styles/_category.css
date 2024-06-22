@@ -82,7 +82,7 @@ div .btn-modify:hover {
 /* mobile version */
 /* This version is called with @media queries. Each media query defines the size of the screen 
  in this case for a screen with a minimum width of 412px and a maximum width of 500px */
-@media screen and (min-width: 412px) and (max-width: 500px) {
+ @media screen and (min-width: 300px) and (max-width: 799px) {
 
   .card-category {
       /* Sets the text color to black */

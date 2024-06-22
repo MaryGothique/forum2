@@ -44,16 +44,25 @@
         </div>
         
         {# Edit and delete buttons, visible only to authenticated users #}
-        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <div class="card-buttons">
-            <a href="{{ path('user.article.edit', {id: article.id}) }}" class="btn-modify">Edit</a>
-            <form method="POST" action="{{ path('user.article.delete', {'id': article.id}) }}"
-                onsubmit="return confirm('Are you sure you want to delete this article? This action cannot be undone.')">
-                <input type="hidden" name="token" value="{{ csrf_token('delete' ~ article.id) }}">
-                <button class="btn-delete">Delete</button>
-            </form>
-        </div>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') and app.user == article.user %}
+            {# Checks if the user is authenticated and is the author of the article #}
+            <div class="card-buttons">
+                {# Begins the card-buttons div, representing buttons for editing and deleting the article #}
+                <a href="{{ path('user.article.edit', {id: article.id}) }}" class="btn-modify">Edit</a>
+                {# Displays a button for editing the article, which leads to the edit page of the article #}
+                <form method="POST" action="{{ path('user.article.delete', {'id': article.id}) }}"
+                    onsubmit="return confirm('Are you sure you want to delete this article? This action cannot be undone.')">
+                    {# Begins a form for deleting the article #}
+                    <input type="hidden" name="token" value="{{ csrf_token('delete' ~ article.id) }}">
+                    {# Adds a hidden input field for CSRF protection #}
+                    <button class="btn-delete">Delete</button>
+                    {# Displays a button for deleting the article, which triggers a confirmation dialog #}
+                </form>
+            </div>
+            {# Ends the card-buttons div #}
         {% endif %}
+
+     
     </article>
 
     {# Comments section #}
