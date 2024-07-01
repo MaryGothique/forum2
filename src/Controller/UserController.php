@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 class UserController extends AbstractController
 {
@@ -19,7 +20,6 @@ class UserController extends AbstractController
     public function profile(): Response
     {
         $user = $this->getUser();
-
         if (!$user) {
             throw $this->createNotFoundException('User not found.');
         }
@@ -32,9 +32,10 @@ class UserController extends AbstractController
     #[Route('/user/edit/{id}', name: 'user_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, User $user, UserPasswordHasherInterface $passwordHasher, EntityManagerInterface $entityManager): Response
     {
-        if (!$user) {
-            throw $this->createNotFoundException('User not found.');
-        }
+        /** Not needed: implicit 404 called by framework if user is not found. */
+        // if (!$user) {
+        //    throw $this->createNotFoundException('User not found.');
+        // }
 
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
@@ -61,8 +62,10 @@ class UserController extends AbstractController
     }
 
     #[Route('/user/delete/{id}', name: 'user_delete', methods: ['POST', 'DELETE'])]
-    public function deleteUser(User $user, EntityManagerInterface $entityManager): Response
+    public function deleteUser(User $user, EntityManagerInterface $entityManager, TokenStorageInterface $tokenStorage): Response
     {
+        $currentUser = $tokenStorage->getToken()?->getUser();
+
         // Delete all categories created by the user
         $categories = $entityManager->getRepository(Category::class)->findBy(['createdBy' => $user]);
         foreach ($categories as $category) {
@@ -93,10 +96,18 @@ class UserController extends AbstractController
             $entityManager->remove($comment);
         }
 
+        $deletingCurrentUser = $currentUser?->getId() === $user->getId();
+
         // Finally, delete the user
         $entityManager->remove($user);
         $entityManager->flush();
 
-        return $this->redirectToRoute('app_logout');
+        if ($deletingCurrentUser) {
+            $tokenStorage->setToken(null);
+
+            return $this->redirectToRoute('home');
+        }
+
+        return $this->redirectToRoute('user', status: Response::HTTP_SEE_OTHER);
     }
 }
